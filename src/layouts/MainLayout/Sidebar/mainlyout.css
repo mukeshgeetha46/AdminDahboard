@@ -1,0 +1,5 @@
+.app-layout{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
