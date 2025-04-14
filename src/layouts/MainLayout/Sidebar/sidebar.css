@@ -183,3 +183,8 @@
     font-weight: 700;
  
   }
+
+  .menu-bar{
+    display: flex;
+    width: 100%;
+  }

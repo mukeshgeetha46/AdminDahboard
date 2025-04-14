@@ -6,6 +6,12 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsChatDots } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { IoMoonOutline } from "react-icons/io5";
+import { TfiShoppingCartFull } from "react-icons/tfi";
+import { IoMdNotificationsOutline } from "react-icons/io";
+
+
 
 
 export {
@@ -16,5 +22,9 @@ export {
     AiOutlineShoppingCart,
     BsChatDots,
     FaRegUser,
-    GoDotFill
+    GoDotFill,
+    HiOutlineMenuAlt2,
+    IoMoonOutline,
+    TfiShoppingCartFull,
+    IoMdNotificationsOutline
 }

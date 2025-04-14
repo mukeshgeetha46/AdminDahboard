@@ -2,16 +2,21 @@
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import '../MainLayout/Sidebar/mainlyout.css'
+import TopNavbar from './TopNavbar';
 
 
 const MainLayout = () => {
   return (
-    <div className="app-layout">
-      <Sidebar />
-      <div className="main-content">
-        <Outlet /> {/* This is where child routes will render */}
-      </div>
-    </div>
+    <div class="container">
+  <div class="left">
+  <Sidebar />
+  </div>
+  <div class="right">
+    
+  <TopNavbar  />
+  </div>
+</div>
+
   );
 };
 

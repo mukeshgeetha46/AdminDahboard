@@ -1,5 +1,21 @@
 .app-layout{
     margin: 0;
-    display: flex;
-    justify-content: flex-start;
+     display: flex;
 }
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh; /* Optional: full screen height */
+  }
+  
+  .left {
+    width: 17%;
+    /* background-color: #f0f0f0; */
+  }
+  
+  .right {
+    width: 83%;
+    /* background-color: #e0e0e0; */
+   
+  }

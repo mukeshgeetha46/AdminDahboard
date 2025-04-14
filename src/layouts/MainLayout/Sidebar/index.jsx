@@ -7,7 +7,8 @@ import { IoIosArrowUp } from "react-icons/io";
 import { GoDotFill } from 'react-icons/go';
 import profileLogo from '../../../assets/sidebar/user6-iQEKvgW-.jpg'
 import { IoMdLogOut } from "react-icons/io";
-
+import { HiOutlineMenuAlt2 } from '../../../icons/index'
+import TopNavbar from '../TopNavbar';
 
 
 
@@ -30,7 +31,9 @@ const Sidebar = () => {
 
 
   return (
-   <div className="sidebar">
+   <>
+   <div style={{ display:"flex",width:'100%' }}>
+     <div className="sidebar">
      <aside>
       <div className="">
         <div className="logo">
@@ -107,6 +110,11 @@ const Sidebar = () => {
         </div>
     </div>
    </div>
+   {/* <TopNavbar  /> */}
+   
+   </div>
+   
+   </>
   );
 };
 
