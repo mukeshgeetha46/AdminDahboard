@@ -20,8 +20,8 @@ const TopNavbar = () => {
         </div>
 
         <div className='right_content'>
-          <div>
-          <input type='text' placeholder='Search...' />
+          <div className='top_search'>
+          <input className='searchinput' type='text' placeholder='Search...' />
           </div>
           <div className='dot'>
           <span className='hoverMenu'>  <IoMoonOutline size={20} /></span>

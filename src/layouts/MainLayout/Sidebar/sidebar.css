@@ -11,6 +11,11 @@
     
 }
 
+.scrollMenu{
+  height: 600px;
+  overflow: auto;
+}
+
 .scrollMenu::-webkit-scrollbar {
     width: 4px;
   }
@@ -187,4 +192,11 @@
   .menu-bar{
     display: flex;
     width: 100%;
+  }
+
+  @media screen and (min-width: 900px) and (max-width: 1300px) {
+    .scrollMenu{
+      height: 490px;
+      overflow: auto;
+    }
   }

@@ -34,7 +34,9 @@ const Sidebar = () => {
    <>
    <div style={{ display:"flex",width:'100%' }}>
      <div className="sidebar">
-     <aside>
+     <aside style={{
+      height:"200px"
+     }}>
       <div className="">
         <div className="logo">
           <img src={logo} width={190} height={44} alt="logo" />
@@ -42,7 +44,7 @@ const Sidebar = () => {
       </div>
 
      
-       <div className='scrollMenu' style={{ height:"600px",overflow:"auto" }}>
+       <div className='scrollMenu'>
        {menus.map((menu, index) => (
            <div className="main_menu" >
           <div key={index}>
