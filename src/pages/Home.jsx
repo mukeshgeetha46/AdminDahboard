@@ -39,6 +39,15 @@ const barData = [
   { label: 'S', grayHeight: 40 },
 ];
 
+const avatars = [
+  "https://img.freepik.com/premium-photo/retro-style-art_551707-70225.jpg?uid=R188668785&ga=GA1.1.1035270016.1740294128&semt=ais_hybrid&w=740",
+  "https://img.freepik.com/premium-photo/retro-style-art_551707-70225.jpg?uid=R188668785&ga=GA1.1.1035270016.1740294128&semt=ais_hybrid&w=740",
+  "https://img.freepik.com/premium-photo/retro-style-art_551707-70225.jpg?uid=R188668785&ga=GA1.1.1035270016.1740294128&semt=ais_hybrid&w=740",
+  "https://img.freepik.com/premium-photo/retro-style-art_551707-70225.jpg?uid=R188668785&ga=GA1.1.1035270016.1740294128&semt=ais_hybrid&w=740",
+  "https://img.freepik.com/premium-photo/retro-style-art_551707-70225.jpg?uid=R188668785&ga=GA1.1.1035270016.1740294128&semt=ais_hybrid&w=740",
+];
+
+
 
   return (
     <div>
@@ -207,7 +216,7 @@ const barData = [
  </div>
 
 
-<div className='bg-white  h-[340px] shadow-md rounded-2xl'>
+<div className='bg-white  h-[340px] shadow-md rounded-2xl flex flex-col justify-between'>
    <div className='flex justify-between items-center m-5'>
     <div className='payments flex-col'>
        <p className='text-2xl font-bold'>Latest Deal</p>
@@ -229,15 +238,33 @@ const barData = [
       <p className='text-[18px]'>$1,22,900</p>
      </div>
 
-    <div className="flex mt-2 ml-5 mr-5 mb-5 h-[7px] w-full max-w-[320px] ">
+    <div className="flex mt-2 ml-5 mr-5 h-[7px] w-full max-w-[320px] ">
   <div className="w-1/1 bg-[#0085db] rounded-tl-2xl rounded-bl-2xl"></div>
   <div className="w-1/6 bg-[#f5f8fb] rounded-tr-2xl rounded-br-2xl"></div>
 </div>
-
+ 
+ <div className='mt-[5px] ml-5 mr-5 mb-5'>
+  <p>Coupons used: 18/22</p>
+ </div>
 
   </div>
 
+  <div className='avatar m-5'>
+   <div>
+    <p>Recent Purchasers</p>
+   </div>
+   <div className="flex justify-start items-center">
+  {avatars.map((url, index) => (
+    <img
+      key={index}
+      src={url}
+      alt={`Avatar ${index + 1}`}
+      className="rounded-full object-cover w-[40px] h-[40px]"
+    />
+  ))}
+</div>
 
+  </div>
 
  </div>
 
