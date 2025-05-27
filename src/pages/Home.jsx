@@ -42,7 +42,7 @@ const barData = [
 
   return (
     <div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 h-[50%]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
  <div
   className="bg-white h-[500px] sm:h-[340px] col-span-0 lg:col-span-2 bg-no-repeat bg-[length:400px_auto] bg-right-bottom rounded-2xl shadow-lg"
   style={{
@@ -175,7 +175,7 @@ const barData = [
        <p>Last 7 days</p>
     </div>
     <div className='payments flex-col'>
-       <p className='text-[20px] font-bold'>432</p>
+       <p className='flex justify-center items-center text-[20px] font-bold'>432</p>
      <p className="flex justify-center items-center pl-4 pr-4 pt-[1px] pb-[1px] text-[12px] bg-[#dffff3] rounded-2xl text-[#6dd9a1] border border-[#6dd9a1]">
 -3.8%
 </p>
@@ -207,8 +207,127 @@ const barData = [
  </div>
 
 
- <div>5</div>
- <div>6</div>
+<div className='bg-white  h-[340px] shadow-md rounded-2xl'>
+   <div className='flex justify-between items-center m-5'>
+    <div className='payments flex-col'>
+       <p className='text-2xl font-bold'>Latest Deal</p>
+       <p className='text-[#7d878a]'>Last 7 days</p>
+    </div>
+    <div className='payments flex-col'>
+       
+     <p className="flex justify-center items-center pl-4 pr-4 pt-[1px] pb-[1px] text-[12px] bg-[#dffff3] rounded-2xl text-[#6dd9a1] border border-[#6dd9a1]">
+-3.8%
+</p>
+
+    </div>
+   </div>
+ 
+  <div className='range'>
+
+     <div className='flex justify-between items-center mt-5 mr-5 ml-5 mb-[5px]'>
+      <p className='text-[18px]'>$98,500</p>
+      <p className='text-[18px]'>$1,22,900</p>
+     </div>
+
+    <div className="flex mt-2 ml-5 mr-5 mb-5 h-[7px] w-full max-w-[320px] ">
+  <div className="w-1/1 bg-[#0085db] rounded-tl-2xl rounded-bl-2xl"></div>
+  <div className="w-1/6 bg-[#f5f8fb] rounded-tr-2xl rounded-br-2xl"></div>
+</div>
+
+
+  </div>
+
+
+
+ </div>
+
+
+
+ <div className='bg-white  h-[340px] shadow-md rounded-2xl'>
+   <div className='flex justify-between items-center m-5'>
+    <div className='payments flex-col'>
+       <p className='text-2xl font-bold'>Customers</p>
+       <p className='text-[#7d878a]'>Last 7 days</p>
+    </div>
+    <div className='payments flex-col items-center'>
+       <p className='flex justify-center items-center text-[20px] font-bold'>6,380</p>
+   <p className="flex justify-center items-center pl-4 pr-4 pt-[1px] pb-[1px] text-[12px] bg-[#dffff3] rounded-2xl text-[#6dd9a1] border border-[#6dd9a1]">
+-3.8%
+</p>
+
+    </div>
+   </div>
+ 
+
+<div className="flex justify-center items-center gap-6 mt-[60px]">
+  {barData.map((item, index) => (
+    <div key={index} className="flex flex-col items-center">
+      <div className="h-[50px] flex justify-center items-end">
+        <p
+          className="bg-[#dfdfdf] w-[9px] rounded-2xl"
+          style={{ height: `${item.grayHeight}px` }}
+        >
+          &nbsp;
+        </p>
+      </div>
+      <div>
+        <p className="bg-[#0085db] w-[9px] h-[30px] rounded-2xl mt-2">&nbsp;</p>
+      </div>
+      <div>
+        <p className="flex justify-center items-center w-[9px] h-[30px] text-[14px]">
+          {item.label}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+  <div className='payment text-[#7d878a]'> 
+   <div className='flex justify-between items-center'>
+    
+    <div className='m-5'>
+       <div className='flex justify-start items-center'>
+    <div className='ml-2'>
+      <p>April 07 - April 14</p>
+    </div>
+      
+     </div>
+     <div className='flex justify-start items-center'>
+    <div className='ml-2'>
+      <p>Last Week</p>
+    </div>
+      
+     </div>
+
+    </div>
+
+
+    <div className='m-5'>
+       <div className='flex justify-start items-center'>
+    <div className='ml-2'>
+      <p>6,380</p>
+    </div>
+      
+     </div>
+     <div className='flex justify-start items-center'>
+    
+    <div className='ml-2'>
+      <p>4,298</p>
+    </div>
+      
+     </div>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div> 
+ 
+ 
+ 
+ 
  <div>7</div>
  <div>8</div>
  <div>9</div>

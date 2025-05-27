@@ -47,7 +47,7 @@ const MainLayout = () => {
       <div className='bg-white h-[10%] m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md'>
   sdsd
     </div>
-    <div className='h-full lg:h-[82%] m-2 lg:m-7'>
+    <div className='h-[80vh] m-2 lg:m-7 overflow-y-auto'>
 
     <Outlet />
 
