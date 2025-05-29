@@ -253,16 +253,27 @@ const avatars = [
    <div>
     <p>Recent Purchasers</p>
    </div>
-   <div className="flex justify-start items-center">
+   <div className="flex justify-start items-center relative">
   {avatars.map((url, index) => (
     <img
       key={index}
       src={url}
       alt={`Avatar ${index + 1}`}
-      className="rounded-full object-cover w-[40px] h-[40px]"
+      className={`rounded-full object-cover w-[40px] h-[40px] border-2 border-white ${
+        index !== 0 ? '-ml-3' : ''
+      }`}
     />
+     
   ))}
+  <div
+    className="w-10 h-10 rounded-full flex items-center justify-center text-white absolute ml-33"
+            style={{ backgroundColor:'green' }}
+          >
+            8+
+          </div>
 </div>
+          
+
 
   </div>
 
@@ -355,8 +366,27 @@ const avatars = [
  
  
  
- <div>7</div>
- <div>8</div>
+ <div className='col-span-0 lg:col-span-4'>
+
+<div className="grid grid-cols-20 gap-4">
+  <div className="col-span-20 lg:col-span-13">
+    <div className="tablediv h-[300px] bg-white">65%</div>
+  </div>
+  <div className="col-span-20 lg:col-span-7">
+    <div className="tablediv h-[300px] bg-white">35%</div>
+  </div>
+</div>
+
+
+ </div>
+
+
+
+
+
+ <div><div className='tablediv h-[300px] bg-white'>
+
+</div></div>
  <div>9</div>
  <div>10</div>
 </div>
