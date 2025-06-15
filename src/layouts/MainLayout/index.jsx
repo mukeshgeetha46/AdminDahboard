@@ -9,14 +9,14 @@ import { useState } from 'react';
 
 const MainLayout = () => {
 
-  const [menuopen,setMenuopen] = useState(false)
+  const [menuopen,setMenuopen] = useState('hidden')
 
   return (
  <>
 
 
-<div class=" flex  justify-start bg-gray-100 relative ">
-		<div class="absolute xl:relative w-[280px] h-[98vh] xl:h-auto p-4 bg-white rounded-0 xl:rounded-2xl shadow-xl/20 ml-0 xl:ml-3 mt-0 xl:mt-6 mb-0 xl:mb-6 mr-0 xl:mr-6 pl-[0px] z-9999">
+<div class=" flex  justify-start bg-gray-100 relative " onClick={()=>setMenuopen((pre)=> pre == 'hidden' ? 'block' : 'hidden')}>
+		<div class={`${menuopen} xl:block absolute xl:relative w-[280px] h-[98vh] xl:h-auto p-4 bg-white rounded-0 xl:rounded-2xl shadow-xl/20 ml-0 xl:ml-3 mt-0 xl:mt-6 mb-0 xl:mb-6 mr-0 xl:mr-6 pl-[0px] z-9999`}>
 		  <div className='flex justify-center '>
         <img src={logo} className='w-[175px]' />
       </div>
@@ -49,7 +49,7 @@ const MainLayout = () => {
 		</div>
 
     <div className='w-full lg:w-[80%] h-[100vh] overflow-y-auto'>
-      <HeaderMenu />
+      <HeaderMenu setMenuopen={setMenuopen} />
     <div className='m-2 lg:m-7'>
 
     <Outlet />
