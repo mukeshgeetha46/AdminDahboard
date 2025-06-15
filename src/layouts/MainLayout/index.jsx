@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import '../MainLayout/Sidebar/mainlyout.css'
 import logo from '../../assets/sidebar/logo-dark-C4P0U4PI.svg'
 import menus from '../../config/menus';
+import HeaderMenu from './HeaderMenu';
 
 const MainLayout = () => {
   return (
@@ -44,9 +45,7 @@ const MainLayout = () => {
 		</div>
 
     <div className='w-full lg:w-[80%] h-[100vh] overflow-y-auto'>
-      <div className='bg-white h-[10%] m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md'>
-  sdsd
-    </div>
+      <HeaderMenu />
     <div className='m-2 lg:m-7'>
 
     <Outlet />

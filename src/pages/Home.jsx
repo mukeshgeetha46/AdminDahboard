@@ -5,11 +5,8 @@ import { CiPause1 } from "react-icons/ci";
 import { PiShoppingCart } from "react-icons/pi";
 import CircleCharts from '../utils/CircleCharts';
 import WeekdayBarChart from '../utils/WeekdayBarChart';
-import iphone from '../assets/Main/product-5-B4cPxpNg.png'
-import applemac from '../assets/Main/product-6-Gy-PWxj9.png'
-import palystatios from '../assets/Main/product-7-Bvj-91bc.png'
-import chair from '../assets/Main/product-8-BbgjC3Cu.png'
-import { BsThreeDotsVertical } from "react-icons/bs";
+import Menu from '../utils/Menu';
+import MainTable from './Table/Maintable';
 
 
 function Home() {
@@ -376,136 +373,9 @@ const avatars = [
 
 <div className="grid grid-cols-20 gap-4 ">
   <div className="col-span-20 lg:col-span-13 ">
-    <div className="tablediv h-[500px] bg-white rounded-2xl">
+    <div className="tablediv h-[500px] bg-white rounded-2xl relative">
       
-      <div className=''>
-
-<div className="overflow-x-auto">
-  <div className="flex gap-4 min-w-max">
-<table className="w-full table-auto border-collapse m-3">
-  <thead>
-    <tr className=' border-b border-[#e5eaef]'>
-      <th className="pl-6 pt-7 pr-6 pb-3 text-left">Products</th>
-      <th className="pl-6 pt-7 pr-6 pb-3 text-left">Payments</th>
-      <th className="pl-6 pt-7 pr-6 pb-3 text-left">Status</th>
-      <th className="pl-6 pt-7 pr-6 pb-3 text-left">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr className="border-b border-[#e5eaef]">
-      <td className="px-4 py-4"> <div className='flex justify-start items-center gap-3'>
-          <div className='img'>
-           <img src={iphone} width={70} height={70} />
-         </div>
-          <div className='title'>
-            iPhone 13 pro max
-         </div>
-         </div></td>
-      <td className="px-4 py-4">
-        <div className='title flex-col justify-start items-center gap-3'>
-           <p>$180/ 499</p>
-           <p>Partially paid</p>
-          <div className="flex  h-[7px] w-[100px] mt-2">
-          <div className="w-2/3 bg-[#0085db] rounded-tl-2xl rounded-bl-2xl"></div>
-          <div className="w-1/6 bg-[#f5f8fb] rounded-tr-2xl rounded-br-2xl"></div>
-          </div>
-
-         </div></td>
-      <td className="px-4 py-4 text-green-600 flex-col justify-start items-center">
-        <p className='pt-[1px] pb-[3px] bg-[#F1EBFF] text-[#8763DA] flex justify-center items-center rounded-2xl text-[12px]'>Confirmed</p>
-      </td>
-       <td className="px-4 py-4 flex-col justify-center items-center">
-        <button className="text-[#666666] hover:underline"><BsThreeDotsVertical size={22}/></button>
-      </td>
-    </tr>
-    <tr className="border-b border-[#e5eaef]">
-      <td className="px-4 py-4"> <div className='flex justify-start items-center gap-3'>
-          <div className='img'>
-           <img src={applemac} width={70} height={70} />
-         </div>
-          <div className='title'>
-            Apple MacBook Pro
-         </div>
-         </div></td>
-      <td className="px-4 py-4"><div className='title flex-col justify-start items-center gap-3'>
-           <p>$180/ 499</p>
-           <p>Partially paid</p>
-          <div className="flex  h-[7px] w-[100px] mt-2">
-          <div className="w-2/3 bg-[#0085db] rounded-tl-2xl rounded-bl-2xl"></div>
-          <div className="w-1/6 bg-[#f5f8fb] rounded-tr-2xl rounded-br-2xl"></div>
-          </div>
-
-         </div></td>
-      <td className="px-4 py-4 text-green-600">
-         <p className='pt-[1px] pb-[3px] bg-[#F1EBFF] text-[#8763DA] flex justify-center items-center rounded-2xl text-[12px]'>Confirmed</p>
-      </td>
-      <td className="px-4 py-4 flex-col justify-center items-center">
-        <button className="text-[#666666] hover:underline"><BsThreeDotsVertical size={22}/></button>
-      </td>
-    </tr>
-    <tr className="border-b border-[#e5eaef]">
-      <td className="px-4 py-4"> <div className='flex justify-start items-center gap-3'>
-          <div className='img'>
-           <img src={palystatios} width={70} height={70} />
-         </div>
-          <div className='title'>
-            PlayStation 5 DualS
-         </div>
-         </div></td>
-      <td className="px-4 py-4"><div className='title flex-col justify-start items-center gap-3'>
-           <p>$180/ 499</p>
-           <p>Partially paid</p>
-          <div className="flex  h-[7px] w-[100px] mt-2">
-          <div className="w-2/3 bg-[#0085db] rounded-tl-2xl rounded-bl-2xl"></div>
-          <div className="w-1/6 bg-[#f5f8fb] rounded-tr-2xl rounded-br-2xl"></div>
-          </div>
-
-         </div></td>
-      <td className="px-4 py-4 text-green-600">
-         <p className='pt-[1px] pb-[3px] bg-[#F1EBFF] text-[#8763DA] flex justify-center items-center rounded-2xl text-[12px]'>Confirmed</p>
-      </td>
-       <td className="px-4 py-4 flex-col justify-center items-center">
-        <button className="text-[#666666] hover:underline"><BsThreeDotsVertical size={22}/></button>
-      </td>
-    </tr>
-    <tr className="">
-      <td className="px-4 py-4"> <div className='flex justify-start items-center gap-3'>
-          <div className='img'>
-           <img src={chair} width={70} height={70} />
-         </div>
-          <div className='title'>
-            Amazon Basics ...
-         </div>
-         </div></td>
-      <td className="px-4 py-4"><div className='title flex-col justify-start items-center gap-3'>
-           <p>$180/ 499</p>
-           <p>Partially paid</p>
-          <div className="flex  h-[7px] w-[200px] mt-2">
-          <div className="w-2/3 bg-[#0085db] rounded-tl-2xl rounded-bl-2xl"></div>
-          <div className="w-1/6 bg-[#f5f8fb] rounded-tr-2xl rounded-br-2xl"></div>
-          </div>
-
-         </div></td>
-      <td className="px-4 py-4 text-green-600">
-         <p className='pt-[1px] pb-[3px] bg-[#F1EBFF] text-[#8763DA] flex justify-center items-center rounded-2xl text-[12px]'>Confirmed</p>
-      </td>
-      <td className="px-4 py-4 flex-col justify-center items-center">
-        <button className="text-[#666666] hover:underline"><BsThreeDotsVertical size={22}/></button>
-      </td>
-    </tr>
-   
-    
-  </tbody>
-      </table>
-  </div>
-  </div>
-
-
-       
-
-
-      </div>
-      
+     <MainTable />
       </div>
   </div>
   <div className="col-span-20 lg:col-span-7">
