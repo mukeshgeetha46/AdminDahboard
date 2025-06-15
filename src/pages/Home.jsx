@@ -7,6 +7,7 @@ import CircleCharts from '../utils/CircleCharts';
 import WeekdayBarChart from '../utils/WeekdayBarChart';
 import Menu from '../utils/Menu';
 import MainTable from './Table/Maintable';
+import MainTable2 from './Table/Maintable2';
 
 
 function Home() {
@@ -379,7 +380,7 @@ const avatars = [
       </div>
   </div>
   <div className="col-span-20 lg:col-span-7">
-    <div className="tablediv h-[400px] bg-white rounded-2xl">35%</div>
+    <div className="tablediv h-[500px] bg-white rounded-2xl">35%</div>
   </div>
 </div>
 
@@ -390,11 +391,10 @@ const avatars = [
 
 
 
- <div><div className='tablediv h-[300px] bg-white'>
-
+ <div className='col-span-0 md:col-span-2 xl:col-span-4'><div className='tablediv h-[500px] bg-white'>
+  <MainTable2 />
 </div></div>
- <div>9</div>
- <div>10</div>
+
 </div>
     </div>
   )
