@@ -6,6 +6,9 @@ import logo from '../../assets/sidebar/logo-dark-C4P0U4PI.svg'
 import menus from '../../config/menus';
 import HeaderMenu from './HeaderMenu';
 import { useState } from 'react';
+import { MdNotificationsNone } from 'react-icons/md';
+import { IoSettingsOutline } from "react-icons/io5";
+import { GoDotFill } from "react-icons/go";
 
 const MainLayout = () => {
 
@@ -35,6 +38,14 @@ const MainLayout = () => {
            
          <span className="relative flex z-10 group-hover:text-[#128ede] transition-colors duration-500"><p className='mr-2'>{item.icon}</p> {item.label}</span>
             </p>
+            {
+              item.submenu && item.submenu.map((smenu)=>(
+                <div  className='p-2 ml-5 flex items-center gap-2'>
+                  <p><GoDotFill size={14} /></p>
+                <p> {smenu.s_label}</p>
+                </div>
+              ))
+            }
                 </div>
               ))
             }
@@ -56,6 +67,12 @@ const MainLayout = () => {
 
     </div>
     </div>
+   <div className="absolute bottom-4 right-4">
+  <p className="w-15 h-15 flex items-center justify-center rounded-full bg-[#0085db] cursor-pointer transition">
+    <IoSettingsOutline className='animate-spin' color='white' size={25} />
+  </p>
+</div>
+
 </div>
     
 
