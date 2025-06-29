@@ -23,7 +23,7 @@ const menus = [
           class: 'menu',
           icon:<SiBlogger size={25} />,
           submenu:[
-            {s_label:'Posts'},
+            {s_label:'Posts',path:'blog'},
             {s_label:'Detail'},
           ]
          },
