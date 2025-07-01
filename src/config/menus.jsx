@@ -24,7 +24,7 @@ const menus = [
           icon:<SiBlogger size={25} />,
           submenu:[
             {s_label:'Posts',path:'blog'},
-            {s_label:'Detail'},
+            {s_label:'Detail',path:'blog/blogdetails'},
           ]
          },
         { label: 'E-Commerse', class: 'menu',icon:<AiOutlineShoppingCart size={25} />, submenu:[

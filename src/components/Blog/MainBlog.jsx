@@ -5,9 +5,19 @@ import profile from '../../assets/Main/user1-D00qJYN4.jpg'
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { BiMessageDetail } from "react-icons/bi";
 import { GoDot } from "react-icons/go";
+import { useNavigate } from 'react-router-dom';
 
 
 const MainBlog = () => {
+
+  const navigate = useNavigate();
+
+  const handelNavigate = (path) => {
+  const formattedPath = path.replace(/\s+/g, '-'); // Replace all spaces with ---
+  navigate(`/blog/${formattedPath}`);
+};
+
+
     return (
         <div className="mainblog">
         <div className="grid grid-cols-l md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,7 +104,7 @@ const MainBlog = () => {
 </div>
          {
   Array.from({ length: 10 }, (_, i) => (
- <div className="col-span-1 rounded-2xl shadow-lg relative bg-white h-[430px]">
+ <div className="col-span-1 rounded-2xl shadow-lg relative bg-white h-[430px]" onClick={()=>handelNavigate('Garmins Instinct Crossover is a rugged hybrid smartwatch')}>
              <div className="bg-no-repeat bg-cover bg-center h-[240px] flex flex-col justify-end items-end " style={{
             backgroundImage: `url(${divbackground3})`,
          }}>
@@ -111,9 +121,9 @@ const MainBlog = () => {
 
                <p className='z-10 pl-3 pr-3 pt-1 pb-1 bg-[#707a82] text-white rounded-2xl text-[14px] w-[70px] h-[30px] m-3'>Gadget</p>
 
-               <p className='ml-3 text-[20px] w-[390px] leading-6 font-bold'>
-                Garmins Instinct Crossover is a rugged hybrid smartwatch
-               </p>
+               <p className='ml-3 text-[20px] w-full leading-6 font-bold break-words'>
+  Garmins Instinct Crossover is a rugged hybrid smartwatch
+</p>
 
                
              </div>
