@@ -11,10 +11,13 @@ import product7 from '../../assets/Ecommerse/s7-DaQaN7Vk.jpg'
 import product8 from '../../assets/Ecommerse/s8-D4HoHCFc.jpg'
 import { FaStar } from "react-icons/fa";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 
 
 const ShopOne = () => {
 
+const pages = [1, 2, 3, 4, 5, 6, '...', 8];
 
     const filters = [
   { label: 'Category', hasRightBorder: true },
@@ -120,6 +123,24 @@ const products = [
 ))}
    <div className="col-span-full border-b border-gray-300 w-[97%] mx-auto" />
    
+  <div className="pagination flex items-center gap-3">
+  <FaChevronLeft className="cursor-pointer" />
+
+  {pages.map((page, index) => (
+    typeof page === 'number' ? (
+      <p
+        key={index}
+        className="w-6 h-6 flex items-center justify-center rounded-full bg-blue-500 cursor-pointer transition text-[12px] text-white"
+      >
+        {page}
+      </p>
+    ) : (
+      <p key={index} className="text-gray-500 px-1">...</p>
+    )
+  ))}
+
+  <FaChevronRight className="cursor-pointer" />
+</div>
 </div>
  
      </div>
