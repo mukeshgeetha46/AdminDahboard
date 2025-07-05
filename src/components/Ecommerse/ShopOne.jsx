@@ -10,6 +10,7 @@ import product6 from '../../assets/Ecommerse/s6-C6XhevY8.jpg'
 import product7 from '../../assets/Ecommerse/s7-DaQaN7Vk.jpg'
 import product8 from '../../assets/Ecommerse/s8-D4HoHCFc.jpg'
 import { FaStar } from "react-icons/fa";
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 
 const ShopOne = () => {
@@ -38,7 +39,7 @@ const products = [
     <div>
      
      <div className='FilterDiv bg-white p-5 rounded-2xl flex justify-between items-center'>
-       <div className='flex justify-start items-center'>
+       <div className='flex justify-start items-center '>
         <p className='mr-5 text-[#79878a]'>Filter by:</p>
 
        <div className="flex justify-start items-center gap-5">
@@ -66,38 +67,59 @@ const products = [
        </div>
      </div>
 
-     <div className='bg-white rounded-2xl shadow-2xl mt-5'>
+     <div className='bg-white rounded-2xl shadow-2xl mt-5 w-full'>
 
-        <div className='Header p-5 flex justify-between items-center'>
-           <p>Products</p>
+        <div className='Header p-5 flex flex-col md:flex-row lg:flex-row justify-between items-center gap-3'>
+           <p className='text-[18px] leading-[25.6px] font-semibold'>Products</p>
 
-           <div className='flex justify-between items-center gap-2'>
+           <div className='flex flex-col md:flex-row lg:flex-row justify-between items-center gap-3 w-full sm:w-full md:w-[50%] lg:w-[30%]'>
             <EcommerseSearch />
 
-            <div className='flex justify-center items-start gap-2 bg-[#e7ecf0] pl-4 pr-4 py-2 rounded-[8px]'>
+            <div className='flex justify-start md:justify-center lg:justify-center items-start gap-2 bg-[#e7ecf0] pl-4 pr-4 py-2 rounded-[8px] w-full md:w-[300px] lg:w-[200px]'>
                 <button>March 2023</button>
             <FaSortDown />
             </div>
            </div>
         </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2 pb-10">
-  {products.map((product) => (
-    <div key={product.id} className="flex justify-center items-center">
-      <div>
-        <img src={product.image} alt={product.name} width={290} className=' rounded-2xl' />
-        <div className='flex flex-col items-start gap-1'> 
-             <p>MacBook Air Pro</p>
-       <div className='flex items-center gap-2'>
-         <FaStar color='#f8c076' /><p>2.3(88)</p>
-       </div>
-       <p>$15 $12</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2 pb-10 pr-10 pl-10">
+ {products.map((product) => (
+  <div key={product.id} className="flex justify-center items-center">
+    <div className="relative group w-full max-w-[290px]">
+      
+      {/* Product Image */}
+      <img
+        src={product.image}
+        alt={product.name}
+        className="rounded-2xl w-full"
+      />
+
+      {/* Hover Icons */}
+      <div className="absolute top-3 right-3 flex gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+        <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100">
+          <FaHeart className="text-[#0085DB]" />
+        </button>
+        <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100">
+          <FaShoppingCart className="text-[#0085DB]" />
+        </button>
+      </div>
+
+      {/* Product Details */}
+      <div className="flex flex-col items-start gap-1 mt-5">
+        <p className="font-semibold text-[16px] leading-[19.2px] text-[#111C2D]">
+          MacBook Air Pro
+        </p>
+        <div className="flex items-center gap-2">
+          <FaStar color="#f8c076" />
+          <p>2.3 (88)</p>
         </div>
+        <p>$15 $12</p>
       </div>
     </div>
-  ))}
+  </div>
+))}
    <div className="col-span-full border-b border-gray-300 w-[97%] mx-auto" />
-
+   
 </div>
  
      </div>
