@@ -20,9 +20,9 @@ const MainBlog = () => {
 
     return (
         <div className="mainblog">
-        <div className="grid grid-cols-l md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-l md:grid-cols-1 lg:grid-cols-3 gap-8">
         <div
-  className="bg-white h-[500px] sm:h-[340px] col-span-2  bg-no-repeat bg-cover bg-center rounded-2xl shadow-lg relative flex flex-col justify-between    "
+  className="bg-white h-[500px] sm:h-[340px] col-span-4 lg:col-span-2  bg-no-repeat bg-cover bg-center rounded-2xl shadow-lg relative flex flex-col justify-between    "
   style={{
     backgroundImage: `url(${divbackground})`,
   }}
@@ -63,7 +63,7 @@ const MainBlog = () => {
 </div>
 
           <div
-  className="bg-white h-[500px] sm:h-[340px] col-span-2 lg:col-span-1 bg-no-repeat bg-cover bg-center rounded-2xl shadow-lg relative flex flex-col justify-between    "
+  className="bg-white h-[500px] sm:h-[340px] col-span-4 lg:col-span-1 bg-no-repeat bg-cover bg-center rounded-2xl shadow-lg relative flex flex-col justify-between    "
   style={{
     backgroundImage: `url(${divbackground2})`,
   }}
@@ -104,7 +104,7 @@ const MainBlog = () => {
 </div>
          {
   Array.from({ length: 10 }, (_, i) => (
- <div className="col-span-1 rounded-2xl shadow-lg relative bg-white h-[430px]" onClick={()=>handelNavigate('Garmins Instinct Crossover is a rugged hybrid smartwatch')}>
+ <div className="col-span-4 lg:col-span-1 rounded-2xl shadow-lg relative bg-white h-[430px]" onClick={()=>handelNavigate('Garmins Instinct Crossover is a rugged hybrid smartwatch')}>
              <div className="bg-no-repeat bg-cover bg-center h-[240px] flex flex-col justify-end items-end " style={{
             backgroundImage: `url(${divbackground3})`,
          }}>

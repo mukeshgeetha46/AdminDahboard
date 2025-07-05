@@ -9,6 +9,85 @@ import { HiReply } from "react-icons/hi";
 
 
 const MainBlogDetails = () => {
+
+
+   const commentsData = [
+  {
+    id: 1,
+    name: "Maurice Carlson",
+    date: "Sun, Apr 15",
+    message: "Lalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pimLalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pim.",
+    profile: "https://randomuser.me/api/portraits/men/11.jpg",
+    sender:false
+  },
+  {
+    id: 2,
+    name: "Ella Thornton",
+    date: "Mon, Apr 16",
+    message: "Ruj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvoRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+    profile: "https://randomuser.me/api/portraits/women/21.jpg",
+    sender:false
+  },
+  {
+    id: 3,
+    name: "Samuel Bennett",
+    date: "Tue, Apr 17",
+    message: "Venagow ris jenvob haz difefik ivdoho cubaz mimu nihmip podo wazijumRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+    profile: "https://randomuser.me/api/portraits/men/31.jpg",
+    sender:true
+  },
+  {
+    id: 4,
+    name: "Isla Moreno",
+    date: "Wed, Apr 18",
+    message: "Bek ruvi ketnuvup jozru zev muk ugopaw japej hogkiz zebin ew.",
+    profile: "https://randomuser.me/api/portraits/women/41.jpg",
+  },
+  {
+    id: 5,
+    name: "Logan Brooks",
+    date: "Thu, Apr 19",
+    message: "Cefumol newfot lag dof kabet epbolaw hopiw ral nemid jimod wi berRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+    profile: "https://randomuser.me/api/portraits/men/51.jpg",
+  },
+  {
+    id: 6,
+    name: "Aria Knight",
+    date: "Fri, Apr 20",
+    message: "Lobmuv gidbuh vegi zaw cug lozpi sapu negdop tuv kioz ezwi.",
+    profile: "https://randomuser.me/api/portraits/women/61.jpg",
+  },
+  {
+    id: 7,
+    name: "Henry Clark",
+    date: "Sat, Apr 21",
+    message: "Nubkaj powegab sok rezeh jo ves rob ka wahek vikburiv jecrobRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+    profile: "https://randomuser.me/api/portraits/men/71.jpg",
+  },
+  {
+    id: 8,
+    name: "Chloe Foster",
+    date: "Sun, Apr 22",
+    message: "Wugij kihohox nivop nacam vapluvur duz fi razowat tohzo big jojpag.",
+    profile: "https://randomuser.me/api/portraits/women/81.jpg",
+  },
+  {
+    id: 9,
+    name: "Ethan Pierce",
+    date: "Mon, Apr 23",
+    message: "Habmiv vov jowjur keguk naf top virnufi pog zek secal.",
+    profile: "https://randomuser.me/api/portraits/men/91.jpg",
+  },
+  {
+    id: 10,
+    name: "Luna Walsh",
+    date: "Tue, Apr 24",
+    message: "Wiwfe co pidoz gutmevob bawjim tiduj zo giwib lajubat rugkaf wiRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+    profile: "https://randomuser.me/api/portraits/women/90.jpg",
+  },
+];
+
+
   return (
 
     <div>
@@ -99,8 +178,8 @@ const MainBlogDetails = () => {
                
     </div>
 
-     <div className='w-full flex justify-center items-center'>
-       <div className=' rounded-2xl bg-white shadow-1xl mt-5 flex flex-col items-center'>
+     <div className=' flex justify-center items-center'>
+       <div className='w-full rounded-2xl bg-white shadow-1xl mt-5 flex flex-col items-center'>
     <div className='w-full flex items-start'>
        <div className='flex justify-start items-center'>
       <p className="font-medium text-[20px] leading-[26.6px] tracking-[-0.5625px] text-[#111C2D] font-['Plus Jakarta Sans'] pl-5 pt-5 pb-5 pr-2">Comments</p>
@@ -109,28 +188,26 @@ const MainBlogDetails = () => {
              </p>
      </div>
     </div>
-       {
-           Array.from({ length: 10 }, (_, i) => (
-<div className='border border-[#e5eaef] rounded-2xl w-[97%] flex flex-col gap-2 p-4 ml-2 mb-5'>
-      <div className='flex justify-start items-center'>
-         <img className="w-9 h-9 rounded-full hover:bg-gray-300 cursor-pointer transition m-3" src={profile} />
-         <div className='flex'>
-            <p>Maurice Carlson</p>
-         <p className='flex items-center ml-2 text-[#a4aaaf]'> <GoDotFill size={12} color='#7f7f7f' /> Sun, Apr 15</p>
-         </div>
+      {commentsData.map((comment) => (
+  <div key={comment.id} className={`border border-[#e5eaef] rounded-2xl w-[97%] flex flex-col gap-2 p-4 ml-2 mb-5`}>
+    <div className='flex justify-start items-center'>
+      <img className="w-9 h-9 rounded-full hover:bg-gray-300 cursor-pointer transition m-3" src={comment.profile} />
+      <div className='flex'>
+        <p>{comment.name}</p>
+        <p className='flex items-center ml-2 text-[#a4aaaf]'>
+          <GoDotFill size={12} color='#7f7f7f' /> {comment.date}
+        </p>
       </div>
+    </div>
+    <p className='pl-5 pr-5'>{comment.message}</p>
+    <div className='pl-5 pr-5'>
+      <p className="w-8 h-8 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px] text-white ">
+        <HiReply />
+      </p>
+    </div>
+  </div>
+))}
 
-      <p className='pl-5 pr-5'>Lalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pim. Ruj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo venagow.</p>
-
-       <div className='pl-5 pr-5'>
-          <p className="w-8 h-8 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px] text-white ">
-            <HiReply />
-             </p>
-       </div>
-     </div>
-           ))
-       }
-     
     </div>
      </div>
     </div>
