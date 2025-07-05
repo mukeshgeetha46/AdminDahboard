@@ -28,7 +28,7 @@ const menus = [
           ]
          },
         { label: 'E-Commerse', class: 'menu',icon:<AiOutlineShoppingCart size={25} />, submenu:[
-          {s_label:'Shop One'},
+          {s_label:'Shop One',path:'/ecommerce/products-one'},
           {s_label:'Shop Two'},
           {s_label:'Details One'},
           {s_label:'Details Two'},
