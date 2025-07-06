@@ -214,14 +214,14 @@ const Totalslide = product.images.length-1;
           }
           {
             tab === 'Review' && (
-            <div className='tabcontent grid grid-cols-3 gap-3 pt-5 pb-5'>
-             <div className='col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
+            <div className='tabcontent grid grid-cols-3 gap-3 pt-5 pb-5 bg-white'>
+             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
               1
              </div>
-             <div className='col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
+             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
               2
              </div>
-             <div className='col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
+             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
               3
              </div>
 
