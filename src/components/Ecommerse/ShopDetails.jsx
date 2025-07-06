@@ -7,8 +7,11 @@ import product5 from '../../assets/Ecommerse/s5-BQ3a5d5q.jpg'
 import product6 from '../../assets/Ecommerse/s6-C6XhevY8.jpg'
 import product7 from '../../assets/Ecommerse/s7-DaQaN7Vk.jpg'
 import product8 from '../../assets/Ecommerse/s8-D4HoHCFc.jpg'
-import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronLeft, FaPlus } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { TiTick } from "react-icons/ti";
+import { FaMinus } from "react-icons/fa6";
 
 
 const ShopDetails = () => {
@@ -92,7 +95,7 @@ const Totalslide = product.images.length-1;
            <div className='Slider mt-5 flex justify-between overflow-y-auto items-center gap-3'>
             {
               product.images.map((image,index)=>(
-                <img src={image} onClick={()=>setSliderIndex(index)} className={`w-[13%] ${index === sliderIndex ? 'border-2 border-[#0085db]' : ''}`} alt="" />
+                <img src={image} onClick={()=>setSliderIndex(index)} className={`rounded-[6px] w-[13%] ${index === sliderIndex ? 'border-2 border-[#0085db]' : ''}`} alt="" />
               ))
             }
            </div>
@@ -101,9 +104,77 @@ const Totalslide = product.images.length-1;
       
     
 
-     <div className='col-span-2 lg:col-span-1'>
-        <p>dsjhfgshj</p>
+     <div className='col-span-2 lg:col-span-1 flex flex-col gap-5 pl-5 lg:pl-0'>
+       
+    <div className='stock pt-7 flex items-center gap-2'>
+     <p className='text-[14px] leading-[19.95px] font-normal bg-[#4BD08B] w-[63.7969px] flex justify-center items-center rounded-full text-white'>In Stock</p>
+     <p className='text-[12px] leading-[16px] font-normal'>Kids</p>
+    </div>
+
+    <div>
+      <p className='text-[20px] leading-[25.6px] font-semibold'>Cute Soft Teddybear</p>
+      
+    </div>
+
+<p className='text-[16px] leading-[19.95px] font-normal text-[#707A82]'>Evsive danukjos ol tapjulof opofe erune fidpuv bo zadaga gi efo vuv teanubal.opofe erune fidpuv bo zadaga gi efo vuv teanubal.</p>
+
+    <div className='flex items-center gap-2'>
+      <p className=' line-through text-[20px] leading-[25.5px] text-[#707A82]'>$175</p>
+      <p className='text-[20px] leading-[25.5px]'>$200</p>
+    </div>
+   
+    <div className='flex items-center gap-2'>
+       <p className="flex"><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" />
+       <AiFillStar size={18} color="#f8c076" /><AiOutlineStar size={18} color="#f8c076" /> </p>
+       <p className='text-[16px] leading-[17.6px] text-[#0085DB]'>(87 reviews)</p>
+    </div>
+    <div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-[97%]" />
+    <div className='flex items-center gap-15'>
+      <p>Colors <span className='text-red-500 font-medium text-[16px] leading-[19.2px]'>*</span></p>
+
+      <div className='flex items-center gap-[2px]'>
+      {
+        product.colors.map((cl)=>(
+            <p style={{
+            backgroundColor:cl.hex
+          }} className={`w-6 h-6 flex items-center justify-center rounded-full  cursor-pointer transition text-[12px] text-white`} 
+    onClick={()=>setSliderIndex((prev)=> prev-1)}>
+      <TiTick />
+    </p>
+        ))
+      }
+      </div>
+
+    
+    </div>
+
+       <div className='flex items-center gap-10'>
+        <p className=' font-medium text-[18px] leading-[19.2px]'>Quantity</p>
+
+        <div className='button text-[#707A82]'>
+          <button className=' border border-[#e5eaef] p-3 rounded-tl-md rounded-bl-md'><FaMinus /></button>
+          <button className=' border-y pt-2.5 border-[#e5eaef] pb-1.5 pl-4 pr-4'>1</button>
+          <button className=' border border-[#e5eaef] p-3 rounded-tr-md rounded-br-md text-[#707A82] bg-[#edeff0]'><FaPlus /></button>
+        </div>
+      </div>
+
+<div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-[97%]" />
+
+  <div className='filterButton flex items-center gap-8'>
+         <button className='bg-[#0085DB] pt-2 pb-2 pl-7 pr-7 text-white rounded-full text-[16px] font-medium shadow-[0_4px_12px_0_#0085DB4D]'>
+  Buy Now
+</button>
+         <button className='bg-[#fb977d] pt-2 pb-2 pl-7 pr-7 text-white rounded-full text-[16px] font-medium shadow-[0_4px_12px_0_#0085DB4D]'>
+  Add to Cart
+</button>
+
+       </div>
+     <div className=' leading-[20px]'>
+      <p className='text-[#83919a]'>Dispatched in 2-3 weeks</p>
+      <p className='text-[#2985dd]'>Why the longer time for delivery?</p>
      </div>
+     </div>
+
      </div>
 
     </div>
