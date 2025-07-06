@@ -29,9 +29,7 @@ const menus = [
          },
         { label: 'E-Commerse', class: 'menu',icon:<AiOutlineShoppingCart size={25} />, submenu:[
           {s_label:'Shop One',path:'/ecommerce/products-one'},
-          {s_label:'Shop Two'},
-          {s_label:'Details One'},
-          {s_label:'Details Two'},
+          {s_label:'Details One',path:'/ecommerce/product/detail/show'},
           {s_label:'List'},
           {s_label:'Checkout'},
         ] },
