@@ -13,7 +13,7 @@ const HeaderMenu = ({setMenuopen}) => {
     <div className='bg-white h-[10%] m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md flex justify-between items-center'>
 
       <div>
-        <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition m-5" onClick={()=>setMenuopen((pre)=> pre == 'hidden' ? 'block' : 'hidden')}>
+        <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition m-5" onClick={()=>setMenuopen((prev) => !prev)}>
         <BiMenuAltLeft size={25} />
         </p>
         </div>

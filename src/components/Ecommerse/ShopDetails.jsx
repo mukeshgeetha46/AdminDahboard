@@ -17,6 +17,7 @@ import { FaMinus } from "react-icons/fa6";
 const ShopDetails = () => {
 
   const [sliderIndex,setSliderIndex] = useState(0);
+  const [tab,setTab] = useState('Discription');
 
   const product = {
   id: "T001",
@@ -30,14 +31,9 @@ const ShopDetails = () => {
   rating: 4.5,
   reviewCount: 87,
   descriptionShort:
-    "Esvive danukjos oi tapjulof opofe erune fidpuv bo zadaga gi efo vuv teanubal.",
-  descriptionLong: `
-    Sed at diam elit. Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet lorem.
-    
-    Cras eget elit semper, congue sapien id, pellentesque diam. Nulla faucibus diam nec fermentum ullamcorper. Praesent sed ipsum ut augue vestibulum malesuada.
-
-    Vivamus quis metus in nunc semper efficitur eget vitae diam. Fusce condimentum venenatis mauris et luctus.
-  `,
+    "Sed at diam elit. Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet lorem pellentesque eu tincidunt a, aliquet sit amet lorem.",
+  descriptionLong1: `Cras eget elit semper, congue sapien id, pellentesque diam. Nulla faucibus diam nec fermentum ullamcorper. Praesent sed ipsum ut augue vestibulum malesuada. Duis vitae volutpat odio. Integer sit amet elit ac justo sagittis dignissim.`,
+  descriptionLong2: `Cras eget elit semper, congue sapien id, pellentesque diam. Nulla faucibus diam nec fermentum ullamcorper. Praesent sed ipsum ut augue vestibulum malesuada. Duis vitae volutpat odio. Integer sit amet elit ac justo sagittis dignissim.`,
   quantityAvailable: 50,
   colors: [
     { name: "Peach", hex: "#FFB6B6" },
@@ -67,19 +63,40 @@ const ShopDetails = () => {
 const Totalslide = product.images.length-1;
 
   return (
-    <div className='bg-white rounded-2xl'>
-
+    <div>
+      <div className='bg-white rounded-2xl shadow-2xl'>
       <div className='grid grid-cols-2'>
  <div className='col-span-2 lg:col-span-1 p-7'>
           <div className='slider'>
            <div className='relative'>
-            <div className='absolute top-1/2 left-0 -translate-y-1/2 ml-3'>
-    <p className={`w-6 h-6 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px] text-white ${sliderIndex === 0 ?'pointer-events-none opacity-50' : ''}`} 
-    onClick={()=>setSliderIndex((prev)=> prev-1)}>
-      <FaChevronLeft />
-    </p>
+            <div className='absolute top-1/2 left-0 -translate-y-1/2 ml-3 z-10'>
+  <p
+    className={`w-6 h-6 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px] text-white ${sliderIndex === 0 ? 'pointer-events-none opacity-50' : ''}`}
+    onClick={() => setSliderIndex(prev => prev - 1)}
+  >
+    <FaChevronLeft />
+  </p>
+</div>
+
+  
+
+
+              <div className="overflow-hidden w-full  relative">
+  <div
+    className="flex transition-transform duration-500 ease-in-out"
+    style={{ transform: `translateX(-${sliderIndex * 100}%)` }}
+  >
+    {product.images.map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        className="w-full flex-shrink-0 object-cover"
+        alt={`slide-${i}`}
+      />
+    ))}
   </div>
-            <img src={product.images[sliderIndex]} className='w-full' alt="" />
+</div>
+
                        <div className='absolute top-1/2 right-0 -translate-y-1/2 mr-3'>
   <p
   className={`w-6 h-6 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px]
@@ -92,7 +109,7 @@ const Totalslide = product.images.length-1;
   </div>
 
            </div>
-           <div className='Slider mt-5 flex justify-between overflow-y-auto items-center gap-3'>
+           <div className='Slider mt-5 flex justify-between overflow-y-auto items-center gap-3 '>
             {
               product.images.map((image,index)=>(
                 <img src={image} onClick={()=>setSliderIndex(index)} className={`rounded-[6px] w-[13%] ${index === sliderIndex ? 'border-2 border-[#0085db]' : ''}`} alt="" />
@@ -164,9 +181,10 @@ const Totalslide = product.images.length-1;
          <button className='bg-[#0085DB] pt-2 pb-2 pl-7 pr-7 text-white rounded-full text-[16px] font-medium shadow-[0_4px_12px_0_#0085DB4D]'>
   Buy Now
 </button>
-         <button className='bg-[#fb977d] pt-2 pb-2 pl-7 pr-7 text-white rounded-full text-[16px] font-medium shadow-[0_4px_12px_0_#0085DB4D]'>
+        <button className='bg-[#fb977d] pt-2 pb-2 pl-7 pr-7 text-white rounded-full text-[16px] font-medium shadow-[0_4px_12px_0_rgba(251,151,125,0.3)]'>
   Add to Cart
 </button>
+
 
        </div>
      <div className=' leading-[20px]'>
@@ -175,8 +193,44 @@ const Totalslide = product.images.length-1;
      </div>
      </div>
 
-     </div>
+     </div> 
+    </div>
 
+    <div className='tab bg-white rounded-2xl shadow-2x mt-5 pl-6 pr-6 pt-12 h-[320px]'>
+      <div className='flex items-center gap-3'>
+        <p className={`text-[16px] font-normal pb-2 ${tab === 'Discription' ? 'text-[#0085db] border-b ' : ''}`} onClick={()=>(setTab('Discription'))}>Description</p>
+        <p className={`text-[16px] font-normal pb-2 ${tab === 'Review'? 'text-[#0085db] border-b ' : ''}`} onClick={()=>(setTab('Review'))}>Review</p>
+      </div>
+      <div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-full" />
+          {
+            tab === 'Discription' && (
+            <div className='tabcontent flex flex-col gap-5 pt-5 pb-5'>
+            <p className='text-[18px] leading-[25.6px] font-semibold'>{product.descriptionShort}</p>
+
+            <p className='text-[14px] leading-[21.98px]'>{product.descriptionLong1}</p>
+            <p className='text-[14px] leading-[21.98px]'>{product.descriptionLong2}</p>
+          </div>
+            )
+          }
+          {
+            tab === 'Review' && (
+            <div className='tabcontent grid grid-cols-3 gap-3 pt-5 pb-5'>
+             <div className='col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
+              1
+             </div>
+             <div className='col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
+              2
+             </div>
+             <div className='col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
+              3
+             </div>
+
+    
+          </div>
+            )
+          }
+         
+    </div>
     </div>
   )
 }
