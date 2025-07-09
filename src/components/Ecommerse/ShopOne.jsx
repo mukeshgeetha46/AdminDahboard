@@ -123,7 +123,7 @@ const products = [
 ))}
    <div className="col-span-full border-b border-gray-300 w-[97%] mx-auto" />
    
-  <div className="pagination flex items-center gap-3">
+  <div className="pagination flex items-center gap-3 w-[400px]">
   <FaChevronLeft className="cursor-pointer" />
 
   {pages.map((page, index) => (

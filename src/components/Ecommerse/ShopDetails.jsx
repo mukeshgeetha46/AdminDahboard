@@ -215,11 +215,65 @@ const Totalslide = product.images.length-1;
           {
             tab === 'Review' && (
             <div className='tabcontent grid grid-cols-3 gap-3 pt-5 pb-5 bg-white'>
-             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
-              1
+             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef] flex justify-center items-center'> 
+              <div className='flex flex-col justify-center items-center gap-3'>
+                <h6>Average Rating</h6>
+              <p className='text-[36px] leading-[44px] font-semibold text-[#0085DB] tracking-[-0.5625px]' >4/5</p>
+              <p className="flex"><AiFillStar size={24} color="#f8c076" /><AiFillStar size={24} color="#f8c076" /><AiFillStar size={24} color="#f8c076" /><AiFillStar size={24} color="#f8c076" /><AiOutlineStar size={24} color="#f8c076" /></p>
+              </div>
              </div>
-             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
-              2
+             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef] '> 
+               <div>
+                
+               <div className='flex justify-center items-center gap-3'>
+                <p>1 stars</p>
+                <div className="h-[5px] w-[60%] flex">
+  <div className="w-[20%] bg-[#0085db]"></div>
+  <div className="w-[80%] bg-[#e5eaef]"></div>
+</div>
+                <p>(125)</p>
+               </div>
+               <div className='flex justify-center items-center gap-3'>
+                <p>1 stars</p>
+                <div className="h-[5px] w-[60%] flex">
+  <div className="w-[20%] bg-[#0085db]"></div>
+  <div className="w-[80%] bg-[#e5eaef]"></div>
+</div>
+                <p>(125)</p>
+               </div>
+               <div className='flex justify-center items-center gap-3'>
+                <p>1 stars</p>
+                <div className="h-[5px] w-[60%] flex">
+  <div className="w-[20%] bg-[#0085db]"></div>
+  <div className="w-[80%] bg-[#e5eaef]"></div>
+</div>
+                <p>(125)</p>
+               </div>
+               <div className='flex justify-center items-center gap-3'>
+                <p>1 stars</p>
+                <div className="h-[5px] w-[60%] flex">
+  <div className="w-[20%] bg-[#0085db]"></div>
+  <div className="w-[80%] bg-[#e5eaef]"></div>
+</div>
+                <p>(125)</p>
+               </div>
+               <div className='flex justify-center items-center gap-3'>
+                <p>1 stars</p>
+                <div className="h-[5px] w-[60%] flex">
+  <div className="w-[20%] bg-[#0085db]"></div>
+  <div className="w-[80%] bg-[#e5eaef]"></div>
+</div>
+                <p>(125)</p>
+               </div>
+               <div className='flex justify-center items-center gap-3'>
+                <p>1 stars</p>
+                <div className="h-[5px] w-[60%] flex">
+  <div className="w-[20%] bg-[#0085db]"></div>
+  <div className="w-[80%] bg-[#e5eaef]"></div>
+</div>
+                <p>(125)</p>
+               </div>
+               </div>
              </div>
              <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
               3
