@@ -7,11 +7,12 @@ import product5 from '../../assets/Ecommerse/s5-BQ3a5d5q.jpg'
 import product6 from '../../assets/Ecommerse/s6-C6XhevY8.jpg'
 import product7 from '../../assets/Ecommerse/s7-DaQaN7Vk.jpg'
 import product8 from '../../assets/Ecommerse/s8-D4HoHCFc.jpg'
-import { FaChevronLeft, FaPlus } from "react-icons/fa";
+import { FaChevronLeft, FaPlus, FaShoppingCart } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { TiTick } from "react-icons/ti";
 import { FaMinus } from "react-icons/fa6";
+import { GoPencil } from "react-icons/go";
 
 
 const ShopDetails = () => {
@@ -59,6 +60,14 @@ const ShopDetails = () => {
   tags: ["toys", "teddybear", "kids", "softtoy", "gift"],
 };
 
+
+const ratings = [
+  { stars: 5, percentage: 80, count: 125 },
+  { stars: 4, percentage: 60, count: 95 },
+  { stars: 3, percentage: 40, count: 65 },
+  { stars: 2, percentage: 20, count: 30 },
+  { stars: 1, percentage: 10, count: 10 },
+];
 
 const Totalslide = product.images.length-1;
 
@@ -223,60 +232,28 @@ const Totalslide = product.images.length-1;
               </div>
              </div>
              <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef] '> 
-               <div>
-                
-               <div className='flex justify-center items-center gap-3'>
-                <p>1 stars</p>
-                <div className="h-[5px] w-[60%] flex">
-  <div className="w-[20%] bg-[#0085db]"></div>
-  <div className="w-[80%] bg-[#e5eaef]"></div>
-</div>
-                <p>(125)</p>
-               </div>
-               <div className='flex justify-center items-center gap-3'>
-                <p>1 stars</p>
-                <div className="h-[5px] w-[60%] flex">
-  <div className="w-[20%] bg-[#0085db]"></div>
-  <div className="w-[80%] bg-[#e5eaef]"></div>
-</div>
-                <p>(125)</p>
-               </div>
-               <div className='flex justify-center items-center gap-3'>
-                <p>1 stars</p>
-                <div className="h-[5px] w-[60%] flex">
-  <div className="w-[20%] bg-[#0085db]"></div>
-  <div className="w-[80%] bg-[#e5eaef]"></div>
-</div>
-                <p>(125)</p>
-               </div>
-               <div className='flex justify-center items-center gap-3'>
-                <p>1 stars</p>
-                <div className="h-[5px] w-[60%] flex">
-  <div className="w-[20%] bg-[#0085db]"></div>
-  <div className="w-[80%] bg-[#e5eaef]"></div>
-</div>
-                <p>(125)</p>
-               </div>
-               <div className='flex justify-center items-center gap-3'>
-                <p>1 stars</p>
-                <div className="h-[5px] w-[60%] flex">
-  <div className="w-[20%] bg-[#0085db]"></div>
-  <div className="w-[80%] bg-[#e5eaef]"></div>
-</div>
-                <p>(125)</p>
-               </div>
-               <div className='flex justify-center items-center gap-3'>
-                <p>1 stars</p>
-                <div className="h-[5px] w-[60%] flex">
-  <div className="w-[20%] bg-[#0085db]"></div>
-  <div className="w-[80%] bg-[#e5eaef]"></div>
-</div>
-                <p>(125)</p>
-               </div>
-               </div>
+             <div className='pt-10'>
+    {ratings.map((rating, index) => (
+      <div key={index} className='flex justify-center items-center gap-3'>
+        <p>{rating.stars} stars</p>
+        <div className="h-[5px] w-[60%] flex">
+          <div
+            className="bg-[#0085db]"
+            style={{ width: `${rating.percentage}%` }}
+          ></div>
+          <div
+            className="bg-[#e5eaef]"
+            style={{ width: `${100 - rating.percentage}%` }}
+          ></div>
+        </div>
+        <p>({rating.count})</p>
+      </div>
+    ))}
+  </div>
              </div>
-             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef]'> 
-              3
+             <div className='col-span-3 lg:col-span-1 border h-[200px] rounded-2xl border-[#e5eaef] flex justify-center items-center'> 
+              <button className='text-[16px] leading-[24px] font-medium text-[#0085DB] border border-[#0085DB] pl-6 pr-6 pt-2 pb-2 rounded-[5px] flex justify-center items-center gap-2' ><span><GoPencil /></span> Write A Review</button>
+            
              </div>
 
     
@@ -284,6 +261,71 @@ const Totalslide = product.images.length-1;
             )
           }
          
+    </div>
+
+    <p className='text-[20px] leading-[25.5px] font-semibold mt-12'>Related Products</p>
+
+    <div className='relatedProductCard grid grid-cols-4 gap-5'>
+      <div className='col-span-1 shadow-2xl'>
+         <div className='relative'>
+       <img className="rounded-t-2xl" src={product1} />
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+                  <FaShoppingCart className="text-[#0085DB]" />
+                </button>
+       </div>
+       <div className='bg-white p-5 rounded-b-2xl'>
+        <p>Cute Soft Teddybear</p>
+        <div className='flex justify-between items-center'>
+          <p>$200 $175</p>
+           <p className="flex"><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiOutlineStar size={18} color="#f8c076" /></p>
+        </div>
+       </div>
+      </div>
+      <div className='col-span-1 shadow-2xl'>
+         <div className='relative'>
+       <img className="rounded-t-2xl" src={product1} />
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+                  <FaShoppingCart className="text-[#0085DB]" />
+                </button>
+       </div>
+       <div className='bg-white p-5 rounded-b-2xl'>
+        <p>Cute Soft Teddybear</p>
+        <div className='flex justify-between items-center'>
+          <p>$200 $175</p>
+           <p className="flex"><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiOutlineStar size={18} color="#f8c076" /></p>
+        </div>
+       </div>
+      </div>
+      <div className='col-span-1 shadow-2xl'>
+         <div className='relative'>
+       <img className="rounded-t-2xl" src={product1} />
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+                  <FaShoppingCart className="text-[#0085DB]" />
+                </button>
+       </div>
+       <div className='bg-white p-5 rounded-b-2xl'>
+        <p>Cute Soft Teddybear</p>
+        <div className='flex justify-between items-center'>
+          <p>$200 $175</p>
+           <p className="flex"><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiOutlineStar size={18} color="#f8c076" /></p>
+        </div>
+       </div>
+      </div>
+      <div className='col-span-1 shadow-2xl'>
+         <div className='relative'>
+       <img className="rounded-t-2xl" src={product1} />
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+                  <FaShoppingCart className="text-[#0085DB]" />
+                </button>
+       </div>
+       <div className='bg-white p-5 rounded-b-2xl'>
+        <p>Cute Soft Teddybear</p>
+        <div className='flex justify-between items-center'>
+          <p>$200 $175</p>
+           <p className="flex"><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiFillStar size={18} color="#f8c076" /><AiOutlineStar size={18} color="#f8c076" /></p>
+        </div>
+       </div>
+      </div>
     </div>
     </div>
   )
