@@ -196,7 +196,7 @@ const Totalslide = product.images.length-1;
 
 
        </div>
-     <div className=' leading-[20px]'>
+     <div className=' leading-[20px] mb-5 lg:mb-0'>
       <p className='text-[#83919a]'>Dispatched in 2-3 weeks</p>
       <p className='text-[#2985dd]'>Why the longer time for delivery?</p>
      </div>
@@ -205,7 +205,7 @@ const Totalslide = product.images.length-1;
      </div> 
     </div>
 
-    <div className='tab bg-white rounded-2xl shadow-2x mt-5 pl-6 pr-6 pt-12 h-[320px]'>
+    <div className='tab bg-white rounded-2xl shadow-2x mt-5 pl-6 pr-6 pt-12 h-full lg:h-[320px]'>
       <div className='flex items-center gap-3'>
         <p className={`text-[16px] font-normal pb-2 ${tab === 'Discription' ? 'text-[#0085db] border-b ' : ''}`} onClick={()=>(setTab('Discription'))}>Description</p>
         <p className={`text-[16px] font-normal pb-2 ${tab === 'Review'? 'text-[#0085db] border-b ' : ''}`} onClick={()=>(setTab('Review'))}>Review</p>
@@ -263,13 +263,13 @@ const Totalslide = product.images.length-1;
          
     </div>
 
-    <p className='text-[20px] leading-[25.5px] font-semibold mt-12'>Related Products</p>
+    <p className='text-[20px] leading-[25.5px] font-semibold mt-12 mb-5'>Related Products</p>
 
     <div className='relatedProductCard grid grid-cols-4 gap-5'>
-      <div className='col-span-1 shadow-2xl'>
+      <div className='col-span-4 md:col-span-2 lg:col-span-1 shadow-2xl'>
          <div className='relative'>
        <img className="rounded-t-2xl" src={product1} />
-         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[93%] right-2">
                   <FaShoppingCart className="text-[#0085DB]" />
                 </button>
        </div>
@@ -281,10 +281,10 @@ const Totalslide = product.images.length-1;
         </div>
        </div>
       </div>
-      <div className='col-span-1 shadow-2xl'>
+      <div className='col-span-4 md:col-span-2 lg:col-span-1'>
          <div className='relative'>
        <img className="rounded-t-2xl" src={product1} />
-         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[93%] right-2">
                   <FaShoppingCart className="text-[#0085DB]" />
                 </button>
        </div>
@@ -296,10 +296,10 @@ const Totalslide = product.images.length-1;
         </div>
        </div>
       </div>
-      <div className='col-span-1 shadow-2xl'>
+      <div className='col-span-4 md:col-span-2 lg:col-span-1'>
          <div className='relative'>
        <img className="rounded-t-2xl" src={product1} />
-         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[93%] right-2">
                   <FaShoppingCart className="text-[#0085DB]" />
                 </button>
        </div>
@@ -311,10 +311,10 @@ const Totalslide = product.images.length-1;
         </div>
        </div>
       </div>
-      <div className='col-span-1 shadow-2xl'>
+      <div className='col-span-4 md:col-span-2 lg:col-span-1'>
          <div className='relative'>
        <img className="rounded-t-2xl" src={product1} />
-         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[90%]">
+         <button className="bg-white p-3 rounded-full shadow hover:bg-gray-100 absolute top-[93%] right-2">
                   <FaShoppingCart className="text-[#0085DB]" />
                 </button>
        </div>
