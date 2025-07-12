@@ -85,7 +85,7 @@ const products = [
            </div>
         </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2 pb-5 pr-5 pl-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2 pb-5 pr-5 pl-5">
  {products.map((product) => (
   <div key={product.id} className="flex justify-center items-center col-span-1">
     <div className="relative group w-full ">
