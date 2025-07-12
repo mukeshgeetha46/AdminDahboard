@@ -1,6 +1,8 @@
+import Checkout from "../components/Ecommerse/Checkout";
 import ShopDetails from "../components/Ecommerse/ShopDetails";
 import ShopOne from "../components/Ecommerse/ShopOne";
 import MainLayout from "../layouts/MainLayout";
+
 // import other ecommerce pages...
 
 const EcommerceRoutes = {
@@ -14,6 +16,10 @@ const EcommerceRoutes = {
     {
       path: 'ecommerce/product/detail/:name',
       element: <ShopDetails />,
+    },
+    {
+      path: 'ecommerce/checkout',
+      element: <Checkout />,
     },
     // add other product routes here...
   ],
