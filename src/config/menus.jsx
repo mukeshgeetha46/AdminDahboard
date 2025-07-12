@@ -32,6 +32,8 @@ const menus = [
           {s_label:'Details One',path:'/ecommerce/product/detail/show'},
           {s_label:'List',path:'/ecommerce/checkout'},
           {s_label:'Checkout',path:'/ecommerce/checkout'},
+          {s_label:'Add Product',path:'/ecommerce/add-product'},
+          {s_label:'Edit Product',path:'/ecommerce/add-product'},
         ] },
         { label: 'Charts', class: 'menu',icon:<BsChatDots size={25} /> },
         { label: 'User Profile', class: 'menu',icon:<FaRegUser size={25} /> },

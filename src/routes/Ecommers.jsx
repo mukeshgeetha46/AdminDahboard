@@ -1,3 +1,4 @@
+import AddFormEcommerse from "../components/Ecommerse/AddForm";
 import Checkout from "../components/Ecommerse/Checkout";
 import ShopDetails from "../components/Ecommerse/ShopDetails";
 import ShopOne from "../components/Ecommerse/ShopOne";
@@ -20,6 +21,10 @@ const EcommerceRoutes = {
     {
       path: 'ecommerce/checkout',
       element: <Checkout />,
+    },
+    {
+      path: 'ecommerce/add-product',
+      element: <AddFormEcommerse />,
     },
     // add other product routes here...
   ],
