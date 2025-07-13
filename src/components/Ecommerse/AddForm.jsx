@@ -169,10 +169,7 @@ const AddFormEcommerse = () => {
       </div>
   </div>
 
- <div className='flex gap-3 pt-6'>
-    <button className='bg-[#0085db] text-white pl-5 pr-5 pt-1 pb-1 rounded-[5px]'>Save Changes</button>
-    <button className='bg-[#f1e9ea] text-[#faa7a0] pl-5 pr-5 pt-1 pb-1 rounded-[5px]'>Cancel</button>
- </div>
+
       </div>
            </div>
            <div className='col-span-4 lg:col-span-1 mt-10'>
@@ -222,9 +219,14 @@ const AddFormEcommerse = () => {
 </div>
 
            </div>
+
+           
         </div>
       
-
+ <div className='flex gap-3 pt-6'>
+    <button className='bg-[#0085db] text-white pl-5 pr-5 pt-1 pb-1 rounded-[5px]'>Save Changes</button>
+    <button className='bg-[#f1e9ea] text-[#faa7a0] pl-5 pr-5 pt-1 pb-1 rounded-[5px]'>Cancel</button>
+ </div>
       </div>
     </div>
   )

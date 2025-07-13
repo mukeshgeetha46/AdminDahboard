@@ -5,7 +5,7 @@ import '../MainLayout/Sidebar/mainlyout.css'
 import logo from '../../assets/sidebar/logo-dark-C4P0U4PI.svg'
 import menus from '../../config/menus';
 import HeaderMenu from './HeaderMenu';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MdNotificationsNone } from 'react-icons/md';
 import { IoSettingsOutline } from "react-icons/io5";
 import { GoDotFill } from "react-icons/go";
@@ -33,16 +33,35 @@ const toggleSubmenu = (label) => {
 
 const handleMenu = (label,path) => {
   setMenu(label);
-  navigate(path)
+  navigate(path);
+   setMenuopen(false);
 }
 
+
+ const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setMenuopen(false);
+      }
+    }
+
+    if (menuopen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuopen, setMenuopen]);
 
   return (
  <>
 
 
-<div class=" flex  justify-start bg-gray-100 relative " onClick={()=>setMenuopen((prev) => !prev)}>
-		<div class={`${menuopen ? 'block' : 'hidden'} xl:block absolute xl:relative w-[280px] h-[98vh] xl:h-auto p-4 bg-white rounded-0 xl:rounded-2xl shadow-xl/20 ml-0 xl:ml-3 mt-0 xl:mt-6 mb-0 xl:mb-6 mr-0 xl:mr-6 pl-[0px] z-9999`}>
+<div class=" flex  justify-start bg-gray-100 relative ">
+		<div ref={sidebarRef} class={`${menuopen ? 'block' : 'hidden'} xl:block absolute xl:relative w-[280px] h-[98vh] xl:h-auto p-4 bg-white rounded-0 xl:rounded-2xl shadow-xl/20 ml-0 xl:ml-3 mt-0 xl:mt-6 mb-0 xl:mb-6 mr-0 xl:mr-6 pl-[0px] z-9999`}>
 		  <div className='flex justify-center '>
         <img src={logo} className='w-[175px]' />
       </div>

@@ -5,14 +5,17 @@ import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { MdNotificationsNone } from "react-icons/md";
 import profile from '../../assets/Main/profile.jpg'
+import companyLogo from '../../assets/sidebar/Screenshot_13-7-2025_22210_.jpeg'
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 
 
 const HeaderMenu = ({setMenuopen}) => {
   return (
-    <div className='bg-white h-[10%] m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md flex justify-between items-center'>
+    <div className='bg-white h-[10%] m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md '>
 
-      <div>
+      <div className="hidden lg:flex justify-between items-center">
+        <div>
         <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition m-5" onClick={()=>setMenuopen((prev) => !prev)}>
         <BiMenuAltLeft size={25} />
         </p>
@@ -41,6 +44,26 @@ const HeaderMenu = ({setMenuopen}) => {
             <p className="text-sm text-[#8d959b]">Admin</p>
         </div>
         </div>
+      </div>
+
+      <div className="block lg:hidden">
+        <div className="flex justify-between items-center m-5">
+          <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition m-5" onClick={()=>setMenuopen((prev) => !prev)}>
+        <BiMenuAltLeft size={25} />
+        </p>
+
+        <HeaderSearch />
+
+         <img className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition" src={companyLogo} />
+         <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition">
+        <MdOutlineDarkMode size={25} />
+        </p>
+
+        <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition">
+        <HiOutlineDotsHorizontal size={25} />
+        </p>
+        </div>
+      </div>
 
     </div>
   )
