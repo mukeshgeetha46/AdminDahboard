@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { BsDot } from "react-icons/bs";
 import MyEditor from '../../utils/MyEditor';
+import { BsPaperclip } from "react-icons/bs";
+import { MdInfoOutline } from "react-icons/md";
+import Tooltip from '@mui/material/Tooltip';
+import Slider from '@mui/material/Slider';
+import TrackInvertedSlider from '../../utils/TrackSlider';
 
 
 const AddFormEcommerse = () => {
@@ -41,7 +46,7 @@ const AddFormEcommerse = () => {
 
       <div className='p-8 flex flex-col justify-center gap-1'>
         <p className='text-[16px] leading-[24px]'>Product Name <span className='text-red-500'>*</span></p>
-        <input type="text" name="" id="" placeholder='Product Name' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full' />
+        <input type="text" name="" id="" placeholder='Product Name' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
         <p className='text-[12px] leading-[22px]'>A product name is required and recommended to be unique.</p>
       </div>
 
@@ -51,8 +56,75 @@ const AddFormEcommerse = () => {
         <p className='text-[12px] leading-[22px] mt-2'>A product name is required and recommended to be unique.</p>
       </div>
   </div>
-  <div className="row-span-1">11</div>
-  <div className="row-span-1">Content 3</div>
+  <div className="row-span-1 Media bg-white rounded-2xl shadow mt-5">
+      <p className='p-6 text-[18px] leading-[25px] font-semibold'>Media</p>
+
+      <div className='flex justify-center items-center pl-6 pr-6 pb-8 gap-5'>
+        <span><BsPaperclip size={20} /></span>
+        <input type="text" name="" id="" placeholder='Drop File here or click to upload' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+      </div>
+  </div>
+  <div className="row-span-1 bg-white rounded-2xl shadow mt-5">
+    <p className='p-6 text-[18px] leading-[25px] font-semibold'>Pricing</p>
+
+    <div className='pl-6 pr-6 pb-6 flex flex-col justify-center gap-1'>
+        <p className='text-[16px] leading-[24px]'>Base Price <span className='text-red-500'>*</span></p>
+        <input type="text" name="" id="" placeholder='Product Price' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+        <p className='text-[12px] leading-[22px]'>Set the product price.</p>
+      </div>
+
+      <div className='pl-6 pr-6 pb-6'>
+        <p className='text-[16px] leading-[24px] flex gap-1 items-center'>Discount Type<span> <Tooltip
+    title={
+    <>
+      Select a discount type <br />
+      that will be applied <br />
+      to this product
+    </>
+  }
+      placement="top"
+      slotProps={{
+        popper: {
+          modifiers: [
+            {
+              name: 'offset',
+              options: {
+                offset: [0, -14],
+              },
+            },
+          ],
+        },
+      }}
+    >
+      <MdInfoOutline />
+    </Tooltip></span></p>
+     
+     <div className='grid grid-cols-3 mt-5 gap-5'> 
+       <div className='col-span-3 lg:col-span-1'>
+         <div className='flex items-center gap-2 border border-[#dfe5ef] border-dashed p-4'>
+          <input type="radio" name="" id="" />
+          <p className='text-[16px] leading-[19.2px] font-medium'>No Discount</p>
+         </div>
+       </div>
+       <div className='col-span-3 lg:col-span-1'>
+         <div className='flex items-center gap-2 border border-[#dfe5ef] border-dashed p-4'>
+          <input type="radio" name="" id="" />
+          <p className='text-[16px] leading-[19.2px] font-medium'>Percentage %</p>
+         </div>
+       </div>
+       <div className='col-span-3 lg:col-span-1'>
+         <div className='flex items-center gap-2 border border-[#dfe5ef] border-dashed p-4'>
+          <input type="radio" name="" id="" />
+          <p className='text-[16px] leading-[19.2px] font-medium'>Fixed Price</p>
+         </div>
+       </div>
+       
+     </div>
+
+     <TrackInvertedSlider />
+
+      </div>
+  </div>
   <div className="row-span-1">Content 4</div>
       </div>
            </div>

@@ -14,7 +14,7 @@ export default function MyEditor() {
   const rteRef = useRef(null); // removed TypeScript type
 
   return (
-    <Box >
+    <Box sx={{ paddingTop:"8px" }}>
       <RichTextEditor
         ref={rteRef}
         extensions={[StarterKit]}
