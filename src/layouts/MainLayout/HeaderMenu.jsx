@@ -12,15 +12,15 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 const HeaderMenu = ({setMenuopen}) => {
   return (
-    <div className='bg-white h-[10%] m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md '>
+    <div className='bg-white m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md '>
 
-      <div className="hidden lg:flex justify-between items-center">
+      <div className="hidden lg:flex justify-between items-center m-[19px]">
         <div>
         <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition m-5" onClick={()=>setMenuopen((prev) => !prev)}>
         <BiMenuAltLeft size={25} />
         </p>
         </div>
-         <div className="flex justify-between items-center gap-3 m-5">
+         <div className="flex justify-between items-center gap-3">
             <HeaderSearch />
            <div>
              <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition">
@@ -47,7 +47,7 @@ const HeaderMenu = ({setMenuopen}) => {
       </div>
 
       <div className="block lg:hidden">
-        <div className="flex justify-between items-center m-5">
+        <div className="flex justify-between items-center">
           <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition m-5" onClick={()=>setMenuopen((prev) => !prev)}>
         <BiMenuAltLeft size={25} />
         </p>

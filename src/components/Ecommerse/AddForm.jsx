@@ -9,6 +9,7 @@ import TrackInvertedSlider from '../../utils/TrackSlider';
 import preview from '../../assets/Ecommerse/preview-img-DtxRC7kT.png'
 import { GoDotFill } from "react-icons/go";
 import MultipleSelect from '../../utils/SelectInput';
+import { FaPlus } from "react-icons/fa";
 
 
 const AddFormEcommerse = () => {
@@ -185,7 +186,7 @@ const AddFormEcommerse = () => {
       </p>
     </div>
 
-    <div className="bg-white rounded-2xl shadow">
+    <div className="bg-white rounded-2xl shadow p-5">
       <div className='flex justify-between items-center p-5'>
         <h5 className='text-[22px] leading-[24px] font-semibold'>Status</h5>
         <GoDotFill size={22} color='#4bd08b' />
@@ -195,24 +196,29 @@ const AddFormEcommerse = () => {
         <p className='text-[12px] leading-[22px] mt-2'>Set the product status.</p>
       </div>
     </div>
-    <div className="bg-white rounded-2xl shadow h-[380px]">
-      <p className='text-[18px] leading-[25px] font-semibold pl-8 pr-8 pt-8'>Thumbnail</p>
-      <div className='flex justify-center items-center p-5'>
-        <img src={preview} className='w-[200px] shadow-2xl' alt="preview" />
+    <div className="bg-white rounded-2xl shadow">
+       <h5 className='text-[22px] leading-[24px] font-semibold pl-8 pt-8'>Product Details</h5>
+      <div className='pl-8 pt-4 pr-8 pb-4 flex flex-col justify-center gap-1'>
+        <p className='text-[16px] leading-[24px]'>Categories <span className='text-red-500'>*</span></p>
+        <input type="text" name="" id="" placeholder='Product Name' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+        <p className='text-[12px] leading-[22px]'>Add product to a category.</p>
       </div>
-      <p className='pl-8 pr-8 pb-8 text-[12px] leading-[22px]'>
-        Set the product thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted
-      </p>
+      <div className='flex items-center  pl-8 pb-0 pr-8'>
+        <button className='flex justify-center items-center gap-2 bg-[#e0f0fa] text-[#0087e1] pl-4 pr-4 pt-2 pb-2 rounded-[6px]'><span><FaPlus /></span>Create New Category</button>
+      </div>
+      <div className='pl-8 pt-5 pr-8 pb-4 flex flex-col justify-center gap-1'>
+        <p className='text-[16px] leading-[24px]'>Categories <span className='text-red-500'>*</span></p>
+        <input type="text" name="" id="" placeholder='Product Name' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+        <p className='text-[12px] leading-[22px]'>Add product to a category.</p>
+      </div>
     </div>
 
-    <div className="bg-white rounded-2xl shadow">
-      <div className='flex justify-between items-center p-5'>
-        <h5 className='text-[22px] leading-[24px] font-semibold'>Status</h5>
-        <GoDotFill size={22} color='#4bd08b' />
-      </div>
-      <div className='px-5'>
-        <MultipleSelect />
-        <p className='text-[12px] leading-[22px] mt-2'>Set the product status.</p>
+    <div className="bg-white rounded-2xl shadow p-8 flex flex-col gap-3">
+       <h5 className='text-[22px] leading-[24px] font-semibold'>Product Template</h5>
+       <div className=' flex flex-col justify-center gap-1'>
+        <p className='text-[16px] leading-[24px]'>Categories <span className='text-red-500'>*</span></p>
+        <input type="text" name="" id="" placeholder='Product Name' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+        <p className='text-[12px] leading-[22px]'>Add product to a category.</p>
       </div>
     </div>
   </div>
