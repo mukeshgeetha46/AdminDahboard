@@ -27,6 +27,8 @@ import { FaRegThumbsUp } from "react-icons/fa";
 import { LuMessageCircleMore } from "react-icons/lu";
 import post from '../../assets/Profile/s1-BOu5QFDr.jpg'
 import { FiShare2 } from "react-icons/fi";
+import ecom1 from '../../assets/Ecommerse/s2-oHJFK5Ck.jpg';
+import ecom2 from '../../assets/Ecommerse/s3-9LH-Wryw.jpg';
 
 const Profileone = () => {
 
@@ -64,6 +66,18 @@ const Profileone = () => {
       sender:false
     },
   
+  ];
+
+
+   const commentsData2 = [
+    {
+      id: 1,
+      name: "Maurice Carlson",
+      date: "Sun, Apr 15",
+      message: "Lalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pimLalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pim.",
+      profile: "https://spike-vue-main.netlify.app/assets/user-3-B7IUMcLl.jpg",
+      sender:true
+    }
   ];
 
   return (
@@ -385,6 +399,122 @@ const Profileone = () => {
 
       </div>
     
+
+    <div className="postsection h-auto row-span-1 bg-white rounded-2xl shadow">
+      <div className='flex items-center gap-3 pl-5 pt-5 pr-5 pb-0'>
+          <Profile url={profile} wh={10} />
+          <p className='text-[16px] leading-[19.2px] font-medium'>David McMichael</p>
+          <p className='flex items-center gap-0'><span><GoDotFill /></span>15 min ago</p>
+         </div>
+
+         <p className='pt-4 text-[16px] leading-[24px] font-normal pl-5 pt-5 pr-5 pb-0'>Bu lunalte wohohzap olkirlog kezumcuj vito gosag ecigacu wibejile ini zibuhime jas veh. Mo jufugiwef fa zotarulo mu nel con capvosvu haroaj pewepo korase jaktiku birjiti duduz orka sabcesla mo tage.</p>
+          
+       
+
+         <div className='flex justify-between items-center'>
+          <div className='flex items-center gap-2 pl-5 pt-5 pr-5 pb-0'>
+          <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>102</p>
+          <Circleicon icon={<LuMessageCircleMore size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>2</p>
+         </div>
+
+         <span className='pr-5'><FiShare2 size={18} /></span>
+         </div>
+          <div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-full mt-16 mb-4" />
+
+         <div className="pl-4 pb-4 pr-4">
+  <div className="w-full flex items-center gap-2">
+    <div className="flex-shrink-0">
+      <Profile url={profile} wh={9} />
+    </div>
+    <input
+      type="text"
+      placeholder="Comments"
+      className="border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]"
+    />
+    <button disabled={true} className="bg-[#0085DB] pl-5 pt-3 pr-5 pb-3 rounded-[6px] text-white">
+      Comment
+    </button>
+  </div>
+</div>
+    </div>
+    <div className="postsection h-auto row-span-1 bg-white rounded-2xl shadow">
+      <div className='flex items-center gap-3 pl-5 pt-5 pr-5 pb-0'>
+          <Profile url={profile} wh={10} />
+          <p className='text-[16px] leading-[19.2px] font-medium'>David McMichael</p>
+          <p className='flex items-center gap-0'><span><GoDotFill /></span>15 min ago</p>
+         </div>
+         <div className='grid grid-cols-2 gap-8 p-5'>
+          <div className='col-span-2 lg:col-span-1'>
+            <div className='h-[85%]'> <img src={ecom1} className=' w-full object-cover rounded-[6px]' alt="" /></div>
+          </div>
+          <div className='col-span-2 lg:col-span-1'>
+            <div className='h-[85%]'><img src={ecom2} className='w-full object-cover rounded-[6px]' alt="" /></div>
+          </div>
+         </div>
+         <p className='pt-4 text-[16px] leading-[24px] font-normal pl-5 pt-5 pr-5 pb-0'>Bu lunalte wohohzap olkirlog kezumcuj vito gosag ecigacu wibejile ini zibuhime jas veh. Mo jufugiwef fa zotarulo mu nel con capvosvu haroaj pewepo korase jaktiku birjiti duduz orka sabcesla mo tage.</p>
+          
+       
+
+         <div className='flex justify-between items-center'>
+          <div className='flex items-center gap-2 pl-5 pt-5 pr-5 pb-0'>
+          <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>102</p>
+          <Circleicon icon={<LuMessageCircleMore size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>2</p>
+         </div>
+
+         <span className='pr-5'><FiShare2 size={18} /></span>
+         </div>
+
+<div className='pl-5 pt-5'>
+            {commentsData2.map((comment) => (
+          <div className={`w-full flex ${!comment.sender ? 'justify-end pr-5' : 'justify-start'}`}>
+             <div key={comment.id} className={`border border-[#e5eaef] rounded-2xl ${!comment.sender ? 'w-[92%]' : 'w-[97%]'}  flex flex-col gap-2 p-4  mb-5`}>
+             <div className='flex justify-start items-center'>
+               <img className="w-9 h-9 rounded-full hover:bg-gray-300 cursor-pointer transition m-3" src={comment.profile} />
+               <div className='flex'>
+                 <p>{comment.name}</p>
+                 <p className='flex items-center ml-2 text-[#a4aaaf]'>
+                   <GoDotFill size={12} color='#7f7f7f' /> {comment.date}
+                 </p>
+               </div>
+             </div>
+             <p className='pl-5 pr-5'>{comment.message}</p>
+             <div className='pl-5 pr-5 flex items-center gap-2'>
+               <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={8} />
+               <p className='text-[16px] leading-[24px] font-semibold'>102</p>
+               <p className="w-8 h-8 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px] text-white ">
+                 <HiReply />
+               </p>
+                
+          
+             </div>
+           </div>
+          </div>
+         ))}
+
+          </div>
+
+          <div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-full mt-6 mb-4" />
+
+         <div className="pl-4 pb-4 pr-4">
+  <div className="w-full flex items-center gap-2">
+    <div className="flex-shrink-0">
+      <Profile url={profile} wh={9} />
+    </div>
+    <input
+      type="text"
+      placeholder="Comments"
+      className="border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]"
+    />
+    <button disabled={true} className="bg-[#0085DB] pl-5 pt-3 pr-5 pb-3 rounded-[6px] text-white">
+      Comment
+    </button>
+  </div>
+</div>
+    </div>
     
           </div>
                </div>
