@@ -7,16 +7,65 @@ import { CgProfile } from "react-icons/cg";
 import { RiTeamFill } from "react-icons/ri";
 import { GrProjects } from "react-icons/gr";
 import { ImConnection } from "react-icons/im";
-import { HiOutlineDotsHorizontal } from 'react-icons/hi';
+import { HiOutlineDotsHorizontal, HiReply } from 'react-icons/hi';
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineSkype } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoSchoolOutline } from "react-icons/io5";
 import { IoLanguageSharp } from "react-icons/io5";
-
+import { IoLogoReact } from "react-icons/io5";
+import { IoLogoGithub } from "react-icons/io";
+import { VscGithubProject } from "react-icons/vsc";
+import { MdOutlinePointOfSale } from "react-icons/md";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { HiOutlinePhotograph } from "react-icons/hi";
+import { MdArticle } from "react-icons/md";
+import Profile from '../../pages/Profile/Profile';
+import Circleicon from '../../pages/CircleIcon/Circleicon';
+import { FaRegThumbsUp } from "react-icons/fa";
+import { LuMessageCircleMore } from "react-icons/lu";
+import post from '../../assets/Profile/s1-BOu5QFDr.jpg'
+import { FiShare2 } from "react-icons/fi";
 
 const Profileone = () => {
+
+     const commentsData = [
+    {
+      id: 1,
+      name: "Maurice Carlson",
+      date: "Sun, Apr 15",
+      message: "Lalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pimLalid cadwew juwog caitbok nutanok jivi kelu mophiona kaju zoomubu kokjuvek bog gogni oc pim.",
+      profile: "https://spike-vue-main.netlify.app/assets/user-3-B7IUMcLl.jpg",
+      sender:true
+    },
+    {
+      id: 2,
+      name: "Ella Thornton",
+      date: "Mon, Apr 16",
+      message: "Ruj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvoRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+      profile: "https://spike-vue-main.netlify.app/assets/user-3-B7IUMcLl.jpg",
+      sender:true
+    },
+    {
+      id: 3,
+      name: "Samuel Bennett",
+      date: "Tue, Apr 17",
+      message: "Venagow ris jenvob haz difefik ivdoho cubaz mimu nihmip podo wazijumRuj cisiv ri uvuzo gaejoges pakod bug jejbu fol hacneh rekferaw gek sigum piljimap un codvo.",
+      profile: "https://spike-vue-main.netlify.app/assets/user-3-B7IUMcLl.jpg",
+      sender:true
+    },
+    {
+      id: 4,
+      name: "Isla Moreno",
+      date: "Wed, Apr 18",
+      message: "Bek ruvi ketnuvup jozru zev muk ugopaw japej hogkiz zebin ew.",
+      profile: "https://spike-vue-main.netlify.app/assets/user-3-B7IUMcLl.jpg",
+      sender:false
+    },
+  
+  ];
+
   return (
    <>
     <div>
@@ -97,7 +146,7 @@ const Profileone = () => {
                     </p>
                     <div className='flex flex-col'>
                       <p className='text-[14px] leading-[17px]'>Call</p>
-                      <p className='text-[14px] leading-[17px]'>(123) 456-7890</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>(123) 456-7890</p>
                     </div>
            </div>
              <div className='flex items-center gap-2'>
@@ -106,7 +155,7 @@ const Profileone = () => {
                     </p>
                     <div className='flex flex-col'>
                       <p className='text-[14px] leading-[17px]'>Email</p>
-                      <p className='text-[14px] leading-[17px]'>jonathan@spike.com</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>jonathan@spike.com</p>
                     </div>
            </div>
              <div className='flex items-center gap-2'>
@@ -115,7 +164,7 @@ const Profileone = () => {
                     </p>
                     <div className='flex flex-col'>
                       <p className='text-[14px] leading-[17px]'>Skype</p>
-                      <p className='text-[14px] leading-[17px]'>jonathan.doe</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>jonathan.doe</p>
                     </div>
            </div>
            </div>
@@ -131,7 +180,7 @@ const Profileone = () => {
                     </p>
                     <div className='flex flex-col'>
                       <p className='text-[14px] leading-[17px]'>Location</p>
-                      <p className='text-[14px] leading-[17px]'>Newyork, USA - 100001</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>Newyork, USA - 100001</p>
                     </div>
            </div>
              <div className='flex items-center gap-2'>
@@ -140,7 +189,7 @@ const Profileone = () => {
                     </p>
                     <div className='flex flex-col'>
                       <p className='text-[14px] leading-[17px]'>Education</p>
-                      <p className='text-[14px] leading-[17px]'>Saint Josef Institute of Science</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>Saint Josef Institute of Science</p>
                     </div>
            </div>
              <div className='flex items-center gap-2'>
@@ -149,7 +198,7 @@ const Profileone = () => {
                     </p>
                     <div className='flex flex-col'>
                       <p className='text-[14px] leading-[17px]'>Language</p>
-                      <p className='text-[14px] leading-[17px]'>English</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>English</p>
                     </div>
            </div>
            </div>
@@ -166,37 +215,30 @@ const Profileone = () => {
 
            <div className='mt-5 flex flex-col gap-4'>
              <div className='flex items-center gap-2'>
-              <p className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ffede9] cursor-pointer transition">
-                    <IoCallOutline size={20} color='#fca994' />
+              <p className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E1F5FA] cursor-pointer transition">
+                    <IoLogoGithub size={20} color='#46CAEB' />
                     </p>
                     <div className='flex flex-col'>
-                      <p className='text-[14px] leading-[17px]'>Call</p>
-                      <p className='text-[14px] leading-[17px]'>(123) 456-7890</p>
+                      <p className='text-[14px] leading-[17px]'>Backend Developer</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>120 members</p>
                     </div>
            </div>
              <div className='flex items-center gap-2'>
-              <p className="w-10 h-10 flex items-center justify-center rounded-full bg-[#dffff3] cursor-pointer transition">
-                    <MdOutlineEmail size={20} color='#70dca5' />
+              <p className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E5F3FB] cursor-pointer transition">
+                    <IoLogoReact size={20} color='#0085DB' />
                     </p>
                     <div className='flex flex-col'>
-                      <p className='text-[14px] leading-[17px]'>Email</p>
-                      <p className='text-[14px] leading-[17px]'>jonathan@spike.com</p>
+                      <p className='text-[14px] leading-[17px]'>React Developer</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>86 members</p>
                     </div>
            </div>
              
            </div>
 
-           
+           <p className='text-[16px] leading-[24px] font-semibold pt-4 text-[#0085DB]'>View all</p>
 
          </div>
 
-        </div>
-        <div className="bg-white rounded-2xl shadow">
-         6
-        </div>
-    
-        <div className="bg-white rounded-2xl shadow p-8 flex flex-col gap-3">
-          7
         </div>
       </div>
     </div>
@@ -205,15 +247,142 @@ const Profileone = () => {
     
                <div className='col-span-3 lg:col-span-2 '>
     <div className="grid grid-rows-3 gap-3">
-      <div className="row-span-3 bg-white rounded-2xl shadow h-[520px] mt-10">
-    
-       1
+      <div className="row-span-3 mt-10">
+        
+        <div className='grid grid-cols-3 gap-3'>
+         <div className='col-span-3 lg:col-span-1 bg-white rounded-2xl shadow'>
+          <div className='flex items-center gap-3 p-5'>
+              <p className="w-12 h-12 flex items-center justify-center rounded-full bg-[#E5F3FB] cursor-pointer transition">
+                    <FaPeopleGroup size={20} color='#0085DB' />
+                    </p>
+                    <div className='flex flex-col'>
+                      <p className='text-[20px] leading-[26px] font-semibold'>680</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>120 members</p>
+                    </div>
+           </div>
+         </div>
+         <div className='col-span-3 lg:col-span-1 bg-white rounded-2xl shadow'>
+          <div className='flex items-center gap-3 p-5'>
+              <p className="w-12 h-12 flex items-center justify-center rounded-full bg-[#DFFFF3] cursor-pointer transition">
+                    <VscGithubProject size={20} color='#4BD08B' />
+                    </p>
+                    <div className='flex flex-col'>
+                      <p className='text-[20px] leading-[26px] font-semibold'>42</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>Projects</p>
+                    </div>
+           </div>
+         </div>
+         <div className='col-span-3 lg:col-span-1 bg-white rounded-2xl shadow'>
+          <div className='flex items-center gap-3 p-5'>
+              <p className="w-12 h-12 flex items-center justify-center rounded-full bg-[#ffede9] cursor-pointer transition">
+                    <MdOutlinePointOfSale size={20} color='#fca994' />
+                    </p>
+                    <div className='flex flex-col'>
+                      <p className='text-[20px] leading-[26px] font-semibold'>$780</p>
+                      <p className='text-[14px] leading-[17px] text-[#707A82]'>Sales</p>
+                    </div>
+           </div>
+         </div>
+        </div>
+        
       </div>
-      <div className="row-span-1 Media bg-white rounded-2xl shadow">
-         2
+      <div className="row-span-1 Media bg-white rounded-2xl shadow pl-5 pt-5 pr-5 pb-7">
+         <div>
+          <textarea className='border w-full h-[140px] focus:outline-none focus:border-blue-500 rounded-[6px] p-2' placeholder='Share your thougths' name="" id=""></textarea>
+
+          
+           <div className='flex justify-between items-center mt-3'>
+         <div className='flex items-center gap-3'>
+            <div className='flex items-center gap-3 pt-3'>
+            <p className="w-9 h-9 flex items-center justify-center rounded-full bg-blue-500 cursor-pointer transition text-[12px] text-white">
+            <HiOutlinePhotograph size={20} />
+             </p>
+             <p className='text-[14px]'>Photo / Video</p>
+          </div>
+            <div className='flex items-center gap-3 pt-3'>
+            <p className="w-9 h-9 flex items-center justify-center rounded-full bg-blue-500 cursor-pointer transition text-[12px] text-white">
+            <MdArticle size={20} />
+             </p>
+             <p className='text-[14px]'>Article</p>
+          </div>
+           </div>
+
+           <button className='bg-[#0085DB] text-white pl-5 pr-5 pt-2 pb-3 rounded-[5px]'>Post</button>
+
+           </div>
+
+         </div>
       </div>
-      <div className="row-span-1 bg-white rounded-2xl shadow">
-       3
+      <div className="postsection h-auto row-span-1 bg-white rounded-2xl shadow">
+         <div className='flex items-center gap-3 pl-5 pt-5 pr-5 pb-0'>
+          <Profile url={profile} wh={10} />
+          <p className='text-[16px] leading-[19.2px] font-medium'>David McMichael</p>
+          <p className='flex items-center gap-0'><span><GoDotFill /></span>15 min ago</p>
+         </div>
+
+         <p className='pt-4 text-[16px] leading-[24px] font-normal pl-5 pt-5 pr-5 pb-0'>Bu lunalte wohohzap olkirlog kezumcuj vito gosag ecigacu wibejile ini zibuhime jas veh. Mo jufugiwef fa zotarulo mu nel con capvosvu haroaj pewepo korase jaktiku birjiti duduz orka sabcesla mo tage.</p>
+          
+        <div className='pl-5 pt-5 pr-5 pb-0'>
+              <img src={post} className='h-[435px] w-full rounded-[6px] mt-4 object-cover' alt="" srcset="" />
+        </div>
+
+         <div className='flex justify-between items-center'>
+          <div className='flex items-center gap-2 pl-5 pt-5 pr-5 pb-0'>
+          <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>102</p>
+          <Circleicon icon={<LuMessageCircleMore size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>2</p>
+         </div>
+
+         <span className='pr-5'><FiShare2 size={18} /></span>
+         </div>
+
+          <div className='pl-5 pt-2'>
+            {commentsData.map((comment) => (
+          <div className={`w-full flex ${!comment.sender ? 'justify-end pr-5' : 'justify-start'}`}>
+             <div key={comment.id} className={`border border-[#e5eaef] rounded-2xl ${!comment.sender ? 'w-[92%]' : 'w-[97%]'}  flex flex-col gap-2 p-4  mb-5`}>
+             <div className='flex justify-start items-center'>
+               <img className="w-9 h-9 rounded-full hover:bg-gray-300 cursor-pointer transition m-3" src={comment.profile} />
+               <div className='flex'>
+                 <p>{comment.name}</p>
+                 <p className='flex items-center ml-2 text-[#a4aaaf]'>
+                   <GoDotFill size={12} color='#7f7f7f' /> {comment.date}
+                 </p>
+               </div>
+             </div>
+             <p className='pl-5 pr-5'>{comment.message}</p>
+             <div className='pl-5 pr-5 flex items-center gap-2'>
+               <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={8} />
+               <p className='text-[16px] leading-[24px] font-semibold'>102</p>
+               <p className="w-8 h-8 flex items-center justify-center rounded-full bg-[#707a82] cursor-pointer transition text-[12px] text-white ">
+                 <HiReply />
+               </p>
+                
+          
+             </div>
+           </div>
+          </div>
+         ))}
+
+          </div>
+         <div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-full mt-6 mb-4" />
+
+         <div className="pl-4 pb-4 pr-4">
+  <div className="w-full flex items-center gap-2">
+    <div className="flex-shrink-0">
+      <Profile url={profile} wh={9} />
+    </div>
+    <input
+      type="text"
+      placeholder="Comments"
+      className="border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]"
+    />
+    <button disabled={true} className="bg-[#0085DB] pl-5 pt-3 pr-5 pb-3 rounded-[6px] text-white">
+      Comment
+    </button>
+  </div>
+</div>
+
       </div>
     
     
