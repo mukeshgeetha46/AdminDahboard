@@ -27,7 +27,10 @@ const Teams = () => {
   { name: "Nisha", place: "Agra", followed: false },
   { name: "Aryan", place: "Rajkot", followed: false },
   { name: "Priya", place: "Varanasi", followed: false },
-];
+].map(member => ({
+  ...member,
+avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(member.name)}`
+}));
 
 
 
@@ -45,7 +48,7 @@ const Teams = () => {
   <div key={index} className='col-span-3 md:col-span-2 lg:col-span-1 bg-white rounded-2xl shadow p-5'>
     <div className='flex justify-between items-center'>
       <div className='flex items-center gap-2'>
-        <Profile url={profile} wh={12} />
+        <Profile url={person.avatar} wh={12} />
         <div>
           <p className='text-[18px] leading-[25.6px] font-semibold'>{person.name}</p>
           <p className='text-[14px] leading-[19px] font-semibold flex items-center gap-2 text-[#707c86]'>

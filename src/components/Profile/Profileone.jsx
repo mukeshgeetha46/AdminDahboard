@@ -30,6 +30,7 @@ import { FiShare2 } from "react-icons/fi";
 import ecom1 from '../../assets/Ecommerse/s2-oHJFK5Ck.jpg';
 import ecom2 from '../../assets/Ecommerse/s3-9LH-Wryw.jpg';
 import Teams from './Teams';
+import Projects from './Projects';
 
 const Profileone = () => {
 
@@ -585,7 +586,7 @@ const Profileone = () => {
    }
 
    {
-    tab === 'project' && (<div></div>)
+    tab === 'project' && (<Projects />)
    }
 
    {
