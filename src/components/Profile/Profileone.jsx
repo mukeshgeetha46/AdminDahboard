@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import profilebanner from '../../assets/Profile/profilebg-2-D09dvhko.jpg'
 import profile from '../../assets/Main/user1-D00qJYN4.jpg'
 import { GoDotFill } from "react-icons/go";
@@ -29,8 +29,13 @@ import post from '../../assets/Profile/s1-BOu5QFDr.jpg'
 import { FiShare2 } from "react-icons/fi";
 import ecom1 from '../../assets/Ecommerse/s2-oHJFK5Ck.jpg';
 import ecom2 from '../../assets/Ecommerse/s3-9LH-Wryw.jpg';
+import Teams from './Teams';
 
 const Profileone = () => {
+
+
+    const [tab,setTab] = useState('myprofile');
+
 
      const commentsData = [
     {
@@ -80,6 +85,14 @@ const Profileone = () => {
     }
   ];
 
+
+  const tabs = [
+  { id: 'myprofile', label: 'My Profile', icon: <CgProfile /> },
+  { id: 'teams', label: 'Teams', icon: <RiTeamFill /> },
+  { id: 'project', label: 'Projects', icon: <GrProjects /> },
+  { id: 'connection', label: 'Connection', icon: <ImConnection /> },
+];
+
   return (
    <>
     <div>
@@ -98,30 +111,27 @@ const Profileone = () => {
              </p>
              </div>
               <div className='flex flex-col items-center lg:items-start gap-2'>
-                <p className='text-[24px] leading-[32px] font-semibold'>Mike Nielsen</p>
+                <p className='text-[24px] leading-[32px] font-semibold'>Mike Nielsen <span className='text-[12px] leading-[32px] rounded-2xl bg-[#E5F3FB] text-[#0085DB] border border-[#0085DB] px-2 py-[2px]'>Admin</span></p>
                 <p className='text-[16px] leading-[19.2px] font-medium text-[#87abce]'>Dream big. Think different. Do great!</p>
                 <p className='flex items-center gap-1'><span><GoDotFill color='#51d28f' /></span>Active</p>
               </div>
             </div>
 
-            <button className='pl-4 pr-4 pt-3 pb-3 bg-[#0085db] rounded-[5px]'>Edit Profile</button>
+            <button className='pl-4 pr-4 pt-3 pb-3 bg-[#0085db] rounded-[5px] text-white'>Edit Profile</button>
             </div>
             
-            <div className='tab mt-5 flex justify-around lg:justify-start items-center gap-4 text-[#707a82]'> 
-             <div className='flex justify-center items-center gap-2 border-b p-2  text-[16px]'>
-              <span><CgProfile   /></span> <p className='hidden lg:block'> My Profile</p>
-             </div>
-             <div className='flex justify-center items-center gap-2 border-b p-2  text-[16px]'>
-              <span><RiTeamFill   /></span> <p className='hidden lg:block'> My Profile</p>
-             </div>
-             <div className='flex justify-center items-center gap-2 border-b p-2  text-[16px]'>
-              <span><GrProjects   /></span> <p className='hidden lg:block'> My Profile</p>
-             </div>
-             <div className='flex justify-center items-center gap-2 border-b p-2  text-[16px]'>
-              <span><ImConnection   /></span> <p className='hidden lg:block'> My Profile</p>
-             </div>
-             
-            </div>
+            <div className='tab mt-5 flex justify-around lg:justify-start items-center gap-4 text-[#707a82]'>
+  {tabs.map(({ id, label, icon }) => (
+    <div
+      key={id}
+      className={`flex justify-center items-center gap-2 ${tab === id ? 'border-b' : ''} p-2 text-[16px]`}
+      onClick={()=>setTab(id)}
+    >
+      <span>{icon}</span>
+      <p className='hidden lg:block'>{label}</p>
+    </div>
+  ))}
+</div>
           </div>
           </div>
 
@@ -135,8 +145,8 @@ const Profileone = () => {
 
 
 
-
-   <div className='flex justify-center items-center'>
+   {
+    tab === 'myprofile' && (<div className='flex justify-center items-center'>
    <div className='grid grid-cols-3 gap-5 mt-80 lg:mt-33 w-[96%]'>
        <div className='col-span-3 lg:col-span-1 mt-10'>
     <div className='col-span-3 lg:col-span-1'>
@@ -364,7 +374,7 @@ const Profileone = () => {
                  </p>
                </div>
              </div>
-             <p className='pl-5 pr-5'>{comment.message}</p>
+             <p className='pl-5 pr-5 text-[14px] leading-[21px]'>{comment.message}</p>
              <div className='pl-5 pr-5 flex items-center gap-2'>
                <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={8} />
                <p className='text-[16px] leading-[24px] font-semibold'>102</p>
@@ -407,7 +417,7 @@ const Profileone = () => {
           <p className='flex items-center gap-0'><span><GoDotFill /></span>15 min ago</p>
          </div>
 
-         <p className='pt-4 text-[16px] leading-[24px] font-normal pl-5 pt-5 pr-5 pb-0'>Bu lunalte wohohzap olkirlog kezumcuj vito gosag ecigacu wibejile ini zibuhime jas veh. Mo jufugiwef fa zotarulo mu nel con capvosvu haroaj pewepo korase jaktiku birjiti duduz orka sabcesla mo tage.</p>
+         <p className='pt-4 text-[14px] leading-[21px] font-normal pl-5 pt-5 pr-5 pb-0'>Bu lunalte wohohzap olkirlog kezumcuj vito gosag ecigacu wibejile ini zibuhime jas veh. Mo jufugiwef fa zotarulo mu nel con capvosvu haroaj pewepo korase jaktiku birjiti duduz orka sabcesla mo tage.</p>
           
        
 
@@ -481,7 +491,7 @@ const Profileone = () => {
                  </p>
                </div>
              </div>
-             <p className='pl-5 pr-5'>{comment.message}</p>
+             <p className='pl-5 pr-5 text-[14px] leading-[21px]'>{comment.message}</p>
              <div className='pl-5 pr-5 flex items-center gap-2'>
                <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={8} />
                <p className='text-[16px] leading-[24px] font-semibold'>102</p>
@@ -515,13 +525,74 @@ const Profileone = () => {
   </div>
 </div>
     </div>
+
+     <div className="postsection h-auto row-span-1 bg-white rounded-2xl shadow">
+         <div className='flex items-center gap-3 pl-5 pt-5 pr-5 pb-0'>
+          <Profile url={profile} wh={10} />
+          <p className='text-[16px] leading-[19.2px] font-medium'>David McMichael</p>
+          <p className='flex items-center gap-0'><span><GoDotFill /></span>15 min ago</p>
+         </div>
+
+         <p className='pt-4 text-[16px] leading-[24px] font-normal pl-5 pt-5 pr-5 pb-0'>Bu lunalte wohohzap olkirlog kezumcuj vito gosag ecigacu wibejile ini zibuhime jas veh. Mo jufugiwef fa zotarulo mu nel con capvosvu haroaj pewepo korase jaktiku birjiti duduz orka sabcesla mo tage.</p>
+          
+        <div className='pl-5 pt-5 pr-5 pb-0'>
+              <img src={post} className='h-[435px] w-full rounded-[6px] mt-4 object-cover' alt="" srcset="" />
+        </div>
+
+         <div className='flex justify-between items-center'>
+          <div className='flex items-center gap-2 pl-5 pt-5 pr-5 pb-0'>
+          <Circleicon icon={<FaRegThumbsUp size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>102</p>
+          <Circleicon icon={<LuMessageCircleMore size={18} />} bg={'#0085DB'} wh={9} />
+          <p className='text-[16px] leading-[24px] font-semibold'>2</p>
+         </div>
+
+         <span className='pr-5'><FiShare2 size={18} /></span>
+         </div>
+
+        
+         <div class="mx-auto border-b border-b-gray-300 border-b-[1px] w-full mt-6 mb-4" />
+
+         <div className="pl-4 pb-4 pr-4">
+  <div className="w-full flex items-center gap-2">
+    <div className="flex-shrink-0">
+      <Profile url={profile} wh={9} />
+    </div>
+    <input
+      type="text"
+      placeholder="Comments"
+      className="border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]"
+    />
+    <button disabled={true} className="bg-[#0085DB] pl-5 pt-3 pr-5 pb-3 rounded-[6px] text-white">
+      Comment
+    </button>
+  </div>
+</div>
+
+      </div>
     
           </div>
                </div>
               
                
             </div>
-   </div>
+   </div>)
+   }
+   
+
+   {
+    tab === 'teams' && (<Teams />)
+   }
+
+   {
+    tab === 'project' && (<div></div>)
+   }
+
+   {
+    tab === 'connection' && (<div></div>
+
+    )
+   }
 
 
 
