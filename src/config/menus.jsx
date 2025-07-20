@@ -1,6 +1,6 @@
 // // src/config/menus.js
 
-import { FaRegUser } from 'react-icons/fa6';
+import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots } from '../icons/index'
 
 
@@ -9,7 +9,7 @@ const menus = [
       label: 'HOME',
       class: 'menutitle',
       mainmenu: [
-        { label: 'Dashboard', class: 'menu',icon:<TbDashboard size={25} /> },
+        { label: 'Dashboard', class: 'menu',icon:<TbDashboard size={25} />,mainpath:"/" },
       ],
     },
     {
@@ -39,6 +39,7 @@ const menus = [
           {s_label:'Profile two',path:'/user/profileone'},
         ] },
         { label: 'Charts', class: 'menu',icon:<BsChatDots size={25} /> },
+        { label: 'Notes', class: 'menu',icon:<FaRegNoteSticky size={25} />,mainpath:"/notes" },
         
       ],
     },

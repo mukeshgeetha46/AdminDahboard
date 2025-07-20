@@ -29,7 +29,8 @@ const Teams = () => {
   { name: "Priya", place: "Varanasi", followed: false },
 ].map(member => ({
   ...member,
-avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(member.name)}`
+avatar: `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 99)}.jpg`
+
 }));
 
 

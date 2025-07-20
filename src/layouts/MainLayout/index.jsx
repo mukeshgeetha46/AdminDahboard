@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 const MainLayout = () => {
 
   const [menuopen,setMenuopen] = useState(false)
+  const [mainmenu,setMainmenu] = useState('Dashboard')
 const [openSubmenus, setOpenSubmenus] = useState({});
 const [menu,setMenu] = useState('');
 
@@ -23,7 +24,11 @@ const navigate = useNavigate();
 
 console.log('🎃🎃',menu,menuopen)
 
-const toggleSubmenu = (label) => {
+const toggleSubmenu = (label,submenu,mainpath) => {
+  setMainmenu(label);
+  if(!submenu){
+    navigate(mainpath)
+  }
   setOpenSubmenus((prev) => ({
     ...prev,
     [label]: !prev[label],
@@ -77,13 +82,14 @@ const handleMenu = (label,path) => {
           {/* Main Menu Label (Clickable) */}
           <p
             className="relative pr-3 pt-3 pb-3 pl-8 group overflow-hidden cursor-pointer flex justify-between items-center"
-            onClick={() => toggleSubmenu(main.label)}
+            onClick={() => toggleSubmenu(main.label,main.submenu,main.mainpath)}
           >
-            <span className={`absolute inset-0 bg-gradient-to-r from-[#e0f0fb] to-[#128ede] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-tr-2xl rounded-br-2xl `}></span>
+            <span className={`absolute inset-0 bg-gradient-to-r from-[#e0f0fb] to-[#128ede] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-tr-2xl rounded-br-2xl ${mainmenu === main.label ? 'translate-x-0 transition-transform  rounded-tr-2xl rounded-br-2xl' : ''}`}></span>
             <span className="relative flex z-10 group-hover:text-[#128ede] transition-colors duration-500">
               <p className='mr-2'>{main.icon}</p> {main.label}
             </span>
-            <span className='z-10'>{openSubmenus[main.label] ? <FaChevronUp /> : <FaChevronDown />}</span>
+            {main.submenu && <span className='z-10'>{openSubmenus[main.label] ? <FaChevronUp /> : <FaChevronDown />}</span>}
+            
           </p>
 
           {/* Submenu - Conditionally Rendered */}
