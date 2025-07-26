@@ -10,6 +10,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { IoMoonOutline } from "react-icons/io5";
 import { TfiShoppingCartFull } from "react-icons/tfi";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { MdOutlineEmail } from "react-icons/md";
 
 
 
@@ -26,5 +27,6 @@ export {
     HiOutlineMenuAlt2,
     IoMoonOutline,
     TfiShoppingCartFull,
-    IoMdNotificationsOutline
+    IoMdNotificationsOutline,
+    MdOutlineEmail
 }

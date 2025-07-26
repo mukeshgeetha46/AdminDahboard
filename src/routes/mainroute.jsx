@@ -1,6 +1,7 @@
 // src/routes/mainroute.jsx
 import MainBlog from '../components/Blog/MainBlog.jsx';
 import MainBlogDetails from '../components/Blog/MainBlogDetails.jsx';
+import EmailPage from '../components/Email/Email.jsx';
 import Notes from '../components/Notes/Notes.jsx';
 import MainLayout from '../layouts/MainLayout/index.jsx';
 import Home from '../pages/Home.jsx';
@@ -25,6 +26,10 @@ const MainRoutes =
       {
         path:'notes',
         element: <Notes />
+      },
+      {
+        path:'email',
+        element: <EmailPage />
       }
       // Add more routes here as needed
     ],

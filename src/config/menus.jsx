@@ -1,7 +1,8 @@
 // // src/config/menus.js
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
-import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots } from '../icons/index'
+import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail } from '../icons/index'
+
 
 
 const menus = [
@@ -40,6 +41,7 @@ const menus = [
         ] },
         { label: 'Charts', class: 'menu',icon:<BsChatDots size={25} /> },
         { label: 'Notes', class: 'menu',icon:<FaRegNoteSticky size={25} />,mainpath:"/notes" },
+        { label: 'Email', class: 'menu',icon:<MdOutlineEmail size={25} />,mainpath:"/email" },
         
       ],
     },
