@@ -33,19 +33,19 @@ const EmailPage = () => {
       </div>
 
      <div className="grid grid-cols-12 mt-10 bg-white rounded-2xl">
-    <div className="col-span-12 md:col-span-5  lg:col-span-5">
+    <div className="col-span-12 lg:col-span-5">
      
     <div className='grid grid-cols-12'>
-      <div className="hidden md:block lg:block col-span-5 p-5 border-r border-[#e5eaef]">
+      <div className="hidden  lg:block col-span-5 p-5 border-r border-[#e5eaef]">
        <Composemenu />  
       </div> {/* Takes 4/12 = 33% */}
-  <div className="col-span-12 md:lg:col-span-7 lg:col-span-7 border-r border-[#e5eaef]">
+  <div className="col-span-12 lg:col-span-7 border-r border-[#e5eaef]">
    <SearchEmailList setOpen={setOpen} /> 
     </div> {/* Takes 8/12 = 66% */}
     </div>
 
     </div> {/* Takes 4/12 = 33% */}
-  <div className="col-span-12 md:col-span-7 lg:col-span-7">2</div> {/* Takes 8/12 = 66% */}
+  <div className="col-span-12 lg:col-span-7">2</div> {/* Takes 8/12 = 66% */}
 </div>
 
 
