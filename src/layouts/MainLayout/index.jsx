@@ -119,7 +119,7 @@ const handleMenu = (label,path) => {
       </div>
 		</div>
 
-    <div className='w-full lg:w-[80%] h-[100vh] overflow-y-auto'>
+    <div className='w-full xl:w-[80%] h-[100vh] overflow-y-auto'>
       <HeaderMenu setMenuopen={setMenuopen} />
     <div className='m-2 lg:m-7'>
 

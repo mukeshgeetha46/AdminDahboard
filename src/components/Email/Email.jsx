@@ -37,22 +37,22 @@ const EmailPage = () => {
       </div>
 
      <div className="grid grid-cols-12 mt-10 bg-white rounded-2xl">
-  <div className={`${responseCheck ? 'col-span-7' : 'col-span-12 lg:col-span-5'}`}>
+  <div className={`${responseCheck ? 'col-span-7' : 'col-span-12 lg:col-span-4 xl:col-span-5'}`}>
 
      
   <div className={`grid ${responseCheck ? 'grid-cols-10' : 'grid-cols-12'}`}>
-  <div className={`hidden lg:block ${responseCheck ? 'col-span-4' : 'lg:col-span-5'} p-5 border-r border-[#e5eaef]`}>
+  <div className={`hidden xl:block ${responseCheck ? 'col-span-4' : 'xl:col-span-5'} p-5 border-r border-[#e5eaef]`}>
     <Composemenu />
   </div>
 
-  <div className={`col-span-12 ${responseCheck ? 'lg:col-span-6' : 'lg:col-span-7'} border-r border-[#e5eaef]`}>
+  <div className={`col-span-12 ${responseCheck ? 'lg:col-span-6' : 'xl:col-span-7'} border-r border-[#e5eaef]`}>
     <SearchEmailList setOpen={setOpen} />
   </div>
 </div>
 
 
     </div> {/* Takes 4/12 = 33% */}
-  <div className={`${responseCheck ? 'col-span-5' : 'col-span-12 lg:col-span-7'}`}>2</div> {/* Takes 8/12 = 66% */}
+  <div className={`${responseCheck ? 'col-span-5' : 'col-span-12 m:col-span-8 xl:col-span-7'}`}>2</div> {/* Takes 8/12 = 66% */}
 </div>
 
 
