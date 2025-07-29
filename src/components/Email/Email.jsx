@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import useWindowSize from '../../utils/useWindowSize';
+import MailBody from './MailBody';
 
 const EmailPage = () => {
 
@@ -52,7 +53,8 @@ const EmailPage = () => {
 
 
     </div> {/* Takes 4/12 = 33% */}
-  <div className={`${responseCheck ? 'col-span-5' : 'col-span-12 m:col-span-8 xl:col-span-7'}`}>2</div> {/* Takes 8/12 = 66% */}
+  <div className={`${responseCheck ? 'col-span-5' : 'col-span-12 m:col-span-8 xl:col-span-7'}`}>
+    <MailBody /></div> {/* Takes 8/12 = 66% */}
 </div>
 
 
