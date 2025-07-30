@@ -131,7 +131,7 @@ const Handlemail = (id) => {
   return (
     <div className=''>
         <div className='block lg:hidden pl-4 pr-4 pt-4'>
-            <button className='bg-[#0085DB] w-full pt-2 pb-2 text-white rounded-[6px]' onClick={()=>setOpen(true)}>
+            <button className='bg-[#0085DB] w-full pt-2 pb-2 text-white rounded-[6px]' onClick={()=>{setDrawerAncher('left');setOpen(true)}}>
           Email Category  
         </button>
         </div>

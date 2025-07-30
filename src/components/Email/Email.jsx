@@ -64,7 +64,7 @@ const EmailPage = () => {
   anchor={drawerAncher} // or "right"
   sx={{
     '& .MuiDrawer-paper': {
-      width:drawerAncher === 'left' ? '260px' : '450px', // or '50%', '30vw', etc.
+      width:drawerAncher === 'left' ? '260px' : '350px', // or '50%', '30vw', etc.
     },
   }}
 >

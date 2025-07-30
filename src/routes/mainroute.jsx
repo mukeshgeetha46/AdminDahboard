@@ -2,6 +2,7 @@
 import MainBlog from '../components/Blog/MainBlog.jsx';
 import MainBlogDetails from '../components/Blog/MainBlogDetails.jsx';
 import EmailPage from '../components/Email/Email.jsx';
+import Kanban from '../components/Kanban/Kanban.jsx';
 import Notes from '../components/Notes/Notes.jsx';
 import MainLayout from '../layouts/MainLayout/index.jsx';
 import Home from '../pages/Home.jsx';
@@ -30,6 +31,10 @@ const MainRoutes =
       {
         path:'email',
         element: <EmailPage />
+      },
+      {
+        path:'kanban',
+        element: <Kanban />
       }
       // Add more routes here as needed
     ],

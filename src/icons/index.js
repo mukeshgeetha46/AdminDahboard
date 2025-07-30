@@ -11,6 +11,7 @@ import { IoMoonOutline } from "react-icons/io5";
 import { TfiShoppingCartFull } from "react-icons/tfi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
+import { BsKanbanFill } from "react-icons/bs";
 
 
 
@@ -28,5 +29,6 @@ export {
     IoMoonOutline,
     TfiShoppingCartFull,
     IoMdNotificationsOutline,
-    MdOutlineEmail
+    MdOutlineEmail,
+    BsKanbanFill
 }
