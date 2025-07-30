@@ -19,8 +19,8 @@ import MailBody from './MailBody';
 const EmailPage = () => {
 
    const [open, setOpen] =useState(false);
-
-
+   const [openedMail,setOpenedMail] = useState(1);
+   const [drawerAncher,setDrawerAncher] = useState('left')
   const { width } = useWindowSize();
   const responseCheck = (width > 1279 && width < 1450);
   return (
@@ -37,7 +37,7 @@ const EmailPage = () => {
         </div>
       </div>
 
-     <div className="grid grid-cols-12 mt-10 bg-white rounded-2xl">
+     <div className="grid grid-cols-12 mt-2 lg:mt-10 bg-white rounded-2xl">
   <div className={`${responseCheck ? 'col-span-7' : 'col-span-12 lg:col-span-4 xl:col-span-5'}`}>
 
      
@@ -47,29 +47,32 @@ const EmailPage = () => {
   </div>
 
   <div className={`col-span-12 ${responseCheck ? 'lg:col-span-6' : 'xl:col-span-7'} border-r border-[#e5eaef]`}>
-    <SearchEmailList setOpen={setOpen} />
+    <SearchEmailList setOpen={setOpen} setOpenedMail={setOpenedMail}  setDrawerAncher={setDrawerAncher}/>
   </div>
 </div>
 
 
     </div> {/* Takes 4/12 = 33% */}
-  <div className={`${responseCheck ? 'col-span-5' : 'col-span-12 m:col-span-8 xl:col-span-7'}`}>
-    <MailBody /></div> {/* Takes 8/12 = 66% */}
+  <div className={`hidden lg:block ${responseCheck ? 'col-span-5' : 'col-span-12 m:col-span-8 xl:col-span-7'}`}>
+    <MailBody openedMail={openedMail} /></div> {/* Takes 8/12 = 66% */}
 </div>
 
 
       <Drawer
   open={open}
   onClose={() => setOpen(false)}
-  anchor="left" // or "right"
+  anchor={drawerAncher} // or "right"
   sx={{
     '& .MuiDrawer-paper': {
-      width: '300px', // or '50%', '30vw', etc.
+      width:drawerAncher === 'left' ? '260px' : '450px', // or '50%', '30vw', etc.
     },
   }}
 >
        <div className='p-5'>
-        <Composemenu /> 
+        {
+          drawerAncher === 'left' ? (<Composemenu />) : ( <MailBody setOpen={setOpen} openedMail={openedMail} />)
+        }
+         
         </div> 
       </Drawer>
     </div>
