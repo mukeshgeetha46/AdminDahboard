@@ -5,6 +5,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { GoTrash } from "react-icons/go";
 import { FaStar } from "react-icons/fa";
 import { getTagColor } from '../../utils/GetTagColors';
+import useWindowSize from '../../utils/useWindowSize';
 
 const SearchEmailList = ({setOpen,setOpenedMail,setDrawerAncher}) => {
 
@@ -121,13 +122,19 @@ const SearchEmailList = ({setOpen,setOpenedMail,setDrawerAncher}) => {
 
 
 
+const { width } = useWindowSize();
 
 const Handlemail = (id) => {
-  setDrawerAncher('right')
+  if(width < 750){
+ setDrawerAncher('right')
   setOpen(true)
+  }
+ 
   setOpenedMail(id)
     setClickedMail(id)
 }
+
+
   return (
     <div className=''>
         <div className='block lg:hidden pl-4 pr-4 pt-4'>

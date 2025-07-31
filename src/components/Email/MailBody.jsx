@@ -181,7 +181,7 @@ const MailBody = ({openedMail,setOpen}) => {
 };
   return (
     <div>
-        <span onClick={()=>setOpen(false)}>
+        <span className='block lg:hidden' onClick={()=>setOpen(false)}>
         <FaArrowLeft size={20} />
       </span>
       <div className='p-5'>

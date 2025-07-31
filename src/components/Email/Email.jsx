@@ -53,7 +53,7 @@ const EmailPage = () => {
 
 
     </div> {/* Takes 4/12 = 33% */}
-  <div className={`hidden lg:block ${responseCheck ? 'col-span-5' : 'col-span-12 m:col-span-8 xl:col-span-7'}`}>
+  <div className={`hidden lg:block ${responseCheck ? 'col-span-5' : 'col-span-12 md:col-span-8 xl:col-span-7'}`}>
     <MailBody openedMail={openedMail} /></div> {/* Takes 8/12 = 66% */}
 </div>
 
