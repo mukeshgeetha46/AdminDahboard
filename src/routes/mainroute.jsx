@@ -4,6 +4,7 @@ import MainBlogDetails from '../components/Blog/MainBlogDetails.jsx';
 import EmailPage from '../components/Email/Email.jsx';
 import Kanban from '../components/Kanban/Kanban.jsx';
 import Notes from '../components/Notes/Notes.jsx';
+import Pricing from '../components/Pricing/Pricing.jsx';
 import MainLayout from '../layouts/MainLayout/index.jsx';
 import Home from '../pages/Home.jsx';
 
@@ -35,6 +36,10 @@ const MainRoutes =
       {
         path:'kanban',
         element: <Kanban />
+      },
+      {
+        path:'pages/pricing',
+        element: <Pricing />
       }
       // Add more routes here as needed
     ],

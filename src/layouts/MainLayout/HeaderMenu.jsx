@@ -12,7 +12,7 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 const HeaderMenu = ({setMenuopen}) => {
   return (
-    <div className='bg-white m-2 lg:m-7 sticky top-0 z-50 shadow rounded-2xl shadow-md '>
+    <div className='bg-white m-2 lg:m-7 sticky top-0 z-50 rounded-2xl shadow-md '>
 
       <div className="hidden lg:flex justify-between items-center m-[19px]">
         <div>

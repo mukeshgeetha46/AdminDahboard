@@ -12,6 +12,7 @@ import { TfiShoppingCartFull } from "react-icons/tfi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsKanbanFill } from "react-icons/bs";
+import { IoPricetagsOutline } from "react-icons/io5";
 
 
 
@@ -30,5 +31,6 @@ export {
     TfiShoppingCartFull,
     IoMdNotificationsOutline,
     MdOutlineEmail,
-    BsKanbanFill
+    BsKanbanFill,
+    IoPricetagsOutline
 }

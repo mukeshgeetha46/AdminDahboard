@@ -1,7 +1,7 @@
 // // src/config/menus.js
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
-import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill } from '../icons/index'
+import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline } from '../icons/index'
 
 
 
@@ -44,6 +44,13 @@ const menus = [
         { label: 'Email', class: 'menu',icon:<MdOutlineEmail size={25} />,mainpath:"/email" },
         { label: 'Kanban', class: 'menu',icon:<BsKanbanFill size={25} />,mainpath:"/kanban" },
         
+      ],
+    },
+    {
+      label: 'PAGES',
+      class: 'menutitle',
+      mainmenu: [
+        { label: 'Pricing', class: 'menu',icon:<IoPricetagsOutline size={25} />,mainpath:"/pages/pricing" },
       ],
     },
   
