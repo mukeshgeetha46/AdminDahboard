@@ -1,7 +1,9 @@
 // // src/config/menus.js
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
-import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline } from '../icons/index'
+import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
+  FaQuestionCircle,IoSettingsOutline
+ } from '../icons/index'
 
 
 
@@ -51,6 +53,8 @@ const menus = [
       class: 'menutitle',
       mainmenu: [
         { label: 'Pricing', class: 'menu',icon:<IoPricetagsOutline size={25} />,mainpath:"/pages/pricing" },
+        { label: 'FAQ', class: 'menu',icon:<FaQuestionCircle size={25} />,mainpath:"/pages/faq" },
+        { label: 'Account Setting', class: 'menu',icon:<IoSettingsOutline size={25} />,mainpath:"/pages/account-settings" },
       ],
     },
   

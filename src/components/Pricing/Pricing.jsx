@@ -5,8 +5,52 @@ import silverMedal from '../../assets/Pricing/silver-pot-BgZ5AR88.svg'
 import bronzeMedal from '../../assets/Pricing/bronze-pot-BwagRgyb.svg'
 import goldMedal from '../../assets/Pricing/gold-pot-BSEiMSHc.svg'
 import { TiTick } from "react-icons/ti";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const Pricing = () => {
+
+  const pricingDetails = [
+    {
+      title:'SILVER',
+      rate:'FREE',
+      monthly:false,
+      pricingDetails:[
+        {available:true,lable:"3 Members",valid:true},
+        {available:true,lable:"Single Device",valid:true},
+        {available:false,lable:"50GB Storage",valid:false},
+        {available:false,lable:"Monthly Backups",valid:false},
+        {available:false,lable:"Permissions & workflows",valid:false},
+      ],
+      action:'Choose Silver'
+    },
+    {
+      title:'bronze',
+      rate:'4.99',
+      monthly:true,
+      pricingDetails:[
+        {available:true,lable:"5 Members",valid:true},
+        {available:true,lable:"Multiple Device",valid:true},
+        {available:false,lable:"80GB Storage",valid:true},
+        {available:false,lable:"Monthly Backups",valid:false},
+        {available:false,lable:"Permissions & workflows",valid:false},
+      ],
+      action:'Choose Bronz'
+    },
+    {
+      title:'SILVER',
+      rate:'9.99',
+      monthly:true,
+      pricingDetails:[
+        {available:true,lable:"5 Members",valid:true},
+        {available:true,lable:"Single Device",valid:true},
+        {available:false,lable:"120GB Storage",valid:true},
+        {available:false,lable:"Monthly Backups",valid:true},
+        {available:false,lable:"Permissions & workflows",valid:true},
+      ],
+      action:'Choose Gold'
+    },
+  ]
+
   return (
     <div>
       <BreadCrums title={`Pricing`} Breadcrums1={`Dashboard`} Breadcrums2={`Pricing`} />
@@ -28,105 +72,50 @@ const Pricing = () => {
         
 
         <div className='grid grid-cols-6 gap-7'>
-          <div className='col-span-6 md:col-span-3 lg:col-span-2 bg-white rounded-2xl shadow p-4 flex flex-col gap-7'>
-             <p className='text-[12px] leading-[17px] font-medium text-[#707A82]'>SILVER</p>
+          {
+            pricingDetails.map((pricing)=>(
+             <div className='col-span-6 md:col-span-3 lg:col-span-2 bg-white rounded-2xl shadow p-4 flex flex-col gap-7'>
+             <p className='text-[12px] leading-[17px] font-medium text-[#707A82]'>{pricing.title}</p>
 
              <div>
               <img src={silverMedal} className='w-[80px] h-[80px]' />
              </div>
-                <p className='text-[44px] leading-[55px] font-bold'>FREE</p>
+                 <p className='text-[44px] leading-[55px] font-bold'>
+                  {pricing.monthly && (
+                    <span className="text-[16px] leading-[19px] font-medium items-start">$</span>
+                   )}
+                  {pricing.rate}
+                  {pricing.monthly && (
+    <span className='text-[16px] leading-[24px]'>/mo</span>
+  )}
+                  </p>
 
                 <div className='flex flex-col gap-6'>
+                  {
+                    pricing.pricingDetails.map((details)=>(
                   <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>3 Members</p>
+                  <span>{details.valid ? <TiTick /> : <IoIosCloseCircleOutline />}</span>
+                 <p
+  className={`text-[16px] leading-[24px] font-medium ${!details.valid ? 'text-gray-400 select-none pointer-events-none' : ''}`}
+>
+  {details.lable}
+</p>
+
                 </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Single Device</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>50GB Storage</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Monthly Backups</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Permissions & workflows</p>
-                </div>
+                    ))
+                  }
+                  
+                 
                 </div>
 
-                <button className='bg-[#0085DB] text-[16px] pl-20 pr-20 pt-2 pb-2 rounded-3xl text-white'>Choose Silver</button>
-          </div>
-          <div className='col-span-6 md:col-span-3 lg:col-span-2 bg-white rounded-2xl shadow p-4 flex flex-col gap-7'>
-             <p className='text-[12px] leading-[17px] font-medium text-[#707A82]'>SILVER</p>
+                <button className="bg-[#0085DB] text-[16px] pl-20 pr-20 pt-2 pb-2 rounded-3xl text-white shadow-md hover:shadow-lg transition-shadow">
+  {pricing.action}
+</button>
 
-             <div>
-              <img src={bronzeMedal} className='w-[80px] h-[80px]' />
-             </div>
-                <p className='text-[44px] leading-[55px] font-bold'><span className='text-[16px] leading-[19px] font-medium items-start'>$</span> 4.99<span className='text-[16px] leading-[24px]'>/mo</span></p>
-
-                <div className='flex flex-col gap-6'>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>5 Members</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Multiple Device</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>80GB Storage</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Monthly Backups</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Permissions & workflows</p>
-                </div>
-                </div>
-
-                <button className='bg-[#0085DB] text-[16px] pl-20 pr-20 pt-2 pb-2 rounded-3xl text-white'>Choose Silver</button>
-          </div>
-          <div className='col-span-6 md:col-span-3 lg:col-span-2 bg-white rounded-2xl shadow p-4 flex flex-col gap-7'>
-             <p className='text-[12px] leading-[17px] font-medium text-[#707A82]'>SILVER</p>
-
-             <div>
-              <img src={goldMedal} className='w-[80px] h-[80px]' />
-             </div>
-                <p className='text-[44px] leading-[55px] font-bold'><span className='text-[16px] leading-[19px] font-medium items-start'>$</span> 9.99<span className='text-[16px] leading-[24px]'>/mo</span></p>
-
-                <div className='flex flex-col gap-6'>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>5 Members</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Single Device</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>120GB Storage</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Monthly Backups</p>
-                </div>
-                  <div className='flex gap-2 items-center'>
-                  <span><TiTick /></span>
-                  <p className='text-[16px] leading-[24px] font-medium'>Permissions & workflows</p>
-                </div>
-                </div>
-
-                <button className='bg-[#0085DB] text-[16px] pl-20 pr-20 pt-2 pb-2 rounded-3xl text-white'>Choose Silver</button>
-          </div>
+          </div> 
+            ))
+          }
+         
          
         </div>
 

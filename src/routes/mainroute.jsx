@@ -1,7 +1,9 @@
 // src/routes/mainroute.jsx
+import AccountSetting from '../components/AccountSetting/AccountSetting.jsx';
 import MainBlog from '../components/Blog/MainBlog.jsx';
 import MainBlogDetails from '../components/Blog/MainBlogDetails.jsx';
 import EmailPage from '../components/Email/Email.jsx';
+import Faq from '../components/FAQ/Faq.jsx';
 import Kanban from '../components/Kanban/Kanban.jsx';
 import Notes from '../components/Notes/Notes.jsx';
 import Pricing from '../components/Pricing/Pricing.jsx';
@@ -40,7 +42,15 @@ const MainRoutes =
       {
         path:'pages/pricing',
         element: <Pricing />
-      }
+      },
+      {
+        path:'pages/faq',
+        element: <Faq />
+      },
+      {
+        path:'pages/account-settings',
+        element: <AccountSetting />
+      },
       // Add more routes here as needed
     ],
   };

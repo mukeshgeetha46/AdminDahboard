@@ -13,6 +13,9 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsKanbanFill } from "react-icons/bs";
 import { IoPricetagsOutline } from "react-icons/io5";
+import { FaQuestionCircle } from "react-icons/fa";
+import { IoSettingsOutline } from "react-icons/io5";
+
 
 
 
@@ -32,5 +35,7 @@ export {
     IoMdNotificationsOutline,
     MdOutlineEmail,
     BsKanbanFill,
-    IoPricetagsOutline
+    IoPricetagsOutline,
+    FaQuestionCircle,
+    IoSettingsOutline
 }
