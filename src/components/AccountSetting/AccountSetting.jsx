@@ -38,9 +38,9 @@ const AccountSetting = () => {
       </div>
       <div className='bg-white rounded-b-2xl pl-2 pr-2 pb-2 xl:pl-6 xl:pr-6 xl:pb-6'>
         { selectTab === 'Account' && (<Account />) }
-        { selectTab === 'Account' && (<Bills />) }
+        { selectTab === 'Bills' && (<Bills />) }
         { selectTab === 'Notification' && (<Notification />) }
-        { selectTab === 'Account' && (<Security />) }
+        { selectTab === 'Security' && (<Security />) }
       </div>
     </div>
   )

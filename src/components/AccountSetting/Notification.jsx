@@ -5,12 +5,15 @@ import { SiTicktick } from "react-icons/si";
 import { WiTime3 } from "react-icons/wi";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
+import { FaRegClock } from "react-icons/fa";
+import { CiPause1 } from "react-icons/ci";
 
 
 const Notification = () => {
   return (
-    <div className='flex justify-center items-center'>
-       <div className='bg-white shadow rounded-2xl w-full  xl:w-[70%] m-5 p-5 flex flex-col gap-4'>
+    <div>
+      <div className='flex flex-col justify-center items-center'>
+       <div className='bg-white shadow rounded-2xl w-full  xl:w-[70%] m-0 xl:m-5 p-5 flex flex-col gap-4'>
           <p className='text-[20px] leading-[25px] font-semibold'>Notification Preferences</p>
 
           <p className='text-[14px] leading-[20px] text-[#707A82]'>Select the notificaitons ou would like to receive via email. Please note that you cannot opt out of receving service messages, such as payment, security or legal notifications.</p>
@@ -99,6 +102,62 @@ const Notification = () => {
       </div>
            </div>
         </div> 
+       
+<div className='bg-white shadow rounded-2xl w-full  xl:w-[70%] m-0 xl:m-5 p-5 flex flex-col gap-4'>
+          <p className='text-[20px] leading-[25px] font-semibold'>Date & Time</p>
+
+          <p className='text-[14px] leading-[20px] text-[#707A82]'>Time zones and calendar display settings.</p>
+
+           <div className='flex flex-col gap-8'>
+
+
+      <div className='flex justify-between items-center'>
+      <div className='flex items-center gap-2'>
+        <p className='bg-[#E5F3FB] p-5 w-[50px] h-[50px] flex justify-center items-center'><span className="text-[24px]">
+       <FaRegClock />
+     </span>
+      </p>
+
+      <div className='flex flex-col gap-1'>
+        <p className='text-[16px] leading-[19px] font-medium'>Time zone</p>
+        <p className='text-[14px] leading-[17px] font-medium w-[70%] xl:w-[100%]'>(UTC + 02:00) Athens, Bucharet</p>
+      </div>
+      </div>
+
+       <ToggleSwitch />
+      </div>
+      
+           </div>
+        </div> 
+<div className='bg-white shadow rounded-2xl w-full  xl:w-[70%] m-0 xl:m-5 p-5 flex flex-col gap-4'>
+          <p className='text-[20px] leading-[25px] font-semibold'>Ignore Tracking</p>
+           <div className='flex flex-col gap-8'>
+
+
+      <div className='flex justify-between items-center'>
+      <div className='flex items-center gap-2'>
+        <p className='bg-[#E5F3FB] p-5 w-[50px] h-[50px] flex justify-center items-center'><span className="text-[24px]">
+       <CiPause1 />
+     </span>
+      </p>
+
+      <div className='flex flex-col gap-1'>
+        <p className='text-[16px] leading-[19px] font-medium'>Ignore Browser Tracking</p>
+        <p className='text-[14px] leading-[17px] font-medium w-[70%] xl:w-[100%]'>Browser Cookie</p>
+      </div>
+      </div>
+
+       <ToggleSwitch />
+      </div>
+      
+           </div>
+        </div> 
+        
+    </div>
+     <div className='m-5 flex justify-end items-start gap-3'>
+         <button className='text-[16px] bg-[#0085DB] pl-4 pr-4 pt-2 pb-2 rounded-full text-white'>Save</button>
+         <button className='text-[16px] bg-[#FFEDE9] pl-4 pr-4 pt-2 pb-2 rounded-full text-[#FB977D]'>Cancel</button>
+       </div>
     </div>
   )
 }
