@@ -31,7 +31,7 @@ const AccountSetting = () => {
             tab.map((t,i)=>(
                 <div key={i} className={`flex items-center p-6 gap-1  ${selectTab == t.label ? 'border-b-2 text-[#0085DB]' : 'hover:bg-gray-100 text-gray-700'}`} onClick={()=>handleTab(t.label)}>
                     <span>{t.icon}</span>
-                    <p className='text-[14px]'>{t.label}</p>
+                    <p className='hidden lg:block text-[14px]'>{t.label}</p>
                 </div>
             ))
          }
