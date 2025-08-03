@@ -15,7 +15,7 @@ const Account = () => {
 
              <div className='profile flex justify-center items-center mt-5'>
               <div>
-                 <Profile wh={30} url={user} /> 
+                 <Profile wh={25} url={user} /> 
               </div>
              </div>
 
@@ -97,6 +97,10 @@ const Account = () => {
                 </div>
              </div>
           </div>
+       </div>
+       <div className='m-5 flex justify-end items-start gap-3'>
+         <button className='text-[16px] bg-[#0085DB] pl-4 pr-4 pt-2 pb-2 rounded-full text-white'>Save</button>
+         <button className='text-[16px] bg-[#FFEDE9] pl-4 pr-4 pt-2 pb-2 rounded-full text-[#FB977D]'>Cancel</button>
        </div>
     </div>
   )
