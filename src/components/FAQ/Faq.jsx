@@ -77,22 +77,25 @@ const anchorRefs = useRef({});
 
                     return (
                         <div>
-                        <div className='faqheading p-6 border-b border-[#e5eaef]'>
-            
-           <div className='flex justify-between items-center'>
-            <p className='font-bold'>{faq.question}</p>
-            <span ref={anchorRefs.current[faq.id]} onClick={()=>Handelopen(faq)}>{open ? <FaChevronDown /> : <FaChevronUp />}</span>
-           </div>
-           
-         </div>
-         {
-            openMenuId === faq.id && (
-           <div className='p-6' anchorRef={anchorRefs.current[faq.id]}>
-             <p className='text-gray-400'>{faq.answer}</p>
-          </div>
-            )
-         }  
-                     </div>
+  <div className='faqheading p-6 border-b border-[#e5eaef]'>
+    <div className='flex justify-between items-center'>
+      <p className='font-bold'>{faq.question}</p>
+      <span ref={anchorRefs.current[faq.id]} onClick={() => Handelopen(faq)}>
+        {openMenuId === faq.id ? <FaChevronDown /> : <FaChevronUp />}
+      </span>
+    </div>
+  </div>
+
+  <div
+    className={`transition-all duration-500 ease-in-out overflow-hidden px-6 ${
+      openMenuId === faq.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+    }`}
+    ref={anchorRefs.current[faq.id]}
+  >
+    <p className='text-gray-400 py-4'>{faq.answer}</p>
+  </div>
+</div>
+
                     )
                 })
             }

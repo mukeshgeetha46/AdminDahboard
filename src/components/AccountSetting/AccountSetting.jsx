@@ -36,12 +36,34 @@ const AccountSetting = () => {
             ))
          }
       </div>
-      <div className='bg-white rounded-b-2xl pl-2 pr-2 pb-2 xl:pl-6 xl:pr-6 xl:pb-6'>
-        { selectTab === 'Account' && (<Account />) }
-        { selectTab === 'Bills' && (<Bills />) }
-        { selectTab === 'Notification' && (<Notification />) }
-        { selectTab === 'Security' && (<Security />) }
-      </div>
+      
+       <div className='relative'>
+  <div className={`bg-white rounded-b-2xl pl-2 pr-2 pb-2 xl:pl-6 xl:pr-6 xl:pb-6 absolute top-0 left-0 w-full transition-all duration-500 ease-in-out ${
+    selectTab === 'Account' ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible -translate-x-3'
+  }`}>
+    <Account />
+  </div>
+
+  <div className={`bg-white rounded-b-2xl pl-2 pr-2 pb-2 xl:pl-6 xl:pr-6 xl:pb-6 absolute top-0 left-0 w-full transition-all duration-500 ease-in-out ${
+    selectTab === 'Bills' ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible -translate-x-3'
+  }`}>
+    <Bills />
+  </div>
+
+  <div className={`bg-white rounded-b-2xl pl-2 pr-2 pb-2 xl:pl-6 xl:pr-6 xl:pb-6 absolute top-0 left-0 w-full transition-all duration-500 ease-in-out ${
+    selectTab === 'Notification' ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible -translate-x-3'
+  }`}>
+    <Notification />
+  </div>
+
+  <div className={`bg-white rounded-b-2xl pl-2 pr-2 pb-2 xl:pl-6 xl:pr-6 xl:pb-6 absolute top-0 left-0 w-full transition-all duration-500 ease-in-out ${
+    selectTab === 'Security' ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible -translate-x-3'
+  }`}>
+    <Security />
+  </div>
+</div>
+
+      
     </div>
   )
 }
