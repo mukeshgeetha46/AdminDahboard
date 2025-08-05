@@ -14,6 +14,7 @@ import profile3 from '../../assets/Profile/user-2-BtZPKsUg.jpg'
 import profile4 from '../../assets/Profile/user-6-DXcW9yFx.jpg'
 import Sceduler from './Sceduler'
 import PaymentHistroy from './PaymentHistroy'
+import WidgetHistory from './WidgetHistory'
 
 const WidgetCard = () => {
 
@@ -214,7 +215,7 @@ const WidgetCard = () => {
                 <PaymentHistroy />
                </div>
                <div className='col-span-4 xl:col-span-1'> 
-                <Sceduler />
+                <WidgetHistory />
                </div>
             </div>
          </div>

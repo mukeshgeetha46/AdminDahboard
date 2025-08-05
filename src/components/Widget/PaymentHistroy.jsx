@@ -61,8 +61,8 @@ const PaymentHistroy = () => {
     )
        }
       </div>
-      <div className='flex justify-center'>
-        <button className=''>View All Transactions</button>
+      <div className='flex justify-center mt-10'>
+        <button className='border border-[#0085db] rounded-full w-full pt-2 pb-2 text-[#0085db]'>View All Transactions</button>
       </div>
       
     </div>
