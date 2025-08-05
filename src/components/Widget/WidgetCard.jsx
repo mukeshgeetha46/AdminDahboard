@@ -48,22 +48,26 @@ const WidgetCard = () => {
       {
         symbol:'₽',
         rate:'2358+23%',
-        title:'Sales'
+        title:'Sales',
+        abstract_img:abstract1
       },
       {
         symbol:'₽',
         rate:'356+8%',
-        title:'Refunds'
+        title:'Refunds',
+        abstract_img:abstract2
       },
       {
         symbol:'₽',
         rate:'$23.8K-3%',
-        title:'Earnings'
+        title:'Earnings',
+        abstract_img:abstract1
       },
       {
         symbol:'₽',
         rate:'2358+23%',
-        title:'Sales'
+        title:'Sales',
+        abstract_img:abstract3
       },
     ]
 
@@ -79,7 +83,7 @@ const WidgetCard = () => {
                   <div className='col-span-4 lg:col-span-1 mt-5'>
 <div className='bg-[#0085db] p-5 rounded-2xl shadow relative'> 
                 <div className="absolute top-0 right-0 w-20 h-20">
-    <img src={abstract1} alt="decor" className="w-full h-full object-cover rounded-tr-2xl" />
+    <img src={item.abstract_img} alt="decor" className="w-full h-full object-cover rounded-tr-2xl" />
   </div>
                <div className='flex flex-col gap-5'>
                 <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center mb-4">
@@ -203,13 +207,13 @@ const WidgetCard = () => {
          </div>
          <div className='col-span-4 gap-0'>
             <div className='grid grid-cols-3 gap-4'>
-               <div className='col-span-1'> 
+               <div className='col-span-4 xl:col-span-1'> 
                 <Sceduler />
                </div>
-               <div className='col-span-1'> 
+               <div className='col-span-4 xl:col-span-1'> 
                 <PaymentHistroy />
                </div>
-               <div className='col-span-1'> 
+               <div className='col-span-4 xl:col-span-1'> 
                 <Sceduler />
                </div>
             </div>
