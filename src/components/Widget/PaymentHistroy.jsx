@@ -2,14 +2,45 @@ import React from 'react'
 import { RiPaypalLine } from "react-icons/ri";
 
 const PaymentHistroy = () => {
+
+    const transactions = [
+        {
+            name:'Paypal',
+            description:'Big Brands',
+            amount:'+$6,235'
+        },
+        {
+            name:'Wallet',
+            description:'Bill payment',
+            amount:'+$6,235'
+        },
+        {
+            name:'Credit Card',
+            description:'Money reversed',
+            amount:'+$6,235'
+        },
+        {
+            name:'Bank Transfer',
+            description:'Money added',
+            amount:'+$6,235'
+        },
+        {
+            name:'Refund',
+            description:'Bill Payment',
+            amount:'+$6,235'
+        },
+    ]
+
   return (
     <div className='bg-white rounded-2xl shadow p-6 h-[600px]'>
        <div>
         <p className='text-[18px] leading-[25px] font-semibold'>Payment Gateways</p>
         <p className='text-[14px] leading-[19px] text-[#707A82]'>Platform For Income</p>
        </div>
-
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col gap-3'>
+ {
+        transactions.map((transaction)=>(
+            <div className='flex justify-between items-center'>
          <div className='flex items-center gap-2 mt-5'>
                   <div
                         className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl"
@@ -26,6 +57,14 @@ const PaymentHistroy = () => {
        </div>
          <p className='text-[14px] leading-[19px] text-[#707A82]'>+$6,235</p>
       </div>
+        )
+    )
+       }
+      </div>
+      <div className='flex justify-center'>
+        <button className=''>View All Transactions</button>
+      </div>
+      
     </div>
   )
 }
