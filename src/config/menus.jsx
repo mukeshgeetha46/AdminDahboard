@@ -56,7 +56,7 @@ const menus = [
         { label: 'FAQ', class: 'menu',icon:<FaQuestionCircle size={25} />,mainpath:"/pages/faq" },
         { label: 'Account Setting', class: 'menu',icon:<IoSettingsOutline size={25} />,mainpath:"/pages/account-settings" },
         { label: 'Widget', class: 'menu',icon:<MdOutlineWidgets size={25} />, submenu:[
-          {s_label:'Cards',path:'/widgets/banners'},
+          {s_label:'Cards',path:'/widgets/cards'},
           {s_label:'Banners',path:'/widgets/banners'},
         ] },
       ],

@@ -8,6 +8,7 @@ import Kanban from '../components/Kanban/Kanban.jsx';
 import Notes from '../components/Notes/Notes.jsx';
 import Pricing from '../components/Pricing/Pricing.jsx';
 import WidgetBanner from '../components/Widget/Banner.jsx';
+import WidgetCard from '../components/Widget/WidgetCard.jsx';
 import MainLayout from '../layouts/MainLayout/index.jsx';
 import Home from '../pages/Home.jsx';
 
@@ -55,6 +56,10 @@ const MainRoutes =
       {
         path:'widgets/banners',
         element: <WidgetBanner />
+      },
+      {
+        path:'widgets/cards',
+        element: <WidgetCard />
       },
       // Add more routes here as needed
     ],
