@@ -15,6 +15,7 @@ import { BsKanbanFill } from "react-icons/bs";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { FaQuestionCircle } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
+import { MdOutlineWidgets } from "react-icons/md";
 
 
 
@@ -37,5 +38,6 @@ export {
     BsKanbanFill,
     IoPricetagsOutline,
     FaQuestionCircle,
-    IoSettingsOutline
+    IoSettingsOutline,
+    MdOutlineWidgets
 }

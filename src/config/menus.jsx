@@ -2,7 +2,7 @@
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
-  FaQuestionCircle,IoSettingsOutline
+  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets
  } from '../icons/index'
 
 
@@ -55,6 +55,10 @@ const menus = [
         { label: 'Pricing', class: 'menu',icon:<IoPricetagsOutline size={25} />,mainpath:"/pages/pricing" },
         { label: 'FAQ', class: 'menu',icon:<FaQuestionCircle size={25} />,mainpath:"/pages/faq" },
         { label: 'Account Setting', class: 'menu',icon:<IoSettingsOutline size={25} />,mainpath:"/pages/account-settings" },
+        { label: 'Widget', class: 'menu',icon:<MdOutlineWidgets size={25} />, submenu:[
+          {s_label:'Cards',path:'/widgets/banners'},
+          {s_label:'Banners',path:'/widgets/banners'},
+        ] },
       ],
     },
   
