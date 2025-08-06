@@ -21,7 +21,7 @@ const HeaderMenu = ({setMenuopen}) => {
         </p>
         </div>
          <div className="flex justify-between items-center gap-3">
-            <HeaderSearch />
+            <HeaderSearch placeholder={'try to searching...'} />
            <div>
              <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition">
         <MdOutlineDarkMode size={25} />
@@ -52,7 +52,7 @@ const HeaderMenu = ({setMenuopen}) => {
         <BiMenuAltLeft size={25} />
         </p>
 
-        <HeaderSearch />
+        <HeaderSearch placeholder={'try to searching...'} />
 
          <img className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition" src={companyLogo} />
          <p className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition">

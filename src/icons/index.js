@@ -16,6 +16,7 @@ import { IoPricetagsOutline } from "react-icons/io5";
 import { FaQuestionCircle } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineWidgets } from "react-icons/md";
+import { RiGraduationCapLine } from "react-icons/ri";
 
 
 
@@ -39,5 +40,6 @@ export {
     IoPricetagsOutline,
     FaQuestionCircle,
     IoSettingsOutline,
-    MdOutlineWidgets
+    MdOutlineWidgets,
+    RiGraduationCapLine
 }

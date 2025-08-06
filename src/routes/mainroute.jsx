@@ -7,6 +7,8 @@ import Faq from '../components/FAQ/Faq.jsx';
 import Kanban from '../components/Kanban/Kanban.jsx';
 import Notes from '../components/Notes/Notes.jsx';
 import Pricing from '../components/Pricing/Pricing.jsx';
+import Allteachers from '../components/School/Allteachers.jsx';
+import TeacherDetail from '../components/School/TeacherDetail.jsx';
 import WidgetBanner from '../components/Widget/Banner.jsx';
 import WidgetCard from '../components/Widget/WidgetCard.jsx';
 import MainLayout from '../layouts/MainLayout/index.jsx';
@@ -60,6 +62,14 @@ const MainRoutes =
       {
         path:'widgets/cards',
         element: <WidgetCard />
+      },
+      {
+        path:'teachers/all-teachers',
+        element: <Allteachers />
+      },
+      {
+        path:'teachers/teachers-details',
+        element: <TeacherDetail />
       },
       // Add more routes here as needed
     ],

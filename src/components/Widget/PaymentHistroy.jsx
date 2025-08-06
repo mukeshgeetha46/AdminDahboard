@@ -1,5 +1,9 @@
 import React from 'react'
 import { RiPaypalLine } from "react-icons/ri";
+import { IoWalletOutline } from "react-icons/io5";
+import { BsCreditCard } from "react-icons/bs";
+import { CiBank } from "react-icons/ci";
+import { VscDebugRestart } from "react-icons/vsc";
 
 const PaymentHistroy = () => {
 
@@ -7,27 +11,37 @@ const PaymentHistroy = () => {
         {
             name:'Paypal',
             description:'Big Brands',
-            amount:'+$6,235'
+            amount:'+$6,235',
+            icon:<RiPaypalLine color='#0085DB' />,
+            bg:'#E5F3FB',
         },
         {
             name:'Wallet',
             description:'Bill payment',
-            amount:'+$6,235'
+            amount:'+$6,235',
+             icon:<IoWalletOutline color='#fb977d' />,
+             bg:'#FFEDE9'
         },
         {
             name:'Credit Card',
             description:'Money reversed',
-            amount:'+$6,235'
+            amount:'+$6,235',
+             icon:<BsCreditCard color='#916fdd' />,
+             bg:'#F1EBFF'
         },
         {
             name:'Bank Transfer',
             description:'Money added',
-            amount:'+$6,235'
+            amount:'+$6,235',
+             icon:<CiBank color='#09c97f' />,
+             bg:'#DFFFF3'
         },
         {
             name:'Refund',
             description:'Bill Payment',
-            amount:'+$6,235'
+            amount:'+$6,235',
+             icon:<VscDebugRestart color='#f8b564' />,
+             bg:'#FFF6EA'
         },
     ]
 
@@ -44,18 +58,17 @@ const PaymentHistroy = () => {
          <div className='flex items-center gap-2 mt-5'>
                   <div
                         className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl"
-                        style={{ backgroundColor: '#E5F3FB' }}
+                        style={{ backgroundColor: transaction.bg }}
                       >
-                        <RiPaypalLine color='#0085DB' />
+                        {transaction.icon}
                       </div>
 
                       <div>
-                         <p className='text-[16px] leading-[19px] font-semibold'>Paypal</p>
-        <p className='text-[14px] leading-[19px] text-[#707A82]'>Big Brands
-</p>
+                         <p className='text-[16px] leading-[19px] font-semibold'>{transaction.name}</p>
+        <p className='text-[14px] leading-[19px] text-[#707A82]'>{transaction.description}</p>
                       </div>
        </div>
-         <p className='text-[14px] leading-[19px] text-[#707A82]'>+$6,235</p>
+         <p className='text-[14px] leading-[19px] text-[#707A82]'>{transaction.amount}</p>
       </div>
         )
     )

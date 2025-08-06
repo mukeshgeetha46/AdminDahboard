@@ -2,7 +2,7 @@
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
-  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets
+  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine
  } from '../icons/index'
 
 
@@ -19,7 +19,6 @@ const menus = [
       label: 'APPS',
       class: 'menutitle',
       mainmenu: [
-        { label: 'Contact', class: 'menu',icon:<IoCallOutline size={25} /> },
         { 
           label: 'Blog',
           class: 'menu',
@@ -39,9 +38,7 @@ const menus = [
         ] },
         { label: 'Users Profile', class: 'menu',icon:<FaRegUser size={25} />, submenu:[
           {s_label:'Profile One',path:'/user/profileone'},
-          {s_label:'Profile two',path:'/user/profileone'},
         ] },
-        { label: 'Charts', class: 'menu',icon:<BsChatDots size={25} /> },
         { label: 'Notes', class: 'menu',icon:<FaRegNoteSticky size={25} />,mainpath:"/notes" },
         { label: 'Email', class: 'menu',icon:<MdOutlineEmail size={25} />,mainpath:"/email" },
         { label: 'Kanban', class: 'menu',icon:<BsKanbanFill size={25} />,mainpath:"/kanban" },
@@ -58,6 +55,17 @@ const menus = [
         { label: 'Widget', class: 'menu',icon:<MdOutlineWidgets size={25} />, submenu:[
           {s_label:'Cards',path:'/widgets/cards'},
           {s_label:'Banners',path:'/widgets/banners'},
+        ] },
+      ],
+    },
+    {
+      label: 'SCHOOL PAGES',
+      class: 'menutitle',
+      mainmenu: [
+       
+        { label: 'Teachers', class: 'menu',icon:<RiGraduationCapLine size={25} />, submenu:[
+          {s_label:'All Teachers',path:'/teachers/all-teachers'},
+          {s_label:'Teachers Details',path:'/teachers/teachers-details'},
         ] },
       ],
     },
