@@ -152,7 +152,7 @@ const handletab = (tabs) => {
        <p className='text-[18px] leading-[25px] font-semibold'>Teacher Skill</p>
        <Border width={100} mt={4} />
 
-       <div className='tables mt-8'>
+       <div className='tables mt-8 overflow-y-auto'>
         <table className='w-full min-w-[800px]'>
                     <thead>
                       <tr className='border-b border-[#dfe5ef]'>
@@ -170,7 +170,7 @@ const handletab = (tabs) => {
                           <td className='pt-3 pr-3 pb-3'><p className='text-[14px] leading-[17px] font-medium text-left'>{teacher.code}</p></td>
                           <td className='pt-3 pr-3 pb-3'><p className='text-[14px] leading-[17px] font-medium text-left'>{teacher.subjectName}</p></td>
                           <td className='pt-3 pr-3 pb-3'>
-                            <div>
+                            <div className='flex flex-col gap-1'>
                               <p className='text-[14px] leading-[17px] font-medium text-left'>{teacher.marks}</p>
                              <div
   className="border-b-6 rounded-2xl"
@@ -180,7 +180,7 @@ const handletab = (tabs) => {
 
                             </div>
                             </td>
-                          <td className='pt-3 pr-3 pb-3'><p className='text-[14px] leading-[17px] font-medium text-left' style={{
+                          <td className='pt-3 pr-3 pb-3'><p className='text-[14px] leading-[17px] font-medium text-left pl-5 flex items-center' style={{
                             color:teacher.color
                           }}>{teacher.grade}</p></td>
                           
