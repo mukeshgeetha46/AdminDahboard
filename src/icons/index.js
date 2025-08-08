@@ -17,6 +17,7 @@ import { FaQuestionCircle } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineWidgets } from "react-icons/md";
 import { RiGraduationCapLine } from "react-icons/ri";
+import { GrTicket } from "react-icons/gr";
 
 
 
@@ -41,5 +42,6 @@ export {
     FaQuestionCircle,
     IoSettingsOutline,
     MdOutlineWidgets,
-    RiGraduationCapLine
+    RiGraduationCapLine,
+    GrTicket
 }

@@ -6,6 +6,7 @@ import Border from '../../pages/Border/Border'
 import { MdOutlineEdit } from "react-icons/md";
 import { IoTrashOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
+import SalaryReport from './SalaryReport';
 const TeacherDetail = () => {
 
   const userData = [
@@ -148,7 +149,8 @@ const handletab = (tabs) => {
         </div>
       </div>
      
-      <div className="row-span-5 bg-white rounded-2xl shadow p-6">
+      {tab === 'teacherskill' && (
+        <div className="row-span-5 bg-white rounded-2xl shadow p-6">
        <p className='text-[18px] leading-[25px] font-semibold'>Teacher Skill</p>
        <Border width={100} mt={4} />
 
@@ -190,7 +192,10 @@ const handletab = (tabs) => {
                   </table>
        </div>
       </div>
+      )}
      
+
+    {tab === 'salary' && <SalaryReport />}
     
     
           </div>

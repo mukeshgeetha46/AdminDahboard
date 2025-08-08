@@ -9,6 +9,7 @@ import Notes from '../components/Notes/Notes.jsx';
 import Pricing from '../components/Pricing/Pricing.jsx';
 import Allteachers from '../components/School/Allteachers.jsx';
 import TeacherDetail from '../components/School/TeacherDetail.jsx';
+import Ticket from '../components/Ticket/Ticket.jsx';
 import WidgetBanner from '../components/Widget/Banner.jsx';
 import WidgetCard from '../components/Widget/WidgetCard.jsx';
 import MainLayout from '../layouts/MainLayout/index.jsx';
@@ -70,6 +71,10 @@ const MainRoutes =
       {
         path:'teachers/teachers-details',
         element: <TeacherDetail />
+      },
+      {
+        path:'apps/tickets',
+        element: <Ticket />
       },
       // Add more routes here as needed
     ],

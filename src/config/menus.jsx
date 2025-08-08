@@ -2,7 +2,7 @@
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
-  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine
+  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket
  } from '../icons/index'
 
 
@@ -42,6 +42,7 @@ const menus = [
         { label: 'Notes', class: 'menu',icon:<FaRegNoteSticky size={25} />,mainpath:"/notes" },
         { label: 'Email', class: 'menu',icon:<MdOutlineEmail size={25} />,mainpath:"/email" },
         { label: 'Kanban', class: 'menu',icon:<BsKanbanFill size={25} />,mainpath:"/kanban" },
+        { label: 'Tickets', class: 'menu',icon:<GrTicket size={25} />,mainpath:"/apps/tickets" },
         
       ],
     },
