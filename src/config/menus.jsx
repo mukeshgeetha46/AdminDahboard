@@ -19,6 +19,7 @@ const menus = [
       label: 'APPS',
       class: 'menutitle',
       mainmenu: [
+           { label: 'Contact', class: 'menu',icon:<IoCallOutline size={25} />,mainpath:"/apps/contacts" },
         { 
           label: 'Blog',
           class: 'menu',

@@ -30,7 +30,7 @@ const ChatHeader = ({setOpensidebar,opensidebar,setSelectedUser}) => {
                   </div>
                 </div>
 
-                <div className='flex items-center gap-5'>
+                <div className='flex items-center gap-2 xl:gap-5'>
                     <span><FiPhoneCall color='#000000' size={22}  /></span>
                     <span><MdOutlineVideoCall color='#000000' size={22} /></span>
                     <span onClick={()=>setOpensidebar(!opensidebar)}><FiMenu color='#000000' size={22} /></span>
