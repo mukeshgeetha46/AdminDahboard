@@ -1,9 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
-import MainRoutes from './mainroute';
 import EcommerceRoutes from './Ecommers';
+import { AuthRoutes, MainRoutes } from './mainroute';
+
 
 
 const router = createBrowserRouter([
+  AuthRoutes,
   MainRoutes,
   ...EcommerceRoutes, // Spread because it's an array
 ]);

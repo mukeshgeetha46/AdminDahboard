@@ -2,7 +2,7 @@
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
-  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket,GiBlackBook
+  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket,GiBlackBook,MdLogin
  } from '../icons/index'
 
 
@@ -61,6 +61,7 @@ const menus = [
         ] },
       ],
     },
+    
     {
       label: 'SCHOOL PAGES',
       class: 'menutitle',
@@ -73,7 +74,18 @@ const menus = [
           { label: 'Classes', class: 'menu',icon:<GiBlackBook size={25} />,mainpath:"/school-pages/classes" },
       ],
     },
-  
+    {
+      label: 'AUTHENTICATION',
+      class: 'menutitle',
+      mainmenu: [
+       
+        // { label: 'Teachers', class: 'menu',icon:<RiGraduationCapLine size={25} />, submenu:[
+        //   {s_label:'All Teachers',path:'/teachers/all-teachers'},
+        //   {s_label:'Teachers Details',path:'/teachers/teachers-details'},
+        // ] },
+          { label: 'Login', class: 'menu',icon:<MdLogin size={25} />,mainpath:"/login" },
+      ],
+    },
   ];
   
   export default menus;

@@ -19,6 +19,7 @@ import { MdOutlineWidgets } from "react-icons/md";
 import { RiGraduationCapLine } from "react-icons/ri";
 import { GrTicket } from "react-icons/gr";
 import { GiBlackBook } from "react-icons/gi";
+import { MdLogin } from "react-icons/md";
 
 
 
@@ -45,5 +46,6 @@ export {
     MdOutlineWidgets,
     RiGraduationCapLine,
     GrTicket,
-    GiBlackBook
+    GiBlackBook,
+    MdLogin
 }

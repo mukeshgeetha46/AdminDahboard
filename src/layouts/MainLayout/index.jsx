@@ -12,6 +12,9 @@ import { GoDotFill } from "react-icons/go";
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import profile from '../../assets/Profile/user-10-BtaXUAQO.jpg'
+import { AiOutlineLogout } from "react-icons/ai";
+
 
 const MainLayout = () => {
 
@@ -66,12 +69,13 @@ const handleMenu = (label,path) => {
 
 
 <div class=" flex  justify-start bg-gray-100 relative ">
-		<div ref={sidebarRef} class={`${menuopen ? 'block' : 'hidden'} xl:block absolute xl:relative w-[280px] h-[98vh] xl:h-auto p-4 bg-white rounded-0 xl:rounded-2xl shadow-xl/20 ml-0 xl:ml-3 mt-0 xl:mt-6 mb-0 xl:mb-6 mr-0 xl:mr-6 pl-[0px] z-9999`}>
+		<div ref={sidebarRef} class={`${menuopen ? 'block' : 'hidden'} xl:block absolute xl:relative w-[280px] h-[98vh] xl:h-auto p-4
+     bg-white rounded-0 xl:rounded-2xl shadow-xl/20 ml-0 xl:ml-3 mt-0 xl:mt-6 mb-0 xl:mb-6 mr-0 xl:mr-6 pl-[0px] z-9999`}>
 		  <div className='flex justify-center '>
         <img src={logo} className='w-[175px]' />
       </div>
 
-       <div className='divmainMenu mt-10 overflow-y-auto max-h-[calc(100vh-170px)] pr-2'>
+       <div className='divmainMenu mt-10 overflow-y-auto h-[690px] pr-2'>
       {menus && menus.map((item) => (
   <div key={item.label}>
     <p className='pr-3 pt-3 pb-3 pl-8 text-gray-500 text-sm'>{item.label}</p>
@@ -116,6 +120,19 @@ const handleMenu = (label,path) => {
 
       
        
+      </div>
+
+      <div className='bg-[#E5F3FB] rounded-[5px] m-4 flex justify-between items-center'>
+      <div className='flex items-center p-3 gap-3'>
+         <img className="w-13 h-13 flex items-center justify-center rounded-full hover:bg-gray-300 cursor-pointer transition" src={profile} />
+        <div>
+            <p className="font-bold">Mike Nileson</p>
+            <p className="text-sm text-[#8d959b]">Admin</p>
+         </div>
+      </div>
+      <div className='pr-1'>
+        <span><AiOutlineLogout color='#0085DB' size={25} /></span>
+      </div>
       </div>
 		</div>
 
