@@ -3,6 +3,7 @@ import AccountSetting from '../components/AccountSetting/AccountSetting.jsx';
 import MainBlog from '../components/Blog/MainBlog.jsx';
 import MainBlogDetails from '../components/Blog/MainBlogDetails.jsx';
 import Chat from '../components/Chat/Chat.jsx';
+import Class from '../components/Classes/Class.jsx';
 import Contact from '../components/Contact/Contact.jsx';
 import EmailPage from '../components/Email/Email.jsx';
 import Faq from '../components/FAQ/Faq.jsx';
@@ -85,6 +86,10 @@ const MainRoutes =
       {
         path:'apps/contacts',
         element: <Contact />
+      },
+      {
+        path:'school-pages/classes',
+        element: <Class />
       },
       // Add more routes here as needed
     ],

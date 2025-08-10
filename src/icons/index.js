@@ -18,6 +18,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineWidgets } from "react-icons/md";
 import { RiGraduationCapLine } from "react-icons/ri";
 import { GrTicket } from "react-icons/gr";
+import { GiBlackBook } from "react-icons/gi";
 
 
 
@@ -43,5 +44,6 @@ export {
     IoSettingsOutline,
     MdOutlineWidgets,
     RiGraduationCapLine,
-    GrTicket
+    GrTicket,
+    GiBlackBook
 }

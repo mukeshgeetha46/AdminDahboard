@@ -2,7 +2,7 @@
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
-  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket
+  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket,GiBlackBook
  } from '../icons/index'
 
 
@@ -70,6 +70,7 @@ const menus = [
           {s_label:'All Teachers',path:'/teachers/all-teachers'},
           {s_label:'Teachers Details',path:'/teachers/teachers-details'},
         ] },
+          { label: 'Classes', class: 'menu',icon:<GiBlackBook size={25} />,mainpath:"/school-pages/classes" },
       ],
     },
   
