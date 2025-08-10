@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import profile from '../../assets/Profile/user-2-BtZPKsUg.jpg'
 import { GoDotFill } from "react-icons/go";
 import HeaderSearch from '../../layouts/MainLayout/Search/HeaderSearch';
+import { CiSearch } from 'react-icons/ci';
 
 const Chatlist = ({chatList,selectedUser,setSelectedUser}) => {
 
@@ -26,7 +27,18 @@ const Chatlist = ({chatList,selectedUser,setSelectedUser}) => {
                 </div>
 
                 <div className='mt-10 pl-5 pr-5'>
-                    <HeaderSearch width='100%' square={true} placeholder={'Search Contact'} />
+                    
+                      <div className="relative w-full">
+                      <CiSearch className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
+                      <input
+                      style={{
+                        width:'100%'
+                      }}
+                        type="text"
+                        placeholder={'Search Contact'}
+                        className={`pl-10 pr-4 py-2 border border-[#dfe5ef] focus:outline-none rounded-[5px]`}
+                      />
+                    </div>
                 </div>
 
                 <div className='filter pl-5 pr-5'>

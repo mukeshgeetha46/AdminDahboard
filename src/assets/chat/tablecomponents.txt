@@ -1,0 +1,512 @@
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import './TableComponent.css';
+import JoborderHeader from 'pages/Transaction/Joborder/Joborder';
+import JoborderFooter from 'pages/Transaction/Joborder/Jobfooter';
+import JoborderTable from 'pages/Transaction/Joborder/JoborderTable';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+import axios from 'axios';
+import AlertDialogSlide from 'components/alertdialog/AlertDialogSlide';
+
+const TableComponent = () => {
+  
+  const [tableData, setTableData] = useState([
+    { id: 1, product: '', width: '', length: '', flop: '', gauge: '', remarks: '', pieces: '', weight: '', reqWeight: '', rateFor: '', rate: '' },
+  ]);
+
+  const [snacktype,setSnackType] = useState('');
+  const [snackmessage, setSnackmessage] = useState('');
+  const cellRefs = useRef([]);
+  const okButtonRef = useRef(null);
+  const [ledger,setLedger] = useState([]);
+  const [is_ok,set_siok] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const autocompleteRefs = useRef([]);
+  const autocompleteRateforRefs = useRef([]);
+
+useEffect(() => {
+  fetchNewOrderNo();
+  fetchLedger();
+}, [])
+
+
+
+
+const focusNextElement = (currentElement) => {
+  const focusableElements = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+  const allFocusable = Array.from(document.querySelectorAll(focusableElements))
+    .filter(el => !el.disabled && el.getAttribute('tabindex') !== '-1');
+
+  const currentIndex = allFocusable.indexOf(currentElement);
+  if (currentIndex > -1 && currentIndex < allFocusable.length - 1) {
+    allFocusable[currentIndex + 1].focus();
+  }
+};
+
+// Function to handle global keydown events
+const handleKeyDown = (e) => {
+  // When Enter is pressed, move focus to the next element
+  if (e.key === 'Enter') {
+    e.preventDefault(); 
+    focusNextElement(document.activeElement);
+  }
+
+  // When down arrow is pressed, move focus to the next row/cell if not in autocomplete
+  if (e.key === 'ArrowDown') {
+    e.preventDefault(); // Prevent default down arrow behavior (scrolling, etc.)
+
+    const activeElement = document.activeElement;
+    const activeElementIsAutocomplete = activeElement && activeElement.closest('.MuiAutocomplete-root');
+
+    if (!activeElementIsAutocomplete) {
+      // Focus the next focusable element in the next row (cell)
+      focusNextElement(document.activeElement);
+    }
+  }
+};
+
+
+useEffect(() => {
+  window.addEventListener('keydown', handleKeyDown);
+  return () => {
+    window.removeEventListener('keydown', handleKeyDown);
+  };
+}, []);
+
+
+
+
+
+  const columns = [
+    { key: 'sno', label: 'SNO' },
+    { key: 'product', label: 'PRODUCT' },
+    { key: 'width', label: 'WIDTH' },
+    { key: 'length', label: 'LENGTH' },
+    { key: 'flop', label: 'FLOP' },
+    { key: 'gauge', label: 'GAUGE' },
+    { key: 'remarks', label: 'REMARKS' },
+    { key: 'pieces', label: 'PIECES' },
+    { key: 'weight', label: 'WEIGHT' },
+    { key: 'reqWeight', label: 'REQ. WGT' },
+    { key: 'rateFor', label: 'RATE FOR' },
+    { key: 'rate', label: 'RATE' },
+  ];
+
+
+  const fetchLedger = async() => { 
+    const response = await axios.get(`${import.meta.env.VITE_APP_API}/fetch-ledger-head`);
+     if(response.data){
+        if(response.data.code == 200){
+          setLedger(response.data.data.message);
+        }else{
+          setLedger([]);
+        }
+     }
+  }
+
+  const handleFocusesRemark = () => {
+        if (remarkRef.current) {
+            setTimeout(() => {
+              remarkRef.current.focus();
+            }, 0);
+          }
+  }
+
+ 
+  const calculateReqWeight = (row) => {
+    const { width, length, flop, gauge, pieces } = row;
+    
+    // Parse values to floats and check if they're valid numbers
+    const widthNum = parseFloat(width) || 0;
+    const lengthNum = parseFloat(length) || 0;
+    const flopNum = parseFloat(flop) || 0;
+    const gaugeNum = parseFloat(gauge) || 0;
+    const piecesNum = parseInt(pieces) || 0;
+  
+    // Calculate reqWeight based on the formula
+    const reqWeight = (((widthNum * (lengthNum + flopNum) * gaugeNum) / 3300) * piecesNum) / 1000;
+    
+    return reqWeight.toFixed(3);
+  };
+  
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true); // Set focused state
+  };
+
+  const handleBlurremark = () => {
+    setIsFocused(false); // Reset focused state
+  };
+
+  const handleKeyDownRemark = (event) => {
+    
+    if (isFocused && event.key === 'Tab' || event.key === 'Enter') {
+      event.preventDefault(); // Prevent default tab behavior if necessary
+      setAlerttitle('Do You want to Save Changes')
+      setButton1('Save');
+      setalertOpen(true);
+    }
+  };
+
+
+  const [openProductIndexes, setOpenProductIndexes] = useState([]);
+
+  const handleAutoCompleteOpenProduct = useCallback((index) => {
+    setOpenProductIndexes((prevIndexes) => [...prevIndexes, index]);
+  }, []);
+
+  const handleAutoCompleteCloseProduct = useCallback((index) => {
+    setOpenProductIndexes((prevIndexes) => prevIndexes.filter((i) => i !== index));
+  }, []);
+
+  const handleInputChange = (event, rowIndex, key, cellIndex) => {
+    const newValue = key === 'product' ? undefined : event.target.textContent;
+     
+    // Validate numeric input for specific columns
+    const isNumericField = ['width', 'length', 'flop', 'gauge', 'weight', 'reqWeight', 'pieces'].includes(key);
+    if (isNumericField) {
+      const regex = key === 'reqWeight' ? /^\d*\.?\d{0,3}$/ : /^\d*\.?\d{0,2}$/;
+      if (!regex.test(newValue) && newValue !== '') {
+        event.target.textContent = tableData[rowIndex][key];
+        return;
+      }
+    }
+  
+    const updatedData = [...tableData];
+    updatedData[rowIndex][key] = newValue;
+  
+    // Update reqWeight if necessary
+    if (['width', 'length', 'flop', 'gauge', 'pieces'].includes(key)) {
+      updatedData[rowIndex].reqWeight = calculateReqWeight(updatedData[rowIndex]);
+    }
+  
+    setTableData(updatedData);
+  
+    // Move cursor to end of the current cell
+    const cell = cellRefs.current[rowIndex * Object.keys(updatedData[0]).length + cellIndex];
+    if (cell) {
+      const range = document.createRange();
+      const selection = window.getSelection();
+      range.selectNodeContents(cell);
+      range.collapse(false);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    
+  
+    // Check if Enter key is pressed
+    if (event.key === 'Enter') {
+      event.preventDefault();
+   
+     
+      // Format numeric fields on Enter
+      if (['width', 'length', 'flop', 'gauge'].includes(key)) {
+        updatedData[rowIndex][key] = parseFloat(newValue).toFixed(2);
+      } else if (key === 'reqWeight' || key === 'weight') {
+        updatedData[rowIndex][key] = parseFloat(newValue).toFixed(3);
+      }
+      setTableData(updatedData);
+      event.target.textContent = updatedData[rowIndex][key];
+  
+      const totalCells = Object.keys(updatedData[0]).length;
+        if(alertopen){
+          alert('sdsdsds');
+        }
+
+  
+      // Check if we're on the last row and last cell (rate)
+      if (rowIndex === tableData.length - 1 && cellIndex === totalCells - 1) {
+        setButton1('Ok')
+        setAlerttitle('do you want add next item');
+        setalertOpen(true);
+      }
+      let nextCellIndex = cellIndex + 1;
+      const reqWeightIndex = Object.keys(updatedData[0]).indexOf('reqWeight');
+      const snotIndex = Object.keys(updatedData[0]).indexOf('sno');
+      
+      // Assuming newRowIndex is the index of the new row or you have a way to check if it's a new row
+      const newRowIndex = updatedData.length; // Change this to your logic for identifying a new row
+      
+      while (nextCellIndex < totalCells && (nextCellIndex === 0 || 
+          nextCellIndex === reqWeightIndex || 
+          (nextCellIndex === snotIndex && cellIndex >= newRowIndex))) {
+        nextCellIndex++;
+      }
+      
+
+    }
+  };
+  
+  const handleAddRow = () => {
+    const newRow = {
+      id: tableData.length + 1,
+      product: '',
+      width: '',
+      length: '',
+      flop: '',
+      gauge: '',
+      remarks: '',
+      pieces: '',
+      weight: '',
+      reqWeight: '',
+      rateFor: '',
+      rate: '',
+    };
+  
+    setTableData((prevData) => [...prevData, newRow]);
+    setalertOpen(false);
+  
+    setTimeout(() => {
+      const productIndex = Object.keys(newRow).indexOf('product');
+      const newRowIndex = tableData.length; // Index of the new row added
+      const productCell = cellRefs.current[newRowIndex * Object.keys(newRow).length + productIndex];
+      productCell?.focus(); // Focus on the product cell
+  
+      // Open the autocomplete dropdown for the new row
+      handleAutoCompleteOpenProduct(newRowIndex);
+    }, 0);
+  };
+  
+  
+
+
+  const handleBlur = (rowIndex, key) => {
+    const updatedData = [...tableData];
+    const value = updatedData[rowIndex][key];
+    if (['width', 'length', 'flop', 'gauge'].includes(key) && value) {
+      updatedData[rowIndex][key] = parseFloat(value).toFixed(2);
+    }
+    if (key === 'reqWeight' || key === 'weight') {
+      updatedData[rowIndex][key] = parseFloat(value).toFixed(3);
+    }
+    setTableData(updatedData);
+  };
+  
+
+  const calculateTotals = () => {
+    const totals = {
+      width: 0,
+      length: 0,
+      flop: 0,
+      gauge: 0,
+      pieces: 0,
+      weight: 0,
+      reqWeight: 0,
+    };
+  
+    tableData.forEach((row) => {
+      totals.width += parseFloat(row.width) || 0;
+      totals.length += parseFloat(row.length) || 0;
+      totals.flop += parseFloat(row.flop) || 0;
+      totals.gauge += parseFloat(row.gauge) || 0;
+      totals.pieces += parseInt(row.pieces) || 0;
+      totals.weight += parseFloat(row.weight) || 0;
+      totals.reqWeight += parseFloat(row.reqWeight) || 0;
+    });
+  
+    return totals;
+  };
+  const [alerttitle,setAlerttitle] = useState([]);
+  const [button1,setButton1] = useState([]);
+  const remarkRef = useRef(null);
+
+  const [alertopen, setalertOpen] = useState(false);
+  const handlesubmitjob = async() => {
+  
+    const res = await axios.post(`${import.meta.env.VITE_APP_API}/insert-joborder`,{
+      formData:formData,
+      billingatas:tableData
+    });
+    
+    if(res.data.code == 200){
+      setSnackbarOpen(true);
+      setSnackmessage('Your job order has been seved successfully');
+      setSnackType('success');
+      // setTableData({ id: 1, product: '', width: '', length: '', flop: '', gauge: '', remarks: '', pieces: '', weight: '', reqWeight: '', rateFor: '', rate: '' })
+      const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0]; 
+    setFormData((prevData) => ({
+      ...prevData,
+      orderNo: prevData.orderNo + 1,  // Assuming orderNo is a number you want to increment
+      orderDate: formattedDate,
+      poNo: '',
+      poDate: formattedDate,
+      dueDate: formattedDate,
+      measurement: 'INCH',
+      customer: null,
+    }));
+    
+    setalertOpen(false);
+      
+    }else{
+      setSnackmessage('Failed to save your job order');
+      setSnackType('error');
+      setSnackbarOpen(true);
+      setalertOpen(false);
+    }
+   }
+  // Inside your render method or component return
+  const totals = calculateTotals();
+
+
+  const handleClose = () => {
+    handleFocusesRemark();
+    setalertOpen(false);
+
+  };
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+
+  const snabaropen = () => {
+    setSnackbarOpen(true);
+  }
+
+  const snakbarclose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
+  }
+
+  const fetchNewOrderNo = async() => {
+    
+    const response = await axios.get(`${import.meta.env.VITE_APP_API}/maxorder-no`);
+     if(response.data){
+        if(response.data.code == 200){
+          const today = new Date();
+          const formattedDate = today.toISOString().split('T')[0]; // Format to YYYY-MM-DD
+          setFormData({
+            orderNo: response.data.data.message,
+            orderDate: formattedDate,
+            poNo: '',
+            poDate: formattedDate,
+            dueDate: formattedDate,
+            measurement: 'INCH',
+            customer: null,
+          })
+        } else{
+          setFormData({
+            orderNo: 0,
+            orderDate: formattedDate,
+            poNo: '',
+            poDate: formattedDate,
+            dueDate: formattedDate,
+            measurement: 'INCH',
+            customer: null,
+          })
+        }
+     }
+  }
+
+  const buttonData = [
+    { label: 'New', onClick: () => console.log('New clicked') },
+    { label: 'Open', onClick: () => console.log('Open clicked') },
+    { label: 'Save', onClick: () => console.log('Open clicked')  }, 
+    { label: 'Delete', onClick: () => console.log('Delete clicked') },
+    { label: 'First', onClick: () => console.log('First clicked') },
+    { label: 'Next', onClick: () => console.log('Next clicked') },
+    { label: 'Previous', onClick: () => console.log('Previous clicked') },
+    { label: 'Last', onClick: () => console.log('Last clicked') },
+  ];
+
+
+  const [formData, setFormData] = useState({
+    orderNo: '10',
+    orderDate: '2024-10-09',
+    poNo: '',
+    poDate: '',
+    dueDate: '',
+    measurement: 'INCH',
+    customer: null, // Store LedgerId here
+  });
+
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  
+
+  const handleAutocompleteChange = (event, newValue) => {
+    if (newValue) {
+      setFormData((prevData) => ({
+        ...prevData,
+        customer: newValue.LedgerId, // Update customer with LedgerId
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        customer: null, // Reset if nothing is selected
+      }));
+    }
+  };
+
+  console.log('formData',formData);
+  return (
+    <div className="table-container">
+      <JoborderHeader ledger={ledger} formData={formData} handleChange={handleChange} handleAutocompleteChange={handleAutocompleteChange} />
+       <div>
+       <JoborderTable 
+     columns={columns} 
+     cellRefs={cellRefs} 
+     handleInputChange={handleInputChange}
+     tableData={tableData}
+     totals={totals}
+     ledger={ledger}
+     setTableData={setTableData}
+     isModalOpen={isModalOpen}
+     setModalOpen={setModalOpen}
+     autocompleteRefs={autocompleteRefs}
+     autocompleteRateforRefs={autocompleteRateforRefs}
+     handleAutoCompleteOpenProduct={handleAutoCompleteOpenProduct}
+     handleAutoCompleteCloseProduct={handleAutoCompleteCloseProduct}
+     openProductIndexes={openProductIndexes}
+     />
+       </div>
+      <JoborderFooter 
+      remarkRef={remarkRef}
+      buttonData={buttonData}
+      handleKeyDownRemark={handleKeyDownRemark}
+      handleFocus={handleFocus}
+      handleBlurremark={handleBlurremark}
+    
+      />
+
+      <AlertDialogSlide
+        alertopen={alertopen}
+        handlesubmitjob={handlesubmitjob}
+        onClose={handleClose}
+        title={alerttitle}
+        description=""
+        button1={button1}
+        handleAddRow={handleAddRow}
+        okButtonRef={okButtonRef}
+        set_siok={set_siok}
+        is_ok={is_ok}
+        setalertOpen={setalertOpen}
+        setSnackbarOpen={setSnackbarOpen}
+      />
+
+       <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={snakbarclose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+        <Alert
+          onClose={snakbarclose}
+          severity={snacktype}
+          variant="filled"
+          sx={{ width: '100%' }}
+          
+        >
+          {snackmessage}
+        </Alert>
+      </Snackbar>
+
+    </div>
+  );
+};
+
+export default TableComponent;
