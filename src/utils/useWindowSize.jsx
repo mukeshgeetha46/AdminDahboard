@@ -4,14 +4,16 @@ import { useState, useEffect } from 'react';
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
+    isMobile: window.innerWidth <= 768 // ✅ Initial mobile check
   });
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
+        isMobile: window.innerWidth <= 768 // ✅ Update on resize
       });
     };
 
@@ -19,7 +21,7 @@ function useWindowSize() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return windowSize; // ✅ Return just the size
+  return windowSize;
 }
 
 export default useWindowSize;

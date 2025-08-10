@@ -214,9 +214,10 @@ const getStatusStyles = (status) => {
           </td>
           <td className='p-2 w-[80px]'>
             <div className='flex items-center gap-3'>
-              <button className='w-9 h-9 rounded-full flex items-center justify-center bg-[#FFEDE9] shadow-2xl transition'>
-                <IoTrashOutline size={18} color='#FB977D' />
-              </button>
+             <button className='w-9 h-9 rounded-full flex items-center justify-center bg-[#FFEDE9] shadow-md transition'>
+  <IoTrashOutline size={18} color='#FB977D' />
+</button>
+
             </div>
           </td>
         </tr>

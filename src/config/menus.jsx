@@ -36,6 +36,7 @@ const menus = [
           {s_label:'Add Product',path:'/ecommerce/add-product'},
           {s_label:'Edit Product',path:'/ecommerce/add-product'},
         ] },
+         { label: 'Chats', class: 'menu',icon:<BsChatDots size={25} />,mainpath:"/apps/chats" },
         { label: 'Users Profile', class: 'menu',icon:<FaRegUser size={25} />, submenu:[
           {s_label:'Profile One',path:'/user/profileone'},
         ] },
