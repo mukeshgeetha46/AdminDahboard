@@ -8,7 +8,7 @@ import useWindowSize from '../../utils/useWindowSize';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = () => {
+const Register = () => {
 
   const {isLaptop} = useWindowSize();
   const navigate = useNavigate();
@@ -57,30 +57,26 @@ const Login = () => {
 
               <div className='flex flex-col gap-10 mt-6'>
                 <div className='flex flex-col gap-2'>
-                  <p className='text-[14px] leading-[17px] font-semibold'>Username</p>
+                  <p className='text-[14px] leading-[17px] font-semibold'>Name</p>
                   <input type="text"  name="" id="" placeholder='Product Price' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
                 </div>
                 <div className='flex flex-col gap-2'>
+                  <p className='text-[14px] leading-[17px] font-semibold'>Email Adddress</p>
+                  <input type="email"  name="" id="" placeholder='Product Price' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+                </div>
+                <div className='flex flex-col gap-2'>
                   <p className='text-[14px] leading-[17px] font-semibold'>Password</p>
-                  <input type="password" value={`admin@123456`} name="" id="" placeholder='Product Price' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
+                  <input type="password"  name="" id="" placeholder='Product Price' className='border border-[#dfe5ef] p-3 rounded-[5px] w-full focus:outline-none focus:border-[#0085db]' />
                 </div>
               </div>
-                 
-                 <div className='mt-5 flex justify-between items-center'>
-                   <div className='flex items-center gap-3'>
-                     <input type="checkbox" />
-                     <p className='text-[14px] leading-[17px]'>Remember this Device</p>
-                   </div>
-                   <div className='flex items-center gap-3' onClick={()=>navigate('/auth/forgot-password')}>
-                     <p className='text-[14px] leading-[21px] font-medium text-[#0085DB]'>Forget Password?</p>
-                   </div>
-                 </div>
+                
 
                  <div className='mt-5'>
-                  <button className='w-full rounded-full bg-[#0085DB] pt-2 pb-2 text-white'>Sign In</button>
+                  <button className='w-full rounded-full bg-[#0085DB] pt-2 pb-2 text-white'>Sign Up</button>
                  </div>
-  <div className='mt-5'>
-                    <p className='text-[14px] leading-[17px] font-medium text-[#707A82]' onClick={()=>navigate('/register')}>New to Spike? <span className='text-[14px] leading-[21px] text-[#0085DB]'>Create an account</span></p>
+
+                   <div className='mt-5'>
+                    <p className='text-[14px] leading-[17px] font-medium text-[#707A82]' onClick={()=>navigate('/login')}>Already have an Account? <span className='text-[14px] leading-[21px] text-[#0085DB]'>Sign in</span></p>
                    </div>
                  </div>
               </div>
@@ -89,4 +85,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

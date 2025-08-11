@@ -2,7 +2,8 @@
 
 import { FaRegNoteSticky, FaRegUser } from 'react-icons/fa6';
 import { TbDashboard,VscDashboard,IoCallOutline,SiBlogger,AiOutlineShoppingCart, BsChatDots,MdOutlineEmail,BsKanbanFill,IoPricetagsOutline,
-  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket,GiBlackBook,MdLogin
+  FaQuestionCircle,IoSettingsOutline,MdOutlineWidgets,RiGraduationCapLine,GrTicket,GiBlackBook,MdLogin,FaUserShield,
+  TbPasswordUser,MdDomainVerification,MdOutlineErrorOutline
  } from '../icons/index'
 
 
@@ -84,6 +85,10 @@ const menus = [
         //   {s_label:'Teachers Details',path:'/teachers/teachers-details'},
         // ] },
           { label: 'Login', class: 'menu',icon:<MdLogin size={25} />,mainpath:"/login" },
+          { label: 'Register', class: 'menu',icon:<FaUserShield size={25} />,mainpath:"/register" },
+          { label: 'Forgot Pssword', class: 'menu',icon:<TbPasswordUser size={25} />,mainpath:"/auth/forgot-password" },
+          { label: 'Two Steps', class: 'menu',icon:<MdDomainVerification size={25} />,mainpath:"/auth/two-step" },
+          { label: 'Error', class: 'menu',icon:<MdOutlineErrorOutline size={25} />,mainpath:"/auth/404" },
       ],
     },
   ];

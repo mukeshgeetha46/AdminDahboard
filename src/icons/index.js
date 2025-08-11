@@ -20,6 +20,10 @@ import { RiGraduationCapLine } from "react-icons/ri";
 import { GrTicket } from "react-icons/gr";
 import { GiBlackBook } from "react-icons/gi";
 import { MdLogin } from "react-icons/md";
+import { FaUserShield } from "react-icons/fa";
+import { TbPasswordUser } from "react-icons/tb";
+import { MdDomainVerification } from "react-icons/md";
+import { MdOutlineErrorOutline } from "react-icons/md";
 
 
 
@@ -47,5 +51,9 @@ export {
     RiGraduationCapLine,
     GrTicket,
     GiBlackBook,
-    MdLogin
+    MdLogin,
+    FaUserShield,
+    TbPasswordUser,
+    MdDomainVerification,
+    MdOutlineErrorOutline
 }

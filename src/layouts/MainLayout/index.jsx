@@ -14,6 +14,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import profile from '../../assets/Profile/user-10-BtaXUAQO.jpg'
 import { AiOutlineLogout } from "react-icons/ai";
+import useWindowSize from '../../utils/useWindowSize';
 
 
 const MainLayout = () => {
@@ -63,6 +64,7 @@ const handleMenu = (label,path) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [menuopen, setMenuopen]);
+  const {isLaptop} = useWindowSize();
 
   return (
  <>
@@ -75,7 +77,7 @@ const handleMenu = (label,path) => {
         <img src={logo} className='w-[175px]' />
       </div>
 
-       <div className='divmainMenu mt-10 overflow-y-auto h-[690px] pr-2'>
+       <div className={`divmainMenu mt-10 overflow-y-auto pr-2 ${isLaptop ?'h-[500px]' : 'h-[690px]'}`}>
       {menus && menus.map((item) => (
   <div key={item.label}>
     <p className='pr-3 pt-3 pb-3 pl-8 text-gray-500 text-sm'>{item.label}</p>

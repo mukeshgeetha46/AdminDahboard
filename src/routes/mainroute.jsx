@@ -1,6 +1,10 @@
 // src/routes/mainroute.jsx
 import AccountSetting from '../components/AccountSetting/AccountSetting.jsx';
+import Error404 from '../components/Authentication/404.jsx';
+import ForgetPassword from '../components/Authentication/ForgetPassword.jsx';
 import Login from '../components/Authentication/Login.jsx';
+import Register from '../components/Authentication/Register.jsx'; // ⬅ Added Register import
+import TwoStepAuthentication from '../components/Authentication/TwoStepAuthentication.jsx';
 import MainBlog from '../components/Blog/MainBlog.jsx';
 import MainBlogDetails from '../components/Blog/MainBlogDetails.jsx';
 import Chat from '../components/Chat/Chat.jsx';
@@ -46,8 +50,14 @@ const MainRoutes = {
 
 // Routes without layout
 const AuthRoutes = {
-  path: '/login',
-  element: <Login />,
+  path: '/',
+  children: [
+    { path: 'login', element: <Login /> },
+    { path: 'register', element: <Register /> },
+    { path: 'auth/forgot-password', element: <ForgetPassword /> },
+    { path: 'auth/two-step', element: <TwoStepAuthentication /> },
+    { path: 'auth/404', element: <Error404 /> },
+  ],
 };
 
 export { MainRoutes, AuthRoutes };

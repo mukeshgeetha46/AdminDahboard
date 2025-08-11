@@ -13,7 +13,8 @@ function useWindowSize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-        isMobile: window.innerWidth <= 768 // ✅ Update on resize
+        isMobile: window.innerWidth <= 768,
+        isLaptop:(window.innerWidth >= 1287 && window.innerWidth <= 1716)
       });
     };
 
