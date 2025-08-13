@@ -13,6 +13,7 @@ import Contact from '../components/Contact/Contact.jsx';
 import EmailPage from '../components/Email/Email.jsx';
 import Faq from '../components/FAQ/Faq.jsx';
 import Kanban from '../components/Kanban/Kanban.jsx';
+import Movie from '../components/Movie/Movie.jsx';
 import Notes from '../components/Notes/Notes.jsx';
 import Pricing from '../components/Pricing/Pricing.jsx';
 import Allteachers from '../components/School/Allteachers.jsx';
@@ -57,6 +58,7 @@ const AuthRoutes = {
     { path: 'auth/forgot-password', element: <ForgetPassword /> },
     { path: 'auth/two-step', element: <TwoStepAuthentication /> },
     { path: 'auth/404', element: <Error404 /> },
+    { path: 'movie', element: <Movie /> },
   ],
 };
 
