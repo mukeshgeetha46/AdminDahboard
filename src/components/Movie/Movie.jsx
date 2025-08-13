@@ -1,72 +1,72 @@
-import React from "react";
+import HeroSlider from "./HeroSlider";
+import MovieCard from "./MovieCard";
+import Navbar from "./Navbar";
 
-const Movie = () => {
-  const movies = [
-    {
-      title: "Cookie",
-      likes: "1-1 M Likes",
-      genres: "Action/Thriller",
-    },
-    {
-      title: "War 2",
-      likes: "1-1 M Likes",
-      genres: "Action/Thriller",
-    },
-    {
-      title: "Thalakran Thalakril",
-      votes: "8,170 31kVotes",
-      genres: "Comedy/Drama/Romantic",
-    },
-    {
-      title: "Mahavatar Natsimha",
-      votes: "9,710 21.15kVotes",
-      genres: "Action/Animation/Drama",
-    },
-    {
-      title: "Housemates",
-      votes: "8,810 2.56Votes",
-      genres: "Comedy/Fantasy/Horror",
-    },
-  ];
 
+
+const movies = [
+  {
+    title: "Coolie",
+    genre: "Action/Thriller",
+    likes: "1.1M Likes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MS4xTSBMaWtlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00395817-qjtckyrarb-portrait.jpg",
+    promoted: true
+  },
+  {
+    title: "War 2",
+    genre: "Action/Thriller",
+    likes: "1.1M Likes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MS4xTSBMaWtlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00356501-zxqqwrkykt-portrait.jpg"
+  },
+  {
+    title: "Thalaivan Thalaivii",
+    genre: "Comedy/Drama/Romantic",
+    likes: "8.1/10 31K Votes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4xLzEwICAzMUsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00444587-gpgzelpbny-portrait.jpg"
+  },
+  {
+    title: "Mahavatar Narsimha",
+    genre: "Action/Animation/Drama",
+    likes: "9.7/10 211.5K Votes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS43LzEwICAyMTEuNUsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00429289-nmmqrhcemr-portrait.jpg"
+  },
+  {
+    title: "Housemates",
+    genre: "Comedy/Fantasy/Horror",
+    likes: "8.8/10 2.5K Votes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC44LzEwICAyLjVLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00453739-wvxnctsylx-portrait.jpg"
+  },
+  {
+    title: "Mahavatar Narsimha",
+    genre: "Action/Animation/Drama",
+    likes: "9.7/10 211.5K Votes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS43LzEwICAyMTEuNUsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00429289-nmmqrhcemr-portrait.jpg"
+  },
+  {
+    title: "Housemates",
+    genre: "Comedy/Fantasy/Horror",
+    likes: "8.8/10 2.5K Votes",
+    poster: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC44LzEwICAyLjVLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00453739-wvxnctsylx-portrait.jpg"
+  }
+];
+
+export default function App() {
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-      {/* Promo Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-6 text-white">
-        <h1 className="text-2xl font-bold mb-2">Unlock $500 off on LIVE gigs</h1>
-        <button className="mt-4 bg-white text-purple-600 font-semibold py-2 px-6 rounded-full hover:bg-purple-100 transition duration-300">
-          Apply Now
-        </button>
-      </div>
+    <div>
+      <Navbar />
+      <HeroSlider />
 
-      {/* Recommended Movies Section */}
-      <div className="p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Recommended Movies</h2>
-        
-        <div className="space-y-4">
-          {movies.map((movie, index) => (
-            <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-medium text-gray-900">{movie.title}</h3>
-                  <p className="text-sm text-gray-500">{movie.genres}</p>
-                </div>
-                <div className="text-right">
-                  {movie.likes && <p className="text-sm text-gray-600">{movie.likes}</p>}
-                  {movie.votes && <p className="text-sm text-gray-600">{movie.votes}</p>}
-                </div>
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto px-4 my-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-semibold">Recommended Movies</h2>
+          <span className="text-red-500 text-sm cursor-pointer">See All ›</span>
+        </div>
+        <div className="flex gap-4 mt-4 overflow-x-auto pb-4">
+          {movies.map((m, i) => (
+            <MovieCard key={i} movie={m} />
           ))}
         </div>
       </div>
-
-      {/* Weather Footer */}
-      <div className="bg-gray-100 px-6 py-3 text-right">
-        <p className="text-sm text-gray-600">27°C: Mainly cloudy</p>
-      </div>
     </div>
   );
-};
-
-export default Movie;
+}
